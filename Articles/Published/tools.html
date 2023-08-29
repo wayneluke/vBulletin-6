@@ -1,0 +1,55 @@
+<p>Within your vBulletin Download Package, we provide a file called tools.php, this file isn't uploaded to the server by default as it is considered to be a <strong>significant security risk</strong>. However, there are times when you need to change specific settings and aren't able to access your AdminCP directly.</p>
+<h2 id="uploadingtotheserver">Uploading to the Server</h2>
+<p>It is recommended that tools.php is installed in the <code>/core/install</code> directory. To do this, follow the steps below:</p>
+<ol>
+<li>Connect to your server with your favorite SFTP or SCP client.</li>
+<li>In your vBulletin package, upload the /core/install directory to your server.</li>
+<li>In your vBulletin package, find tools.php in your <code>do_not_upload</code> directory and upload to the <code>/core/install</code> directory.</li>
+</ol>
+<h2 id="afterusingremovetoolsphp">After Using Remove Tools.php</h2>
+<p><strong>We consider this file to be a security risk</strong>. This cannot be overstated. This file should not be stored on your server after use. It is provided as a tool of last resort. Once you have completed your tasks, you should delete it from your server. To do this, delete the <code>/core/install/</code> directory.</p>
+<h2 id="usingthetools">Using The Tools</h2>
+<ol>
+<li>Point your browser to the file at /core/install/tools.php (e.g. <code>https://example.com/core/install/tools.php</code>)</li>
+<li>Enter your Customer ID.</li>
+<li>Select the tool from the menu.</li>
+</ol>
+<h2 id="thetools">The Tools</h2>
+<h3 id="xmltools">XML Tools</h3>
+<p>These tools allow you to restore default information that is normally updated during an installation or upgrade. They allow you to restore a site to its default look and feel.</p>
+<ul>
+<li><code>Style</code>: Loads the vbulletin_style.xml file located in the /core/install directory and overwrites the MASTER style. All other styles inherit their templates from this hidden MASTER style. This will not affect changes made in themes or custom styles.</li>
+<li><code>Settings</code>: Loads the vbulletin_settings.xml file located in the /core/install directory and updates the setting table in the database. It does not overwrite your configured options.</li>
+<li><code>Language</code>: Loads the vbulletin_language.xml file located in the /core/install directory. Similar to the Style system, this rebuilds the MASTER language that contains all phrases that other languages are based on. This will not affect changes made in custom languages.</li>
+<li><code>Admin Help</code>: Loads the vbulletin_adminhelp.xml file. This is a series of phrases used for the inline help with the AdminCP.</li>
+</ul>
+<h3 id="datastoretools">Datastore Tools</h3>
+<p>This information is stored in the datastore table of your database. It allows us to consolidate frequently used information into a single table in order to reduce queries when loading pages. Sometimes, the values in this table can be out of date or corrupted. These options let you rebuild some important values.</p>
+<ul>
+<li><code>Usergroup / Channel Cache</code>: Every usergroup has a datastore record that caches custom permissions across the site. These are loaded for the users on every page load. This tool will rebuild these records should they get corrupted.</li>
+<li><code>Options Cache</code>: Rebuilds the datastore records that stores the compiled values of every setting under Settings -&gt; Options. If you manually change values in the setting table, this should be run. Until you do so, your new values will have no affect.</li>
+<li><code>Bitfield Cache</code>: vBulletin stores a number of values in Bitfields. That is the values are stored as a portion of an integer within the database. This allows the software to store multiple settings in a single integer. This will rebuild the bitfield cache with those options.</li>
+<li><code>Password Schemes</code>: Unlike other datastore options, Password Schemes are not stored in a scheme table within the database but reside in a file. These schemes are cached within the datastore. Using this option imports all <code>pwsschemes_*.xml</code> files schemese located <code>core/includes/xml/</code> directory and rebuilds the cache. This file tells vBulletin what types of password storage is available and what PHP Class processes those passwords. It also provides options like the cost for Blowfish hashing. If you ever get an error stating there are no known password types for a user, this datastore should be rebuilt. It should also be rebuilt if you ever edit/add to the <code>pwsschemes-vbulletin.xml</code> file.</li>
+</ul>
+<h3 id="mysqltools">MySQL Tools</h3>
+<p>These tools directly modify your modify your database and should be used with extreme caution. Before making any changes to your database you should create a complete backup.</p>
+<ul>
+<li><code>Run Query</code>: This allows you to run alter and update queries on the database. Altering the database can make your vBulletin inoperable.</li>
+<li><code>Repair Tables</code>: (<strong>OBSOLETE</strong>) Allows you to repair crashed MyISAM tables. You can repair MyISAM tables with this tool if your software is returning an error of "Table is marked as crashed." This tool will not fix other database errors.</li>
+<li><code>Reset Admin Access</code>: Allows you to promote any user to Administrator status. They would have full access to your site. This can be used to create a new administrator if applied to a newly registered user.</li>
+<li><code>Set User Password</code>: Allows you to change the password of any user. The new password will be saved in the top priority password scheme.</li>
+<li><code>Scan Content Tables</code>: Scan &amp; Repair node, closure, and content tables. You should only do this if vBulletin Technical Support Staff advises you to do so, and make sure you have a back up first.</li>
+<li><code>Restore Pages</code>: This allows you to revert pages to their default configuration. This restores the route (URL), page, pagetemplate, and widgets defaults for the selected page(s). You should only use this if vBulletin Technical Support Staff advises you to do so, and after backing up your database first.</li>
+<li><code>Fix Poll Option Cache</code>: Regenerate the poll option cache if it is out of sync.</li>
+</ul>
+<h3 id="otheroptions">Other Options</h3>
+<p>All of the options below can be found in the AdminCP under Settings -&gt; Options.</p>
+<ul>
+<li><code>Turn On/Off Forum</code>: Toggles the availability of your forum. The default value is On.</li>
+<li><code>Turn On/Off Css As Files</code>: Toggles where your CSS Files are stored. The default value is Off. The recommended value is On. If you're having problems upgrading with the Web Upgrade Wizard, setting this to Off may help.</li>
+<li><code>Turn Off Templates As Files</code>: Determines where your templates are stored. The default value is Off. The recommended value is Off. Only turn this on if you have very fast SSD based storage.</li>
+<li><code>Rebuild Styles</code>: Rebuild the internal Style Rollup values based on the Master Style and individual style customizations. <em>This will rebuild the css cache on disk if Css As Files is on</em>.</li>
+<li><code>Rebuild Template Cache</code>: Rebuild the template cache on disk. <em>This only has an effect if Templates As Files is on</em></li>
+<li><code>Default Language</code>: Reset the site's default language. This can be useful if you receive an error stating the language cannot be found.</li>
+<li><code>Location of Website</code>: Change location of site. Allows you to change the location of the site if you cannot access the AdminCP. Frequently used after changing domain names for your site. (This is the <code>$vboptions[frontendurl]</code> setting).</li>
+</ul>
