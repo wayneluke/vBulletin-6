@@ -3,7 +3,7 @@
 Ensure that you have Apache Web Server installed on your system. If not, you can install it using package managers like apt (for Debian/Ubuntu), yum (for CentOS/RHEL), brew (MacOS) or any other appropriate method for your operating system.
 
 
-## Install MariaDB
+## Install MySQL or MariaDB
 
 MariaDB is a popular open-source relational database management system and a drop-in replacement for MySQL. This will provide the required database server for vBulletin. 
 
@@ -15,7 +15,7 @@ sudo apt install mariadb-server   # For Debian/Ubuntu
 sudo yum install mariadb-server   # For CentOS/RHEL
 ```
 
-### Secure MariaDB installation:
+### Secure Database installation:
 
 After installation, run the following command to secure your MariaDB installation and set the root password:
 
@@ -48,8 +48,8 @@ By default, Apache may not be configured to read .htaccess files. To enable this
 
 Locate the Apache configuration file, often named httpd.conf, apache2.conf, or httpd-vhosts.conf.
 
-Look for the <Directory> block that corresponds to the directory where your PHP applications will be stored (e.g., /var/www/html).
-Change AllowOverride None to AllowOverride All within the <Directory> block. This will allow .htaccess files to override settings.
+Look for the <Directory> block that corresponds to the directory where your PHP applications will be stored (e.g., `/var/www/html`).
+Change AllowOverride None to AllowOverride All within the `<Directory>` block. This will allow .htaccess files to override settings.
 
 Save the changes and restart Apache for the changes to take effect:
 
