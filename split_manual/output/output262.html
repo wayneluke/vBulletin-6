@@ -1,0 +1,43 @@
+<table class="headingtable" cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tbody>
+					<tr valign="bottom">
+						<td>
+							<h4 style="display:inline"><a name="item267"></a>User Ranks Example</h4>
+						</td>
+						<td>
+							<div style="font:11px tahoma; text-align:right"><a
+									href="https://www.vbulletin.com/docs/onepage/#link267">Back to Top</a></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			This example will demonstrate how you would setup a group of ranks for all users, based on post count.
+			Administrators will get a special rank and will not have the rank that everyone else has.<br>
+			<br>
+			Since we have set the <strong>Display Type</strong> of the <span class="Mmono">All Usergroups</span> ranks
+			to <em>Displaygroup</em>, we have invoked the special setting mentioned in <a
+				href="https://www.vbulletin.com/docs/html/main/acp_users_userprofile_userranks_modifyuserranks"
+				class="Mhop">Modifying User Ranks</a>. The <span class="Mmono">All Usergroups</span> ranks will display
+			for everyone except for those in the <span class="Mmono">Administrator</span> group since that group has a
+			rank explicitly defined, the ADMIN rank. Since we have set <strong>Stack Rank</strong> to
+			<strong>No</strong> for both ranks, that means that the rank will appear all on one line.<br>
+			<br>
+			Ranks are evaluated by usergroupid in reverse order. This means that the <span class="Mmono">All
+				Usergroups</span> rank will appear last. If you wish to have ADMIN appear on one line, and the <span
+				class="Mmono">All Usergroups</span> rank on another, you would set the <strong>Stack Rank</strong>
+			option of the <span class="Mmono">Administrator</span> group to <strong>Yes</strong>. This will result in an
+			html <span class="Mkey" title="Hit the &#39;br /&#39; key(s)">&lt;br /&gt;</span> being placed after ADMIN.
+			The <span class="Mmono">All Usergroups</span> rank would then follow, displaying on a new line.<br>
+			<br>
+			The ADMIN rank would only display for users that had the <span class="Mmono">Administrator</span> group as
+			their primary Usergroup or as a Secondary group. If the <strong>Display Type</strong> of the <span
+				class="Mmono">Administrator</span> group's rank was changed to <em>Displaygroup</em>, then this rank
+			would only show for those user's who have set the <span class="Mmono">Administrator</span> group as their
+			displaygroup. That would be accomplished either by the user only being in the <span
+				class="Mmono">Administrator</span> group, being a member of multiple groups assigned by the admin and
+			having the Admin group as their displaygroup, or by having used Public Groups to to join the Admin group and
+			choosing that as their display group.<br>
+			<br>
+			The last scenario is quite unlikely since you would not allow members to join the Administrator group on
+			their own choosing but the logic can be applied to other groups.
+			

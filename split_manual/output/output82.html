@@ -1,0 +1,48 @@
+<table class="headingtable" cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tbody>
+					<tr valign="bottom">
+						<td>
+							<h5 style="display:inline"><a name="item87"></a>Image Settings</h5>
+						</td>
+						<td>
+							<div style="font:11px tahoma; text-align:right"><a
+									href="https://www.vbulletin.com/docs/onepage/#link87">Back to Top</a></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			Path to Image Settings: <span class="Mprocess">Settings &gt; Options &gt; Image Settings</span> <br>
+			<br>
+			The Image Settings group allows you to control how vBulletin processes images for uploading and handles
+			image verification.<div class="Mnote">
+				<div class="Mnotewarnheader">Note:</div>
+				<div class="Mnotewarninner">You must click <strong>Save</strong> for changes to take effect.</div>
+			</div>
+			<div align="center"><img src="./vBulletin Manual_files/image-settings.png" border="0" alt=""></div>
+			<br>
+			<strong>Image Processing Library</strong> (default: GD)<br>
+			vBulletin provides two options for manipulating attachment thumbnails, custom avatars, and profile
+			pictures.<br>
+			<br>
+			The first is GD, which is bundled with PHP 4.3.0 and later, and is often available with earlier releases.
+			The GD v2+ library is preferable to the v1+ library, so always choose v2 if you're given the opportunity by
+			your host. GD supports the following file types: GIF, JPEG, and PNG.<div class="Mnote">
+				<div class="Mnotewarnheader">Note:</div>
+				<div class="Mnotewarninner">The GD Libraries might have to be manually activated when using PHP
+					installed on Windows.</div>
+			</div>The second supported library is ImageMagick v6 by ImageMagick Studio LLC. ImageMagick is an executable
+			binary that must be installed at the server level to be called by PHP. Only the identify and convert
+			binaries from ImageMagick are required by vBulletin. ImageMagick supports the following file types: GIF,
+			JPEG, PNG, BMP, TIFF, and PSD. ImageMagick also has better support for handling animated GIF.<br>
+			<br>
+			<br>
+			<strong>ImageMagick Binary Path</strong><br>
+			Path to the ImageMagick 6 binaries (convert and identify). <br>
+			<br>
+			Example:<br>
+			Unix:<div class="Mcodecontainer">
+				<pre class="Mcodeblock">/usr/local/bin/</pre>
+			</div>Windows:<div class="Mcodecontainer">
+				<pre class="Mcodeblock">C:\imagemagick\</pre>
+			</div>
+			

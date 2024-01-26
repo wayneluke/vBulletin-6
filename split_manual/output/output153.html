@@ -1,0 +1,40 @@
+<table class="headingtable" cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tbody>
+					<tr valign="bottom">
+						<td>
+							<h5 style="display:inline"><a name="item158"></a>Data Format</h5>
+						</td>
+						<td>
+							<div style="font:11px tahoma; text-align:right"><a
+									href="https://www.vbulletin.com/docs/onepage/#link158">Back to Top</a></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			Downloaded languages are in XML format. The XML for a language contains a <span
+				class="Mvar">&lt;language&gt;</span> tag that provides information about the language, multiple <span
+				class="Mvar">&lt;phrasetype&gt;</span> tags that denote each phrase type/group, and many <span
+				class="Mvar">&lt;phrase&gt;</span> tags that describe the individual phrases.<br>
+			<br>
+			The <span class="Mvar">&lt;phrase&gt;</span> tags here are very different from the <span
+				class="Mvar">&lt;phrase&gt;</span> tags used in templates. An example language XML file looks like the
+			following.<div class="Mcodecontainer">
+				<pre class="Mcodeblock">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
+
+&lt;language name="English (US)" vbversion="3.0.0"&gt;
+
+   &lt;phrasetype name="GLOBAL"&gt;
+       &lt;phrase name="1_day_ago"&gt;&lt;![CDATA[1 Day Ago]]&gt;&lt;/phrase&gt;
+       &lt;phrase name="1_hour_ago"&gt;&lt;![CDATA[1 Hour Ago]]&gt;&lt;/phrase&gt;
+   &lt;/phrasetype&gt;
+
+   &lt;phrasetype name="Control Panel Global"&gt;
+       &lt;phrase name="access"&gt;&lt;![CDATA[Access]]&gt;&lt;/phrase&gt;
+       &lt;phrase name="access_masks"&gt;&lt;![CDATA[Access Masks]]&gt;&lt;/phrase&gt;
+       &lt;phrase name="add"&gt;&lt;![CDATA[Add]]&gt;&lt;/phrase&gt;
+   &lt;/phrasetype&gt;
+
+&lt;/language&gt;
+</pre>
+			</div>
+			

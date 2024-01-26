@@ -1,0 +1,42 @@
+<table class="headingtable" cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tbody>
+					<tr valign="bottom">
+						<td>
+							<h3 style="display:inline"><a name="item399"></a>5) Completing the Installation</h3>
+						</td>
+						<td>
+							<div style="font:11px tahoma; text-align:right"><a
+									href="https://www.vbulletin.com/docs/onepage/#link399">Back to Top</a></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<table cellpadding="5" cellspacing="0" border="0">
+				<!--<tr><td nowrap="nowrap"><b>Step Num</b></td><td><b>Instruction</b></td></tr>-->
+				<tbody>
+					<tr valign="top">
+						<td class="Mstepnum">1</td>
+						<td class="Msteptext" width="100%">Now we just want to copy our PHP configuration file:
+							<blockquote class="Mtype">cd /usr/local/src/php-xxx<br>
+								cp php.ini-optimized /usr/local/php/php.ini</blockquote>If you have any modifications
+							you wish to make to your php.ini file, you may make them now.</td>
+					</tr>
+					<tr valign="top">
+						<td class="Mstepnum">2</td>
+						<td class="Msteptext" width="100%">
+							<blockquote class="Mtype">cd /usr/local/etc/httpd/conf</blockquote>Edit your httpd.conf file
+							and make sure the following line is added:<br>
+							<span class="Mmono">AddType application/x-httpd-php .php</span>
+						</td>
+					</tr>
+					<tr valign="top">
+						<td class="Mstepnum">3</td>
+						<td class="Msteptext" width="100%">You can now reboot your system, or simply re-start Apache
+							with:<br>
+							<span class="Mtype">
+								<blockquote>/usr/local/etc/httpd/bin/apachectl start</blockquote>
+							</span></td>
+					</tr>
+				</tbody>
+			</table>
+			

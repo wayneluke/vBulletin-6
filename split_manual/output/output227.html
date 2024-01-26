@@ -1,0 +1,218 @@
+<table class="headingtable" cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tbody>
+					<tr valign="bottom">
+						<td>
+							<h6 style="display:inline"><a name="item232"></a>Adding and Editing Channel Permissions</h6>
+						</td>
+						<td>
+							<div style="font:11px tahoma; text-align:right"><a
+									href="https://www.vbulletin.com/docs/onepage/#link232">Back to Top</a></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			You add channel permissions using various vBulletin tools, which are described in the following topics: <a
+				href="https://www.vbulletin.com/docs/html/main/acp_permissions_tools_permission_duplication"
+				class="Mhop">Permission Duplicating Tools</a>, <a
+				href="https://www.vbulletin.com/docs/html/main/acp_permissions_tools_quickeditor"
+				class="Mhop">Permissions Quick Editor</a>, and <a
+				href="https://www.vbulletin.com/docs/html/main/acp_permissions_tools_quicksetup" class="Mhop">Quick
+				Channel Permission Setup</a>.<br>
+			<br>
+			Path to viewing and editing channel permissions: <span class="Mprocess">Channel Management &gt; Channel
+				Permissions</span> or <span class="Mprocess">Usergroups &gt; Channel Permissions</span>.<br>
+			<br>
+			You view and edit channel permissions in the Edit Channel Permissions form of the Channel Permissions
+			Manager.<br>
+			<br>
+			<font color="red"><strong>&lt;&lt;&lt;Insert a level-setting screenshot of the Channel Permissions Manager
+					home screen.&gt;&gt;&gt;</strong></font><br>
+			<br>
+			On this screen, all of your channels are listed. Beneath each channel, all of your usergroups are
+			listed.<br>
+			<br>
+			The color of each usergroup is significant. If the usergroup text is in white, it is using the default
+			permissions for the usergroup. If the usergroup text is in red, it is using permissions customized for that
+			channel. If it is in yellow, it is using custom permissions from a parent channel. The circle next to each
+			usergroup name is also significant. A hollow circle means the usergroup cannot view the channel, while a
+			full circle means they can.<br>
+			<br>
+			To edit the permissions for any usergroup, or to revert them to default, click <strong>Edit</strong> next to
+			the relevant group under the relevant channel.<br>
+			<br>
+			You can <strong>Reset</strong> or <strong>Deny All</strong> usergroups within a channel as a group.<br>
+			<br>
+			Other <strong>Channel Permissions Manager</strong> functions are linked from the <strong>Additional
+				Functions</strong> form at the top of the page. There is detailed documentation for each (linked
+			below).<br>
+			<br>
+			The <strong>Permission Duplicator</strong> allows you to quickly duplicate an existing permission set
+			between usergroups or between channels (see the <a
+				href="https://www.vbulletin.com/docs/html/main/acp_permissions_tools_permission_duplication"
+				class="Mhop">Permission Duplicating Tools</a> article).<br>
+			<br>
+			You can also access the <strong>Permissions Quick Editor</strong> from here. The Quick Editor allows you to
+			quickly revert permissions to default (see the <a
+				href="https://www.vbulletin.com/docs/html/main/acp_permissions_tools_quickeditor"
+				class="Mhop">Permissions Quick Editor</a> article).<br>
+			<br>
+			The last link at the top is <strong>Quick Channel Permissions Setup</strong>. You can use this to mass-apply
+			permissions to multiple usergroups for a particular channel (see the <a
+				href="https://www.vbulletin.com/docs/html/main/acp_permissions_tools_quicksetup" class="Mhop">Quick
+				Channel Permission Setup</a> article).<br>
+			<br>
+			Following is information about viewing, adding and editing channel permissions.<br>
+			<br>
+			<font color="red"><strong>&lt;&lt;&lt;Insert a level-setting screenshot of only the View Channel Permissions
+					form of the Channel Permissions Manager.&gt;&gt;&gt;</strong></font><br>
+			<br>
+			All existing channels and their usergroups are listed on the form in a hierarchical format.<br>
+			<br>
+			To edit the permissions for a given usergroup within a given channel, click the <strong>Edit</strong> link
+			to the left of the usergroup name.<div class="Mnote">
+				<div class="Mnotewarnheader">Note:</div>
+				<div class="Mnotewarninner">You must click <strong>Save</strong> for changes to take effect.</div>
+			</div>The edit screen of the Channel Permissions Manager opens.<br>
+			<br>
+			<font color="red"><strong>&lt;&lt;&lt;Insert a level-setting screenshot of a sample “edit”
+					screen.&gt;&gt;&gt;</strong></font><br>
+			<br>
+			The exact contents of the edit screen varies depending on which set of permissions is being displayed.<br>
+			<br>
+			However, the options in the top form (Edit Channel Permissions for Usergroup <em>x</em> in Channel
+			<em>y</em>) are always as follows:<br>
+			<br>
+			<strong>Inherit from parent (this will delete any existing permissions)</strong><br>
+			To save any changes to this page, you must select "Use custom permissions" (see below). If you already have
+			custom settings and want to set this usergroup back to its default, select "Use usergroup default" and click
+			the <span class="Mbutton" title="Click the &#39;Save&#39; button">[Save]</span> button.<div class="Mnote">
+				<div class="Mnotewarnheader">Note:</div>
+				<div class="Mnotewarninner">This option is not available unless you have already created custom
+					settings.</div>
+			</div>If you have custom settings for this group and remove them as described above, any subchannels also
+			revert if they do not have custom settings explicitly set.<br>
+			<br>
+			<strong>Use Custom Permissions</strong><br>
+			If you intend to make changes to anything on the remainder of the page, click this option.<br>
+			<br>
+			To set the Yes/No options on the rest of the screen to either all Yes or all No, click the <strong>All
+				Yes</strong> or <strong>All No</strong> button.<br>
+			<br>
+			<font size="2"><strong>Edit Channel Permissions Options</strong></font><br>
+			<br>
+			<strong>Time Limit for Editing Replies (hr)</strong> (default: 24)<br>
+			This limits the amount of time a member of this usergroup has to edit a reply for the selected channel.
+			After the entered time period a reply cannot be changed.<br>
+			<br>
+			<strong>Require Moderation for Replies</strong> (Yes/<u>No</u>)<br>
+			Any reply made by this group to any topic in the selected channel will require a moderator to approve it
+			before it becomes visible to other users.<br>
+			<br>
+			<strong>Maximum number of tags</strong> (default: 6)<br>
+			This limits the number of tags members of the usergroup can apply to a topic in this channel.<br>
+			<br>
+			<strong>Maximum tags for Starter Reply</strong> (default: 3)<br>
+			This limits the number of tags members of the usergroup can apply to the first post of a topic.<br>
+			<br>
+			<strong>Maximum Tags by Other Users</strong> (default: 3)<br>
+			This limits the number of tags members of the usergroup can apply to a topic they did not start.<br>
+			<br>
+			<strong>Maximum Attachments</strong> (default: 5)<br>
+			This limits the number of attachments a topic can have.<br>
+			<br>
+			<font size="2"><strong>Channel Permissions</strong></font><br>
+			<br>
+			<strong>Can View Channel</strong> (<u>Yes</u>/No)<br>
+			If set to ‘No’, the rest of the settings on this screen are unused, because the user is denied access to the
+			channel.<br>
+			<br>
+			<strong>Can Move Own Topics</strong> (Yes/<u>No</u>)<br>
+			If this is set to ‘Yes’, users can move their own topics between any channels to which they have access. We
+			recommend leaving this set to ‘No’ and having your channel moderators move the topics or doing it
+			yourself.<br>
+			<br>
+			<strong>Can Download Attachments</strong> (<u>Yes</u>/No)<br>
+			If this is set to ‘No’, users cannot download reply attachments from topics in this channel. The attachment
+			link is still visible, but after clicking it users are told that they don't have permission to use it.<br>
+			<br>
+			<strong>Can Upload Attachments</strong> (<u>Yes</u>/No)<br>
+			If this is set to ‘No’, users cannot attach files to their replies. They can, however, still use the BB IMG
+			code to show images if you have turned that on for this channel.<br>
+			<br>
+			<strong>Can Tag Own Topics</strong> (<u>Yes</u>/No)<br>
+			Whether or not members of the usergroup can add tags to their own topics within this channel.<br>
+			<br>
+			<strong>Can Tag Others’ Topics</strong> (Yes/<u>No</u>)<br>
+			Whether or not members of the usergroup can add tags to others' topics within this channel.<br>
+			<br>
+			<strong>Can Delete Tags on Own Topics</strong> (<u>Yes</u>/No)<br>
+			Whether or not members of the usergroup can delete tags from topics they started within this channel.<br>
+			<br>
+			<strong>Can Use HTML</strong> (Yes/<u>No</u>)<br>
+			This determines whether or not members of the usergroup can use HTML in their topics and replies.<br>
+			<br>
+			<strong>Can Publish</strong> (Yes/<u>No</u>)<br>
+			This determines whether or not members of the usergroup can publish articles.<br>
+			<br>
+			<font size="2"><strong>Moderator Permissions</strong></font><br>
+			<br>
+			<strong>Can Edit Replies</strong> (Yes/<u>No</u>)<br>
+			This allows members of the usergroup to edit replies in this channel.<br>
+			<br>
+			<strong>Can Manage Topics</strong> (Yes/<u>No</u>)<br>
+			This allows members of the usergroup to move, delete, sticky, and unsticky topics in the channel<br>
+			<br>
+			<strong>Can Moderate Replies</strong> (Yes/<u>No</u>)<br>
+			This allows members of the usergroup to moderate replies in the channel.<br>
+			<br>
+			<strong>Can Moderate Attachments</strong> (Yes/<u>No</u>)<br>
+			This allows members of the usergroup to moderate attachments in the channel.<br>
+			<br>
+			<strong>Can Ban Users</strong> (Yes/<u>No</u>)<br>
+			This allows members of the usergroup to ban other users from the channel.<br>
+			<br>
+			<strong>Can remove replies</strong> (Yes/<u>No</u>)<br>
+			This allows members of the usergroup to remove and delete replies from topics in the channel.<br>
+			<br>
+			<strong>Can Set Featured</strong> (Yes/<u>No</u>)<br>
+			This allows members of the usergroup to set articles in the channel as Featured content.<br>
+			<br>
+			<strong>Can Moderate Tags</strong> (Yes/<u>No</u>)<br>
+			This allows members of the usergroup to moderate tags in the channel.<br>
+			<br>
+			<strong>Can add_owners</strong> (Yes/<u>No</u>)<br>
+			This allows members of the usergroup to add a moderator to the social group or blog.<br>
+			<br>
+			<font size="2"><strong>Create Permissions</strong></font><br>
+			This allows members of the usergroup to create permissions for other users in the channel.<br>
+			<br>
+			<strong>Can create channel</strong> (Yes/<u>No</u>)<br>
+			This allows members of the usegroup to create subchannels in the channel.<br>
+			<br>
+			<strong>Can create text/reply</strong> (<u>Yes</u>/No)<br>
+			This allows members of the usergroup to make replies to topics in the channel.<br>
+			<br>
+			<strong>Can create report</strong> (Yes/<u>No</u>)<br>
+			This allows members of the usergroup to create reports.<br>
+			<br>
+			<strong>Can create photo gallery</strong> (<u>Yes</u>/No)<br>
+			This allows members of the usergroup to create a photo gallery.<br>
+			<br>
+			<strong>Can poll</strong> (<u>Yes</u>/No)<br>
+			This allows members of the usergroup to post polls in the channel.<br>
+			<br>
+			<strong>Can create attachment</strong> (<u>Yes</u>/No)<br>
+			This allows members of the usergroup to post attachments in the channel.<br>
+			<br>
+			<strong>Can create photo</strong> (<u>Yes</u>/No)<br>
+			This allows members of the usergroup to post photos in the channel.<br>
+			<br>
+			<strong>Can create private message</strong> (<u>Yes</u>/No)<br>
+			This allows members of the usergroup to send private messages.<br>
+			<br>
+			<strong>Can create video</strong> (<u>Yes</u>/No)<br>
+			This allows members of the usergroup to post videos.<br>
+			<br>
+			<strong>Can create link</strong> (<u>Yes</u>/No)<br>
+			This allows members of the usergroup to use links in their posts.
+			

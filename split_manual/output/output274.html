@@ -1,0 +1,90 @@
+<table class="headingtable" cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tbody>
+					<tr valign="bottom">
+						<td>
+							<h5 style="display:inline"><a name="item279"></a>Paypal</h5>
+						</td>
+						<td>
+							<div style="font:11px tahoma; text-align:right"><a
+									href="https://www.vbulletin.com/docs/onepage/#link279">Back to Top</a></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<table cellpadding="5" cellspacing="0" border="0">
+				<!--<tr><td nowrap="nowrap"><b>Step Num</b></td><td><b>Instruction</b></td></tr>-->
+				<tbody>
+					<tr valign="top">
+						<td class="Mstepnum">1</td>
+						<td class="Msteptext" width="100%">Log in to your <a href="https://www.paypal.com/"
+								target="_blank">PayPal</a> account</td>
+					</tr>
+					<tr valign="top">
+						<td class="Mstepnum">2</td>
+						<td class="Msteptext" width="100%">Click the settings icon at the top of your PayPal account
+							page and then click Account Settings.</td>
+					</tr>
+					<tr valign="top">
+						<td class="Mstepnum">3</td>
+						<td class="Msteptext" width="100%">On the Notifications page, click the Update link for the
+							Instant payment notifications item.</td>
+					</tr>
+					<tr valign="top">
+						<td class="Mstepnum">4</td>
+						<td class="Msteptext" width="100%">Click Choose IPN Settings to specify your listener's URL and
+							activate the listener. The following page opens:<br>
+							<br>
+							You should now be presented with a screen containing the following:<p class="Mfig"><img
+									src="./vBulletin Manual_files/paypal_setup.png" alt="Setting callback URL"
+									title="Setting callback URL" border="0"></p>
+							<div class="Mnote">
+								<div class="Mnotewarnheader">Note:</div>
+								<div class="Mnotewarninner">If the Instant Payment Notification link is not present you
+									will need to apply for Premier Account or a Business Account from PayPal.</div>
+							</div>Check the checkbox to activate Instant Payment Notification and enter the following
+							URL below the checkbox.<br>
+							<br>
+							http://www.example.com/forums/payment_gateway.php?method=paypal<br>
+							<br>
+							Make sure to replace www.example.com with your own domain name.<br>
+							<br>
+							Click <span class="Mbutton" title="Click the &#39;Save&#39; button">[Save]</span>
+						</td>
+					</tr>
+					<tr valign="top">
+						<td class="Mstepnum">5</td>
+						<td class="Msteptext" width="100%">Go to <span class="Mprocess">Paid Subscriptions &gt; Payment
+								API Manager &gt; PayPal</span> in your AdminCP where you will be presented with the
+							following screen:<p class="Mfig"><img src="./vBulletin Manual_files/paypal1.png"
+									alt="PayPal Settings" title="PayPal Settings" border="0"></p>
+						</td>
+					</tr>
+					<tr valign="top">
+						<td class="Mstepnum">6</td>
+						<td class="Msteptext" width="100%">Enter your PayPal email address in the PayPal email field.
+							This does not need to be the primary email address for your PayPal account and can be any
+							email address associated with your PayPal account that you wish to use for payments received
+							from your forum.</td>
+					</tr>
+					<tr valign="top">
+						<td class="Mstepnum">7</td>
+						<td class="Msteptext" width="100%">If you wish to use recurring subscriptions, you also need to
+							enter your primary email address for your PayPal account in the PayPal Primary Account Email
+							field.<br>
+							<br>
+							Your completed PayPal page will then look like either<p class="Mfig"><img
+									src="./vBulletin Manual_files/paypal2.png" alt="Setting PayPal Emails"
+									title="Setting PayPal Emails" border="0"></p>where the PayPal email address used for
+							your forum is the same as the primary email address for your PayPal account, or<p
+								class="Mfig"><img src="./vBulletin Manual_files/paypal3.png" alt="Setting PayPal Emails"
+									title="Setting PayPal Emails" border="0"></p>where the PayPal email address is
+							different to the primary email address for your PayPal account.</td>
+					</tr>
+					<tr valign="top">
+						<td class="Mstepnum">8</td>
+						<td class="Msteptext" width="100%">Finally, to activate the PayPal API for paid subscriptions,
+							change the Active setting to Yes.</td>
+					</tr>
+				</tbody>
+			</table>
+			

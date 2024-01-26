@@ -1,0 +1,108 @@
+<table class="headingtable" cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tbody>
+					<tr valign="bottom">
+						<td>
+							<h5 style="display:inline"><a name="item91"></a>Server Settings and Optimization Options
+							</h5>
+						</td>
+						<td>
+							<div style="font:11px tahoma; text-align:right"><a
+									href="https://www.vbulletin.com/docs/onepage/#link91">Back to Top</a></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			Path to Server Settings and Optimization Options: <span class="Mprocess">Settings &gt; Options &gt; Server
+				Settings and Optimization Options</span>
+			<div class="Mnote">
+				<div class="Mnotewarnheader">Note:</div>
+				<div class="Mnotewarninner">You must click <strong>Save</strong> for changes to take effect.</div>
+			</div>
+			<div align="center"><img src="./vBulletin Manual_files/server-settings-and-optimization.png" border="0"
+					alt=""></div>
+			<br>
+			<strong>Public phpinfo() Display Enabled</strong> (Yes/<u>No</u>)<br>
+			If you enable this option, anyone can view your phpinfo() page by adding ‘&amp;do=phpinfo’ to a forum URL.
+			vBulletin Support might ask you to temporarily enable this to help diagnose problems if you request
+			technical support. Otherwise, we recommend turning it off.<br>
+			<br>
+			<br>
+			<strong>Cached Posts Lifespan</strong> (default: 7)<br>
+			Posts are normally stored with bbcode tags in the same form the user posted them with so the code can be
+			edited later, and then parsed at display time. If they are cached, they are parsed at post time (instead of
+			display time) into the HTML they will be displayed in and stored separately from the pre-parsed posts. This
+			results in a faster display on topics, since the posts do not have to be parsed at display time.<br>
+			<br>
+			This option determines how long posts are stored. While a post is cached, it takes approximately twice as
+			much storage space since it is essentially being stored twice. If you have a busy site, and topics typically
+			don't last very long, you can probably set this to a lower value such as 10 days. If you have a slower site,
+			and topics typically last longer, 20 to 30 days might be a better choice. If you have available disk space,
+			you can set this to a higher value for better performance.<br>
+			<br>
+			<br>
+			<strong>Update Thread Views Immediately</strong> (Yes/<u>No</u>)<br>
+			If you enable this option, the thread view counter for a thread is updated in real time as threads are
+			viewed. Otherwise, they are stored and updated every hour (by default) as a group. We recommend disabling
+			this option for larger or busier forums, because updating them in real time can have a performance
+			impact.<br>
+			<br>
+			<br>
+			<strong>Update Attachment Views Immediately</strong> (Yes/<u>No</u>)<br>
+			If you enable this option, the attachment view counter for an attachment is updated in real time as
+			attachments are viewed. Otherwise, they are stored and updated every hour (by default) as a group. We
+			recommend disabling this option for larger or busier forums, because updating them in real time can have a
+			performance impact.<br>
+			<br>
+			<br>
+			<strong>*NIX Server Load Limit</strong> (default: 0)<br>
+			vBulletin can read the overall load of the server on certain *NIX setups (including Linux).<br>
+			<br>
+			This allows vBulletin to determine the load on the server and processor, and to turn away further users if
+			the load becomes too high. If you do not want to use this option, set it to 0. A typical level would be 5.00
+			for a reasonable warning level.<br>
+			<br>
+			<br>
+			<strong>Re-check Frequency</strong> (default: 60)<br>
+			The specified frequency to re-check the server load average after the system determines that the load
+			average is too high. Re-checking diverts a tiny bit of system resource to check the new server load average,
+			so re-checking too frequently might end up causing you to stay in busy mode for longer.<br>
+			<br>
+			<br>
+			<strong>Safe Mode Upload Enabled</strong> (Yes/<u>No</u>)<br>
+			If your server has Safe Mode enabled, set this to Yes. You can determine if Safe Mode is enabled by viewing
+			your ‘phpinfo’ page and searching for Safe Mode.<br>
+			<br>
+			<br>
+			<strong>Safe Mode Temporary Directory</strong><br>
+			If your server is running in PHP Safe Mode, specify a directory that is CHMOD to 777 that will act as a
+			temporary directory for uploads. All files are removed from this directory after database insertion.<div
+				class="Mnote">
+				<div class="Mnotewarnheader">Note:</div>
+				<div class="Mnotewarninner">Do NOT include the trailing slash (‘/’ after the directory name.</div>
+			</div><strong>Duplicate Search Index Information on Thread Copy?</strong> (<u>Yes</u>/No)<br>
+			It is not strictly necessary to index a copied topic since the original topic is already indexed. However,
+			you might want to index copied topics for the sake of completeness. Setting this option to Yes causes search
+			index information to be copied with each post in the topic. This allows the copied version of the topic to
+			be searchable, as well. However, on larger sites, this mibht cause significant delays in copying a topic. If
+			this is a problem for you, we recommend disabling this option.<br>
+			<br>
+			<br>
+			<strong>Session IP Octet Length Check</strong><br>
+			Select the subnet mask that reflects the level of checking you want to run against IP addresses when a
+			session is being fetched.<br>
+			<br>
+			This is useful if you have a large number of users who are behind transparent proxies (for example, AOL) and
+			have an IP address that can change randomly between requests.<br>
+			<br>
+			The more the level is decreased the greater the security risk from session hijacking.<br>
+			<br>
+			<br>
+			<strong>Use Remote YUI</strong> (Yes/<u>No</u>)<br>
+			YUI (Yahoo! User Interface Library) script files are hosted locally on your server; however, you can have
+			them served from Yahoo or Google, saving you some bandwidth and potentially decreasing load times.<br>
+			<br>
+			<br>
+			<strong>Disable Content Caching</strong> (Yes/<u>No</u>)<br>
+			Setting this to Yes disables content caching. We do not recommend doing this except for troubleshooting
+			purposes.
+			

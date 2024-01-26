@@ -1,0 +1,236 @@
+<table class="headingtable" cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tbody>
+					<tr valign="bottom">
+						<td>
+							<h3 style="display:inline"><a name="item22"></a>Editing the Core config.php File</h3>
+						</td>
+						<td>
+							<div style="font:11px tahoma; text-align:right"><a
+									href="https://www.vbulletin.com/docs/onepage/#link22">Back to Top</a></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			The core configuration file is always located in the <span class="Mmono">upload/core/includes/</span> folder
+			of your vBulletin package.<div class="Mnote">
+				<div class="Mnotewarnheader">Note:</div>
+				<div class="Mnotewarninner">When editing a config.php file, make sure there is no whitespace or extra
+					lines either before the &lt;?php. If there are any extra lines or space, you will see an 'Unable to
+					add headers' error when accessing your forums.</div>
+			</div>Editing the core config.php file is one of the few times in vBulletin where you will be required to
+			edit raw PHP code. The file is heavily commented in order to help you fill in the necessary information.<br>
+			<br>
+			You are only required to edit a few of the the settings in this file to create a working vBulletin
+			configuration file. These settings are:<table class="Mtable" cellpadding="5" cellspacing="1" border="0"
+				align="center">
+				<tbody>
+					<tr valign="top">
+						<td class="Mtd"><strong>
+								<div align="center">Variable Name</div>
+							</strong></td>
+						<td class="Mtd"><strong>
+								<div align="center">Description</div>
+							</strong></td>
+					</tr>
+					<tr valign="top">
+						<td class="Mtd">$config['Database']['dbtype']</td>
+						<td class="Mtd">This tells vBulletin how to access your database. The default is satisfactory
+							for most purposes. However if your server supports MySQLI, you would want to set this to
+							'mysqli' in order to have improved performance.</td>
+					</tr>
+					<tr valign="top">
+						<td class="Mtd">$config['Database']['dbname']</td>
+						<td class="Mtd">This value should be altered to state the name of the database that will contain
+							your vBulletin installation on the database server.</td>
+					</tr>
+					<tr valign="top">
+						<td class="Mtd">$config['Database']['technicalemail']</td>
+						<td class="Mtd">An email address should be entered here. All database error messages will be
+							forwarded to the email address provided. It is important to fill in this variable for
+							support purposes. It should be a valid email that you receive emails at regularly. It should
+							not be your personal email address.</td>
+					</tr>
+					<tr valign="top">
+						<td class="Mtd">$config['MasterServer']['servername']</td>
+						<td class="Mtd">This sets the address of your database server. On most installations the
+							database server is located on the same computer as the web server, in which case the address
+							should be set to 'localhost', otherwise use the address of the database server as supplied
+							by your web host.</td>
+					</tr>
+					<tr valign="top">
+						<td class="Mtd">$config['MasterServer']['username']</td>
+						<td class="Mtd">This variable contains the username provided to you by your host for connecting
+							to your database server.</td>
+					</tr>
+					<tr valign="top">
+						<td class="Mtd">$config['MasterServer']['password']</td>
+						<td class="Mtd">The password that accompanies the database username should be entered here.</td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="Mnote">
+				<div class="Mnotewarnheader">Note:</div>
+				<div class="Mnotewarninner">Please note that the vBulletin Support Team can not provide the values you
+					require for $config['Database']['dbname'], $config['MasterServer']['servername'],
+					$config['MasterServer']['username'], and $config['MasterServer']['password']. These variables are
+					only available from the web host providing your web/database server.</div>
+			</div>The remaining variables in this config.php are only needed for advanced vBulletin configurations. For
+			most installations, it is recommended that you do not alter them until after the installation process is
+			complete, unless you are confident that you know what you are doing beforehand. A description of these
+			remaining variables follows.<div class="Mnote">
+				<div class="Mnotewarnheader">Note:</div>
+				<div class="Mnotewarninner">Please note, these are organized by function, not their actual location in
+					the file. They are included here for completeness</div>
+			</div><strong>Additional Database Options</strong>
+			<table class="Mtable" cellpadding="5" cellspacing="1" border="0" align="center">
+				<tbody>
+					<tr valign="top">
+						<td class="Mtd"><strong>
+								<div align="center">Variable Name</div>
+							</strong></td>
+						<td class="Mtd"><strong>
+								<div align="center">Description</div>
+							</strong></td>
+					</tr>
+					<tr valign="top">
+						<td class="Mtd">$config['Database']['tableprefix']</td>
+						<td class="Mtd">In order to easily identify the tables related to vBulletin in your database,
+							you may prefix the names of all tables with a few letters or a word. For example, if you
+							specify the<br>
+							$config['Database']['tableprefix'] as 'vb_' then all tables will be prefixed with vb_,
+							making vb_forum, vb_user etc.<br>
+							If you choose to change your $config['Database']['tableprefix'] at some point after you have
+							installed your vBulletin, tools are provided to do this.</td>
+					</tr>
+					<tr valign="top">
+						<td class="Mtd">$config['MasterServer']['usepconnect']</td>
+						<td class="Mtd">Setting this variable to 1 will cause PHP to use persistent connections to the
+							MySQL server. For very large vBulletin installations, using persistent connections may
+							result in a slight performance boost but in most cases leaving it set to 0 (off) is the best
+							option. If you are unsure, leave it set to 0</td>
+					</tr>
+					<tr valign="top">
+						<td class="Mtd">$config['Mysqli']['charset']</td>
+						<td class="Mtd">If you need to set the default connection charset because your database is using
+							a charset other than latin1, you can set the charset here. If you don't set the charset to
+							be the same as your database, you may receive collation errors. Ignore this setting unless
+							you are sure you need to use it.</td>
+					</tr>
+					<tr valign="top">
+						<td class="Mtd">$config['Mysqli']['ini_file']</td>
+						<td class="Mtd">PHP can be instructed to set connection parameters by reading from the file
+							named in 'ini_file'. Please use a full path to the file. This is generally used to set the
+							connection's default character set. This setting should also be ignored unless you are sure
+							you need to use it.</td>
+					</tr>
+				</tbody>
+			</table><strong>Slave Database Configuration</strong><br>
+			These variables only apply if you have a Slave Database configured. If you are not sure, you should leave
+			these variables alone. This is an advanced setting! <br>
+			<br>
+			<br>
+			<strong>Security Related Options</strong>
+			<table class="Mtable" cellpadding="5" cellspacing="1" border="0" align="center">
+				<tbody>
+					<tr valign="top">
+						<td class="Mtd"><strong>
+								<div align="center">Variable Name</div>
+							</strong></td>
+						<td class="Mtd"><strong>
+								<div align="center">Description</div>
+							</strong></td>
+					</tr>
+					<tr valign="top">
+						<td class="Mtd">$config['SpecialUsers']['canviewadminlog']</td>
+						<td class="Mtd">All actions performed in the vBulletin Administrators' Control Panel are logged
+							in the database. This variable controls the permissions for which users are allowed to view
+							this log. The variable takes the form of a list of user IDs separated by commas. For
+							example, if you would like the users with user IDs 1, 15 and 16 to be able to view the Admin
+							Log, this variable would be set like this:<br>
+							$config['SpecialUsers']['canviewadminlog'] = '1,15,16';</td>
+					</tr>
+					<tr valign="top">
+						<td class="Mtd">$config['SpecialUsers']['canpruneadminlog']</td>
+						<td class="Mtd">In the same way as $config['SpecialUsers']['canviewadminlog'] controls which
+							users can view the Admin Log, $config['SpecialUsers']['canpruneadminlog'] controls which
+							users are permitted to prune (delete items from) the Admin Log. Use the same user IDs
+							separated with commas system as with the $config['SpecialUsers']['canviewadminlog'] setting.
+						</td>
+					</tr>
+					<tr valign="top">
+						<td class="Mtd">$config['SpecialUsers']['canrunqueries']</td>
+						<td class="Mtd">The vBulletin Administrators' Control Panel contains a simple interface for
+							running queries directly on the database. This variable contains the IDs of the users with
+							permission to do this. For security reasons you may wish to leave this list totally empty.
+						</td>
+					</tr>
+					<tr valign="top">
+						<td class="Mtd">$config['SpecialUsers']['undeletableusers']</td>
+						<td class="Mtd">If your vBulletin installation is going to have multiple users with
+							administrative privileges, you may wish to protect certain users from accidental (or even
+							malicious) deletion or editing. Any user IDs entered into this list will not be editable or
+							deletable from the Administrators' Control Panel by anybody.</td>
+					</tr>
+					<tr valign="top">
+						<td class="Mtd">$config['SpecialUsers']['superadministrators']</td>
+						<td class="Mtd">Any users whose user IDs are specified within the
+							$config['SpecialUsers']['superadministrators'] setting will be automatically granted full
+							access to all vBulletin features, including the ability to set the permission levels of
+							other administrators.</td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="Mnote">
+				<div class="Mnotewarnheader">Note:</div>
+				<div class="Mnotewarninner">The variables $config['SpecialUsers']['canviewadminlog'],
+					$config['SpecialUsers']['canpruneadminlog'], $config['SpecialUsers']['canrunqueries'],
+					$config['SpecialUsers']['undeletableusers'] and $config['SpecialUsers']['superadministrators']
+					should all contain a single userid number, a comma-separated list of user id numbers, or nothing at
+					all. For example:<br>
+					$config['SpecialUsers']['canviewadminlog'] = '1,15,16'; <br>
+					$config['SpecialUsers']['canpruneadminlog'] = '1'; <br>
+					$config['SpecialUsers']['canrunqueries'] = ''; <br>
+					$config['SpecialUsers']['undeletableusers'] = '1,15'; <br>
+					$config['SpecialUsers']['superadministrators'] = '1';</div>
+			</div><strong>Miscellaneous Options</strong>
+			<table class="Mtable" cellpadding="5" cellspacing="1" border="0" align="center">
+				<tbody>
+					<tr valign="top">
+						<td class="Mtd"><strong>
+								<div align="center">Variable Name</div>
+							</strong></td>
+						<td class="Mtd"><strong>
+								<div align="center">Description</div>
+							</strong></td>
+					</tr>
+					<tr valign="top">
+						<td class="Mtd">$config['Misc']['admincpdir']</td>
+						<td class="Mtd">By default, vBulletin will install the files for the Administrators' Control
+							Panel into a folder called admincp, but you may wish to rename this folder this for security
+							purposes. If you rename the folder, enter the new name here. Note that you can only rename
+							the folder, if you move the folder to a new location the system will be unable to function.
+						</td>
+					</tr>
+					<tr valign="top">
+						<td class="Mtd">$config['Misc']['modcpdir']</td>
+						<td class="Mtd">This variable is similar to the $admincpdir setting, with the exception that
+							$modcpdir refers to the Moderators' Control Panel rather than the Administrators' Control
+							Panel.</td>
+					</tr>
+					<tr valign="top">
+						<td class="Mtd">$config['Misc']['cookieprefix']</td>
+						<td class="Mtd">When vBulletin sets cookies on users' computers they will all be prefixed with a
+							few characters in order to be easily identified as cookies set by vBulletin. By default this
+							prefix is bb but you can change it to be whatever you like. This option is particularly
+							useful if you have many vBulletin installations running on the same domain. This must match
+							the value set in the presentation config.php file.</td>
+					</tr>
+					<tr valign="top">
+						<td class="Mtd">$config['Misc']['forumpath']</td>
+						<td class="Mtd">Some systems may require a full path to the forum files. If vBulletin does not
+							tell you that you need this, leave this blank.</td>
+					</tr>
+				</tbody>
+			</table>Once you have finished editing your config.php file you should save it again and prepare to upload
+			the file to your web server.
+			

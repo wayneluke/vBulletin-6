@@ -1,0 +1,75 @@
+<table class="headingtable" cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tbody>
+					<tr valign="bottom">
+						<td>
+							<h3 style="display:inline"><a name="item24"></a>MySQLi</h3>
+						</td>
+						<td>
+							<div style="font:11px tahoma; text-align:right"><a
+									href="https://www.vbulletin.com/docs/onepage/#link24">Back to Top</a></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<span class="Mmono">MySQLi</span> is an improved database layer for PHP 5 and MySQL 4.1+. It is strongly
+			recommended that <span class="Mmono">MySQLi</span> be used for increase performance.<br>
+			<br>
+			To enable <span class="Mmono">MySQLi</span>, view <a
+				href="https://www.vbulletin.com/docs/html/main/install_core_config_php" class="Mhop">Editing the Core
+				config.php File</a>.<br>
+			<br>
+			The Core config.php contains two advanced settings that you may need when <span class="Mmono">MySQLi</span>
+			is in use. These settings are to be ignored as long as you are not having issues of the following type:<div
+				class="Mcodecontainer">
+				<pre
+					class="Mcodeblock">MySQL Error  : Illegal mix of collations (latin1_swedish_ci,COERCIBLE) and (utf8_general_ci,IMPLICIT) for operation</pre>
+			</div>Generally, this error only happens when your database's character set has been changed from the
+			default of latin1. To begin to resolve this problem, you must first determine what character set is being
+			used for your database.<br>
+			<br>
+			From the Administrator Control Panel, go to <span class="Mprocess">Admin CP-&gt;Maintenance-&gt;Execute SQL
+				Query</span>. If you receive a no permissions message, please refer back to <a
+				href="https://www.vbulletin.com/docs/html/main/editconfig" class="Mhop">Editing the vBulletin
+				Configuration File</a> on how to grant the appropriate permissions so that you may execute queries.<br>
+			<br>
+			Enter the following query in the <span class="Mscreen">Manual Query</span> input box and press <span
+				class="Mbutton" title="Click the &#39;Continue&#39; button">[Continue]</span><br>
+			<br>
+			<span class="Mscreen">SHOW VARIABLES LIKE 'char%'</span>
+			<p class="Mfig"><img src="./vBulletin Manual_files/mysqli_query.png" border="0" alt=""></p>The results
+			screen will show your current character set settings:<p class="Mfig"><img
+					src="./vBulletin Manual_files/mysqli_query_results.png" border="0" alt=""></p>If the values <span
+				class="Mscreen">character_set_database</span> and <span class="Mscreen">character_set_connection</span>
+			are different then this can be resolved by continuing this solution.<div class="Mnote">
+				<div class="Mnotewarnheader">Note:</div>
+				<div class="Mnotewarninner">If the values are the same, then your problem will not be solved by this
+					solution. Please contact vBulletin Support in this case. You may have tables in your database that
+					are configured to use a different character set than your database is. All of your tables will need
+					to be updated to use the same character set. This condition can be caused by changing the character
+					set of your database after vBulletin has been installed. Upgrades may create tables that are in your
+					new character set, which will cause problems.</div>
+			</div>Your <span class="Mvar">character_set_connection</span> needs to be updated to be the same as your
+			<span class="Mvar">character_set_database</span>.<br>
+			<br>
+			Create a new file in your forums include directory named <span class="Mprocess">mysqli.ini</span>. Inside of
+			this file place:<div class="Mcodecontainer">
+				<pre class="Mcodeblock">[client]
+default-character-set=utf8
+</pre>
+			</div>The value <strong>utf8</strong> will need to be the same value that appeared as your <span
+				class="Mvar">character_set_database</span> in the previous step. Generally, this will be utf8 but you
+			may have a special case that requires a different setting.<br>
+			<br>
+			Edit the <a href="https://www.vbulletin.com/docs/html/main/editconfig" class="Mhop">vBulletin Configuration
+				File</a> file by following the instructions in the previous section.<br>
+			<br>
+			Uncomment the following line by removing the two slashes from the beginning<div class="Mcodecontainer">
+				<pre
+					class="Mcodeblock">//    $config['Mysqli']['ini_file'] = 'c:\program files\MySQL\MySQL Server 4.1\my.ini';</pre>
+			</div>Change the line to point to the location of the <span class="Mprocess">mysqli.ini</span> file that you
+			created in the previous step. Example:<div class="Mcodecontainer">
+				<pre
+					class="Mcodeblock">$config['Mysqli']['ini_file'] = 'c:\program files\apache group\apache\htdocs\forums\includes\mysqli.ini';</pre>
+			</div>If you have enabled <span class="Mmono">MySQLi</span> and entered the correct path to your new <span
+				class="Mprocess">mysqli.ini</span> file, then this problem should be resolved.
+			

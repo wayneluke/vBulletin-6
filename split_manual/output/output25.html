@@ -1,0 +1,60 @@
+<table class="headingtable" cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tbody>
+					<tr valign="bottom">
+						<td>
+							<h2 style="display:inline"><a name="item28"></a>Enabling SSL Logins in vBulletin</h2>
+						</td>
+						<td>
+							<div style="font:11px tahoma; text-align:right"><a
+									href="https://www.vbulletin.com/docs/onepage/#link28">Back to Top</a></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			One feature that has been requested for a long time is the ability to force logins via SSL. vBulletin
+			implements this feature. In order to have SSL Logins, you need a couple of things.<br>
+			[*] SSL Certificate sold by a trusted authority.<br>
+			[*] Copy of the vBulletin files in your SSL directory.<br>
+			To turn on this feature, you would do so in your presentation config.php file. This is located in your forum
+			root directly (along with index.php and .htaccess). In this file look for the following code:<br>
+			<br>
+			// If you do wish to use https for login, uncomment this line<br>
+			// Then fill in your https url.<br>
+			//$config['baseurl_login'] = 'https://www.yourdomain.com/folder';<br>
+			<br>
+			For most purposes, you would uncomment this line and add your base url using the https protocol. For
+			example:<br>
+			If your base url is: http://www.example.com<br>
+			Then your login url would be: https://www.example.com<br>
+			<br>
+			<strong>
+				<font size="3">Frequently Asked Questions</font>
+			</strong><br>
+			<br>
+			<strong>Can I use a self-signed certificate?</strong><br>
+			While nothing is stopping you from doing this, it is not recommended. Self-Signed Certificates are often
+			flagged as untrusted by modern web browsers and the user is warned against accessing sites without trusted
+			certificates<br>
+			<br>
+			<strong>Aren't SSL Certificates expensive?</strong><br>
+			That depends on your definition of expensive. If you're not selling items with SSL and don't need the
+			anti-fraud insurance, you can purchase a certificate for under $15.00 (US).<br>
+			<br>
+			<strong>Can I use a Wildcard Certificate?</strong><br>
+			As long it is valid for your domain name, then yes.<br>
+			<br>
+			<strong>How do I install a Certificate?</strong><br>
+			Your hosting provider can assist you with installing your SSL certificate.<br>
+			<br>
+			<strong>What is my SSL Directory?</strong><br>
+			On modern web hosting platforms, this is usually the same as your standard public_html or htdocs directory.
+			Contact your hosting provider for more information on this.<br>
+			<br>
+			<strong>Can vBulletin Solutions install my security certificate?</strong><br>
+			This is not a service we offer at this time.<br>
+			<br>
+			<strong>I purchased a new installation and would like this implemented. Can you do this?</strong><br>
+			With the purchase of the installation service, we can set up SSL logins provided the certificate is already
+			installed. State you want this done in the customer comments field of your installation worksheet.<br>
+
+			

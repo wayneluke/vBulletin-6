@@ -1,0 +1,91 @@
+<table class="headingtable" cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tbody>
+					<tr valign="bottom">
+						<td>
+							<h2 style="display:inline"><a name="item33"></a>Preparing the vBulletin Files for Upload
+							</h2>
+						</td>
+						<td>
+							<div style="font:11px tahoma; text-align:right"><a
+									href="https://www.vbulletin.com/docs/onepage/#link33">Back to Top</a></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			After you have successfully downloaded the vBulletin package to your computer you will need to prepare the
+			scripts to be uploaded to your web server. We’ve included the instructions for both Windows 7® and Mac OS X®
+			below.<br>
+			<br>
+			<font size="3"><strong>Windows 7®</strong></font><br>
+			<br>
+			The first thing to do is to decompress the package into its constituent files. If you’ve downloaded the
+			<em>.zip</em> package and your computer is running a recent operating system, you should have all the tools
+			you need to do this.<br>
+			<br>
+			To extract the files from the package, open the folder on your computer where you saved the vBulletin
+			package and right-click on its icon. Choose <strong>Extract All...</strong> from the pop-up menu.<br>
+			<br>
+			<div align="center"><img src="./vBulletin Manual_files/extract.png" border="0" alt=""></div>
+			<br>
+			This will open a wizard to guide you through the unzipping progress. Accept the default options and the
+			system will decompress the files from the zip package.<br>
+			<br>
+			<font size="3"><strong>Mac OS X®</strong></font><br>
+			<br>
+			The first thing to do is to decompress the package into its constituent files. If you’ve downloaded the
+			<em>.zip</em> package and your computer is running a recent operating system, you should have all the tools
+			you need to do this.<br>
+			<br>
+			To extract the files from the package, open the folder on your computer where you saved the vBulletin
+			package and right-click (or control-click) on its icon. Choose <strong>Open</strong> from the pop-up
+			menu.<br>
+			<br>
+			<div align="center"><img src="./vBulletin Manual_files/prepare-01.png" border="0" alt=""></div>
+			This will extract all of the files from the package to the current folder.<br>
+			<br>
+			<font size="3"><strong>After Decompressing the Files</strong></font><br>
+			<br>
+			When the unzipping progress is complete, you will find that the process has created a new folder called
+			<strong>upload</strong> and another called <strong>do_not_upload</strong>.<ul>
+				<li>The <strong>upload</strong> folder contains the vBulletin files that need to be uploaded to your web
+					server.<br>
+					<br>
+					Rename the <strong>upload</strong> folder to match the name you gave to the directory containing
+					your vBulletin files on your web server. In this example, the folder containing the vBulletin files
+					is called <strong>forums</strong>.<div class="Mnote">
+						<div class="Mnotewarnheader">Note:</div>
+						<div class="Mnotewarninner">If you installed vB5 directly in the root directory of your web
+							publishing folder (not in a subfolder), you do not need to rename the
+							<strong>upload</strong> folder.</div>
+					</div>
+					<div class="Mnote">
+						<div class="Mnotewarnheader">Note:</div>
+						<div class="Mnotewarninner">If you have changed the names of the <strong>admincp</strong> and
+							<strong>modcp</strong> directories in your config.php file, be sure to make the same change
+							to these subdirectories prior to uploading.</div>
+					</div>
+				</li>
+				<li>The <strong>do_not_upload</strong> folder contains tools to perform various updating tasks on your
+					board.<ul>
+						<li><strong>searchindex.php</strong> - This file rebuilds the default vBulletin search index.
+						</li>
+						<li><strong>vb_backup.sh</strong> - This file allows you to run a database backup via SSH/Telnet
+							or a scheduled backup through cron.</li>
+						<li><strong>tools.php</strong> - This file must be uploaded to the <strong>admincp</strong>
+							folder and allows you to perform certain tasks should your board go down or you accidentally
+							lock yourself out of the <strong>Admin Control Panel</strong>.<div class="Mwarn">
+								<div class="Mnotewarnheader">Warning:</div>
+								<div class="Mnotewarninner">Because this file presents a SEVERE security risk, it should
+									be deleted immediately after use.</div>
+							</div>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<div class="Mnote">
+				<div class="Mnotewarnheader">Note:</div>
+				<div class="Mnotewarninner">As you already have a vBulletin installation running on your web server, you
+					should delete the <strong>install.php</strong> file in the <strong>/core/install directory</strong>
+					before you proceed to upload the files.</div>
+			</div>
+			

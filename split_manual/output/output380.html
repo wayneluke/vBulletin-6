@@ -1,0 +1,33 @@
+<table class="headingtable" cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tbody>
+					<tr valign="bottom">
+						<td>
+							<h3 style="display:inline"><a name="item389"></a>1) Backing Up and Moving the Files</h3>
+						</td>
+						<td>
+							<div style="font:11px tahoma; text-align:right"><a
+									href="https://www.vbulletin.com/docs/onepage/#link389">Back to Top</a></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			You can use FTP or your hosts' file manager to move your vB files from one server to another. You need to
+			download all the appropriate vB files and directories (making sure to retain the current directory
+			structure) then upload these files and directories to the new server. Make sure you transfer all the image
+			files (.gif, .jpg, .png, .ico, .attach, .thumb) in Binary format and the non-image files in ASCII format.
+			Most FTP programs are set to recognize the correct file types automatically but it does not hurt to
+			double-check.<br>
+			<br>
+			If you are storing attachments, avatars and user profile pictures in the file system instead of the database
+			(the default storage method) then you will need to move those files and directories over as well. As with
+			the old server these directories will need to be made world-readable and writable, (chmod -R 777 on *Nix
+			systems.) <br>
+			<br>
+			Also since the exact path to these directories will very likely be different on the new server, you will
+			need to reset these paths in the Admin CP after the transfer is done and your forums are up and running on
+			the new server. You do this here:<br>
+			<br>
+			<span class="Mprocess">Admin CP -&gt; Attachments -&gt; Attachment Storage Type</span><br>
+			<br>
+			<span class="Mprocess">Admin CP -&gt; Avatars -&gt; User Picture Storage Type</span>
+			

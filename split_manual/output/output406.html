@@ -1,0 +1,50 @@
+<table class="headingtable" cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tbody>
+					<tr valign="bottom">
+						<td>
+							<h3 style="display:inline"><a name="item415"></a>Restoring The Database via SSH/Telnet</h3>
+						</td>
+						<td>
+							<div style="font:11px tahoma; text-align:right"><a
+									href="https://www.vbulletin.com/docs/onepage/#link415">Back to Top</a></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			In order to restore your database via SSH or Telnet you will require 2 things:<br>
+			<br>
+			1) SSH or Telnet access to your site. You will need to check with your hosting company to see if this is
+			available.<br>
+			<br>
+			2) An SSH/Telnet Client, such as PuTTy.<div class="Mnote">
+				<div class="Mnotewarnheader">Note:</div>
+				<div class="Mnotewarninner">If your database backup resides on your home computer, you will first have
+					to upload it via FTP to your website</div>
+			</div>Open your SSH/Telnet client and log into your website. The command line prompt you will see will vary
+			by OS. For most hosting companies, this will bring you into the FTP root folder.<br>
+			<br>
+			You can either change directoties to wherever the backup is located and type in the following:<br>
+			<br>
+			<span class="Mtype">mysql -u <strong>dbusername</strong> -p <strong>databasename</strong> &lt;
+				backupname.sql</span><br>
+			<br>
+			Or if you do not want to change directories and you know the path to where the backup is located, type in
+			the following:<br>
+			<br>
+			<span class="Mtype">mysql -u <strong>dbusername</strong> -p <strong>databasename</strong> &lt;
+				/path/to/backupname.sql</span><br>
+			<br>
+			You will be prompted for the database password. Enter it and the database will backup.<br>
+			<br>
+			If your hosting company has you on a remote MySQL server, such as mysql.yourhost.com, you will need to add
+			the servername to the command line. The servername will be the same as in your config.php. The command line
+			will be:<br>
+			<br>
+			<span class="Mtype">mysql -h <strong>servername</strong> -u <strong>dbusername</strong> -p
+				<strong>databasename</strong> &lt; backupname.sql</span><br>
+			<br>
+			Or:<br>
+			<br>
+			<span class="Mtype">mysql -h <strong>servername</strong> -u <strong>dbusername</strong> -p
+				<strong>databasename</strong> &lt; /path/to/backupname.sql</span>
+			

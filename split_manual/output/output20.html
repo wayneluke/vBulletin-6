@@ -1,0 +1,395 @@
+<table class="headingtable" cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tbody>
+					<tr valign="bottom">
+						<td>
+							<h4 style="display:inline"><a name="item23"></a>Example Core Config.php</h4>
+						</td>
+						<td>
+							<div style="font:11px tahoma; text-align:right"><a
+									href="https://www.vbulletin.com/docs/onepage/#link23">Back to Top</a></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			Below is a copy of the Legacy config.php in your download package. It controls access to the database and
+			core functionality. This file is located at <span class="Mvar">/upload/core/includes/config.php</span>.
+			Within a new download package the file will have a .new extension. This is prevent it from being over
+			written by new versions of the software.<div class="Mcodecontainer">
+				<div class="Mcodeblock"><code><span style="color: #000000">
+							<span style="color: #0000BB">&lt;?php
+								<br></span><span
+								style="color: #FF8000">/*======================================================================*\
+								<br>||&nbsp;####################################################################&nbsp;||
+								<br>||&nbsp;#&nbsp;vBulletin&nbsp;5.0.0&nbsp;
+								<br>||&nbsp;#&nbsp;----------------------------------------------------------------&nbsp;#&nbsp;||
+								<br>||&nbsp;#&nbsp;All&nbsp;PHP&nbsp;code&nbsp;in&nbsp;this&nbsp;file&nbsp;is&nbsp;?2000-2012&nbsp;vBulletin&nbsp;Solutions&nbsp;Inc.#&nbsp;||
+								<br>||&nbsp;#&nbsp;This&nbsp;file&nbsp;may&nbsp;not&nbsp;be&nbsp;redistributed&nbsp;in&nbsp;whole&nbsp;or&nbsp;significant&nbsp;part.&nbsp;#&nbsp;||
+								<br>||&nbsp;#&nbsp;----------------&nbsp;VBULLETIN&nbsp;IS&nbsp;NOT&nbsp;FREE&nbsp;SOFTWARE&nbsp;----------------&nbsp;#&nbsp;||
+								<br>||&nbsp;#&nbsp;http://www.vbulletin.com&nbsp;|&nbsp;http://www.vbulletin.com/license.html&nbsp;#&nbsp;||
+								<br>||&nbsp;####################################################################&nbsp;||
+								<br>\*======================================================================*/
+								<br>
+								<br>/*----------------------------------------------------------------------*\
+								<br>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;******&nbsp;NOTE&nbsp;REGARDING&nbsp;THE&nbsp;VARIABLES&nbsp;IN&nbsp;THIS&nbsp;FILE&nbsp;******&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+								<br>+------------------------------------------------------------------------+
+								<br>|&nbsp;If&nbsp;you&nbsp;get&nbsp;any&nbsp;errors&nbsp;while&nbsp;attempting&nbsp;to&nbsp;connect&nbsp;to&nbsp;MySQL,&nbsp;you&nbsp;will&nbsp;&nbsp;&nbsp;|
+								<br>|&nbsp;need&nbsp;to&nbsp;email&nbsp;your&nbsp;webhost&nbsp;because&nbsp;we&nbsp;cannot&nbsp;tell&nbsp;you&nbsp;the&nbsp;correct&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;
+								<br>|&nbsp;values&nbsp;for&nbsp;the&nbsp;variables&nbsp;in&nbsp;this&nbsp;file.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<br>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+								<br>|&nbsp;When&nbsp;making&nbsp;changes&nbsp;to&nbsp;the&nbsp;file,&nbsp;the&nbsp;edit&nbsp;should&nbsp;always&nbsp;be&nbsp;to&nbsp;the&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+								<br>|&nbsp;right&nbsp;of&nbsp;the&nbsp;=&nbsp;sign&nbsp;between&nbsp;the&nbsp;single&nbsp;quotes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+								<br>|&nbsp;Default:&nbsp;$config['admincpdir']&nbsp;=&nbsp;'admincp';&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+								<br>|&nbsp;Example:&nbsp;$config['admincpdir']&nbsp;=&nbsp;'myadmin';&nbsp;&nbsp;GOOD!&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+								<br>|&nbsp;Example:&nbsp;$config['myadmin']&nbsp;=&nbsp;'admincp';&nbsp;BAD!&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+								<br>\*----------------------------------------------------------------------*/
+								<br>
+								<br>
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;******&nbsp;DATABASE&nbsp;TYPE&nbsp;******
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;This&nbsp;is&nbsp;the&nbsp;type&nbsp;of&nbsp;the&nbsp;database&nbsp;server&nbsp;on&nbsp;which&nbsp;your&nbsp;vBulletin&nbsp;database
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;will&nbsp;be&nbsp;located.&nbsp;Valid&nbsp;options&nbsp;are&nbsp;mysql&nbsp;and&nbsp;mysqli,&nbsp;for&nbsp;slave&nbsp;support&nbsp;add
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_slave&nbsp;to&nbsp;the&nbsp;end&nbsp;of&nbsp;the&nbsp;database&nbsp;class.&nbsp;&nbsp;
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;Try&nbsp;to&nbsp;use&nbsp;mysqli&nbsp;if&nbsp;you&nbsp;are&nbsp;using&nbsp;PHP&nbsp;5&nbsp;and&nbsp;MySQL&nbsp;4.1+
+								<br></span><span style="color: #0000BB">$config</span><span
+								style="color: #007700">[</span><span style="color: #DD0000">'Database'</span><span
+								style="color: #007700">][</span><span style="color: #DD0000">'dbtype'</span><span
+								style="color: #007700">]&nbsp;=&nbsp;</span><span
+								style="color: #DD0000">'mysql'</span><span style="color: #007700">;
+								<br>
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+								style="color: #FF8000">//&nbsp;&nbsp;&nbsp;&nbsp;******&nbsp;DATABASE&nbsp;NAME&nbsp;******
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;This&nbsp;is&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;database&nbsp;where&nbsp;your&nbsp;vBulletin&nbsp;will&nbsp;be&nbsp;located.
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;This&nbsp;must&nbsp;be&nbsp;created&nbsp;by&nbsp;your&nbsp;webhost.
+								<br></span><span style="color: #0000BB">$config</span><span
+								style="color: #007700">[</span><span style="color: #DD0000">'Database'</span><span
+								style="color: #007700">][</span><span style="color: #DD0000">'dbname'</span><span
+								style="color: #007700">]&nbsp;=&nbsp;</span><span
+								style="color: #DD0000">'forum'</span><span style="color: #007700">;
+								<br>
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+								style="color: #FF8000">//&nbsp;&nbsp;&nbsp;&nbsp;******&nbsp;TABLE&nbsp;PREFIX&nbsp;******
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;Prefix&nbsp;that&nbsp;your&nbsp;vBulletin&nbsp;tables&nbsp;have&nbsp;in&nbsp;the&nbsp;database.
+								<br></span><span style="color: #0000BB">$config</span><span
+								style="color: #007700">[</span><span style="color: #DD0000">'Database'</span><span
+								style="color: #007700">][</span><span style="color: #DD0000">'tableprefix'</span><span
+								style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #DD0000">''</span><span
+								style="color: #007700">;
+								<br>
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+								style="color: #FF8000">//&nbsp;&nbsp;&nbsp;&nbsp;******&nbsp;TECHNICAL&nbsp;EMAIL&nbsp;ADDRESS&nbsp;******
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;any&nbsp;database&nbsp;errors&nbsp;occur,&nbsp;they&nbsp;will&nbsp;be&nbsp;emailed&nbsp;to&nbsp;the&nbsp;address&nbsp;specified&nbsp;here.
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;Leave&nbsp;this&nbsp;blank&nbsp;to&nbsp;not&nbsp;send&nbsp;any&nbsp;emails&nbsp;when&nbsp;there&nbsp;is&nbsp;a&nbsp;database&nbsp;error.
+								<br></span><span style="color: #0000BB">$config</span><span
+								style="color: #007700">[</span><span style="color: #DD0000">'Database'</span><span
+								style="color: #007700">][</span><span
+								style="color: #DD0000">'technicalemail'</span><span
+								style="color: #007700">]&nbsp;=&nbsp;</span><span
+								style="color: #DD0000">'dbmaster@example.com'</span><span style="color: #007700">;
+								<br>
+								<br>
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+								style="color: #FF8000">//&nbsp;&nbsp;&nbsp;&nbsp;******&nbsp;MASTER&nbsp;DATABASE&nbsp;SERVER&nbsp;NAME&nbsp;AND&nbsp;PORT&nbsp;******
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;This&nbsp;is&nbsp;the&nbsp;hostname&nbsp;or&nbsp;IP&nbsp;address&nbsp;and&nbsp;port&nbsp;of&nbsp;the&nbsp;database&nbsp;server.
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;you&nbsp;are&nbsp;unsure&nbsp;of&nbsp;what&nbsp;to&nbsp;put&nbsp;here,&nbsp;leave&nbsp;the&nbsp;default&nbsp;values.
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;Note:&nbsp;If&nbsp;you&nbsp;are&nbsp;using&nbsp;IIS&nbsp;7+&nbsp;and&nbsp;MySQL&nbsp;is&nbsp;on&nbsp;the&nbsp;same&nbsp;machine,&nbsp;you
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;need&nbsp;to&nbsp;use&nbsp;127.0.0.1&nbsp;instead&nbsp;of&nbsp;localhost
+								<br></span><span style="color: #0000BB">$config</span><span
+								style="color: #007700">[</span><span style="color: #DD0000">'MasterServer'</span><span
+								style="color: #007700">][</span><span style="color: #DD0000">'servername'</span><span
+								style="color: #007700">]&nbsp;=&nbsp;</span><span
+								style="color: #DD0000">'localhost'</span><span style="color: #007700">;
+								<br></span><span style="color: #0000BB">$config</span><span
+								style="color: #007700">[</span><span style="color: #DD0000">'MasterServer'</span><span
+								style="color: #007700">][</span><span style="color: #DD0000">'port'</span><span
+								style="color: #007700">]&nbsp;=&nbsp;</span><span
+								style="color: #0000BB">3306</span><span style="color: #007700">;
+								<br>
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+								style="color: #FF8000">//&nbsp;&nbsp;&nbsp;&nbsp;******&nbsp;MASTER&nbsp;DATABASE&nbsp;USERNAME&nbsp;&amp;&nbsp;PASSWORD&nbsp;******
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;This&nbsp;is&nbsp;the&nbsp;username&nbsp;and&nbsp;password&nbsp;you&nbsp;use&nbsp;to&nbsp;access&nbsp;MySQL.
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;These&nbsp;must&nbsp;be&nbsp;obtained&nbsp;through&nbsp;your&nbsp;webhost.
+								<br></span><span style="color: #0000BB">$config</span><span
+								style="color: #007700">[</span><span style="color: #DD0000">'MasterServer'</span><span
+								style="color: #007700">][</span><span style="color: #DD0000">'username'</span><span
+								style="color: #007700">]&nbsp;=&nbsp;</span><span
+								style="color: #DD0000">'root'</span><span style="color: #007700">;
+								<br></span><span style="color: #0000BB">$config</span><span
+								style="color: #007700">[</span><span style="color: #DD0000">'MasterServer'</span><span
+								style="color: #007700">][</span><span style="color: #DD0000">'password'</span><span
+								style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #DD0000">''</span><span
+								style="color: #007700">;
+								<br>
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+								style="color: #FF8000">//&nbsp;&nbsp;&nbsp;&nbsp;******&nbsp;MASTER&nbsp;DATABASE&nbsp;PERSISTENT&nbsp;CONNECTIONS&nbsp;******
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;This&nbsp;option&nbsp;allows&nbsp;you&nbsp;to&nbsp;turn&nbsp;persistent&nbsp;connections&nbsp;to&nbsp;MySQL&nbsp;on&nbsp;or&nbsp;off.
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;difference&nbsp;in&nbsp;performance&nbsp;is&nbsp;negligible&nbsp;for&nbsp;all&nbsp;but&nbsp;the&nbsp;largest&nbsp;boards.
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;you&nbsp;are&nbsp;unsure&nbsp;what&nbsp;this&nbsp;should&nbsp;be,&nbsp;leave&nbsp;it&nbsp;off.&nbsp;(0&nbsp;=&nbsp;off;&nbsp;1&nbsp;=&nbsp;on)
+								<br></span><span style="color: #0000BB">$config</span><span
+								style="color: #007700">[</span><span style="color: #DD0000">'MasterServer'</span><span
+								style="color: #007700">][</span><span style="color: #DD0000">'usepconnect'</span><span
+								style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #0000BB">0</span><span
+								style="color: #007700">;
+								<br>
+								<br>
+								<br>
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+								style="color: #FF8000">//&nbsp;&nbsp;&nbsp;&nbsp;******&nbsp;SLAVE&nbsp;DATABASE&nbsp;CONFIGURATION&nbsp;******
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;you&nbsp;have&nbsp;multiple&nbsp;database&nbsp;backends,&nbsp;this&nbsp;is&nbsp;the&nbsp;information&nbsp;for&nbsp;your&nbsp;slave
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;server.&nbsp;If&nbsp;you&nbsp;are&nbsp;not&nbsp;100%&nbsp;sure&nbsp;you&nbsp;need&nbsp;to&nbsp;fill&nbsp;in&nbsp;this&nbsp;information,
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;do&nbsp;not&nbsp;change&nbsp;any&nbsp;of&nbsp;the&nbsp;values&nbsp;here.
+								<br></span><span style="color: #0000BB">$config</span><span
+								style="color: #007700">[</span><span style="color: #DD0000">'SlaveServer'</span><span
+								style="color: #007700">][</span><span style="color: #DD0000">'servername'</span><span
+								style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #DD0000">''</span><span
+								style="color: #007700">;
+								<br></span><span style="color: #0000BB">$config</span><span
+								style="color: #007700">[</span><span style="color: #DD0000">'SlaveServer'</span><span
+								style="color: #007700">][</span><span style="color: #DD0000">'port'</span><span
+								style="color: #007700">]&nbsp;=&nbsp;</span><span
+								style="color: #0000BB">3306</span><span style="color: #007700">;
+								<br></span><span style="color: #0000BB">$config</span><span
+								style="color: #007700">[</span><span style="color: #DD0000">'SlaveServer'</span><span
+								style="color: #007700">][</span><span style="color: #DD0000">'username'</span><span
+								style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #DD0000">''</span><span
+								style="color: #007700">;
+								<br></span><span style="color: #0000BB">$config</span><span
+								style="color: #007700">[</span><span style="color: #DD0000">'SlaveServer'</span><span
+								style="color: #007700">][</span><span style="color: #DD0000">'password'</span><span
+								style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #DD0000">''</span><span
+								style="color: #007700">;
+								<br></span><span style="color: #0000BB">$config</span><span
+								style="color: #007700">[</span><span style="color: #DD0000">'SlaveServer'</span><span
+								style="color: #007700">][</span><span style="color: #DD0000">'usepconnect'</span><span
+								style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #0000BB">0</span><span
+								style="color: #007700">;
+								<br>
+								<br>
+								<br>
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+								style="color: #FF8000">//&nbsp;&nbsp;&nbsp;&nbsp;******&nbsp;PATH&nbsp;TO&nbsp;ADMIN&nbsp;&amp;&nbsp;MODERATOR&nbsp;CONTROL&nbsp;PANELS&nbsp;******
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;This&nbsp;setting&nbsp;allows&nbsp;you&nbsp;to&nbsp;change&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;folders&nbsp;that&nbsp;the&nbsp;admin&nbsp;and
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;moderator&nbsp;control&nbsp;panels&nbsp;reside&nbsp;in.&nbsp;You&nbsp;may&nbsp;wish&nbsp;to&nbsp;do&nbsp;this&nbsp;for&nbsp;security&nbsp;purposes.
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;Please&nbsp;note&nbsp;that&nbsp;if&nbsp;you&nbsp;change&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;directory&nbsp;here,&nbsp;you&nbsp;will&nbsp;still&nbsp;need
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;to&nbsp;manually&nbsp;change&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;directory&nbsp;on&nbsp;the&nbsp;server.
+								<br></span><span style="color: #0000BB">$config</span><span
+								style="color: #007700">[</span><span style="color: #DD0000">'Misc'</span><span
+								style="color: #007700">][</span><span style="color: #DD0000">'admincpdir'</span><span
+								style="color: #007700">]&nbsp;=&nbsp;</span><span
+								style="color: #DD0000">'admincp'</span><span style="color: #007700">;
+								<br></span><span style="color: #0000BB">$config</span><span
+								style="color: #007700">[</span><span style="color: #DD0000">'Misc'</span><span
+								style="color: #007700">][</span><span style="color: #DD0000">'modcpdir'</span><span
+								style="color: #007700">]&nbsp;=&nbsp;</span><span
+								style="color: #DD0000">'modcp'</span><span style="color: #007700">;
+								<br>
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+								style="color: #FF8000">//&nbsp;&nbsp;&nbsp;&nbsp;Prefix&nbsp;that&nbsp;all&nbsp;vBulletin&nbsp;cookies&nbsp;will&nbsp;have
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;Keep&nbsp;this&nbsp;short&nbsp;and&nbsp;only&nbsp;use&nbsp;numbers&nbsp;and&nbsp;letters,&nbsp;i.e.&nbsp;1-9&nbsp;and&nbsp;a-Z
+								<br></span><span style="color: #0000BB">$config</span><span
+								style="color: #007700">[</span><span style="color: #DD0000">'Misc'</span><span
+								style="color: #007700">][</span><span style="color: #DD0000">'cookieprefix'</span><span
+								style="color: #007700">]&nbsp;=&nbsp;</span><span
+								style="color: #DD0000">'bb'</span><span style="color: #007700">;
+								<br>
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+								style="color: #FF8000">//&nbsp;&nbsp;&nbsp;&nbsp;********&nbsp;FULL&nbsp;PATH&nbsp;TO&nbsp;FORUMS&nbsp;DIRECTORY&nbsp;******
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;On&nbsp;a&nbsp;few&nbsp;systems&nbsp;it&nbsp;may&nbsp;be&nbsp;necessary&nbsp;to&nbsp;input&nbsp;the&nbsp;full&nbsp;path&nbsp;to&nbsp;your&nbsp;forums&nbsp;directory
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;vBulletin&nbsp;to&nbsp;function&nbsp;normally.&nbsp;You&nbsp;can&nbsp;ignore&nbsp;this&nbsp;setting&nbsp;unless&nbsp;vBulletin
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;tells&nbsp;you&nbsp;to&nbsp;fill&nbsp;this&nbsp;in.&nbsp;Do&nbsp;not&nbsp;include&nbsp;a&nbsp;trailing&nbsp;slash!
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;Example&nbsp;Unix:
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$config['Misc']['forumpath']&nbsp;=&nbsp;'/home/users/public_html/forums';
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;Example&nbsp;Win32:
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$config['Misc']['forumpath']&nbsp;=&nbsp;'c:\program&nbsp;files\apache&nbsp;group\apache\htdocs\vb3';
+								<br></span><span style="color: #0000BB">$config</span><span
+								style="color: #007700">[</span><span style="color: #DD0000">'Misc'</span><span
+								style="color: #007700">][</span><span style="color: #DD0000">'forumpath'</span><span
+								style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #DD0000">''</span><span
+								style="color: #007700">;
+								<br>
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+								style="color: #FF8000">//&nbsp;&nbsp;&nbsp;&nbsp;******&nbsp;USERS&nbsp;WITH&nbsp;ADMIN&nbsp;LOG&nbsp;VIEWING&nbsp;PERMISSIONS&nbsp;******
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;users&nbsp;specified&nbsp;here&nbsp;will&nbsp;be&nbsp;allowed&nbsp;to&nbsp;view&nbsp;the&nbsp;admin&nbsp;log&nbsp;in&nbsp;the&nbsp;control&nbsp;panel.
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;Users&nbsp;must&nbsp;be&nbsp;specified&nbsp;by&nbsp;*ID&nbsp;number*&nbsp;here.&nbsp;To&nbsp;obtain&nbsp;a&nbsp;user's&nbsp;ID&nbsp;number,
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;view&nbsp;their&nbsp;profile&nbsp;via&nbsp;the&nbsp;control&nbsp;panel.&nbsp;If&nbsp;this&nbsp;is&nbsp;a&nbsp;new&nbsp;installation,&nbsp;leave
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;first&nbsp;user&nbsp;created&nbsp;will&nbsp;have&nbsp;a&nbsp;user&nbsp;ID&nbsp;of&nbsp;1.&nbsp;Seperate&nbsp;each&nbsp;userid&nbsp;with&nbsp;a&nbsp;comma.
+								<br></span><span style="color: #0000BB">$config</span><span
+								style="color: #007700">[</span><span style="color: #DD0000">'SpecialUsers'</span><span
+								style="color: #007700">][</span><span
+								style="color: #DD0000">'canviewadminlog'</span><span
+								style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #DD0000">'1'</span><span
+								style="color: #007700">;
+								<br>
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+								style="color: #FF8000">//&nbsp;&nbsp;&nbsp;&nbsp;******&nbsp;USERS&nbsp;WITH&nbsp;ADMIN&nbsp;LOG&nbsp;PRUNING&nbsp;PERMISSIONS&nbsp;******
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;users&nbsp;specified&nbsp;here&nbsp;will&nbsp;be&nbsp;allowed&nbsp;to&nbsp;remove&nbsp;("prune")&nbsp;entries&nbsp;from&nbsp;the&nbsp;admin
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;log.&nbsp;See&nbsp;the&nbsp;above&nbsp;entry&nbsp;for&nbsp;more&nbsp;information&nbsp;on&nbsp;the&nbsp;format.
+								<br></span><span style="color: #0000BB">$config</span><span
+								style="color: #007700">[</span><span style="color: #DD0000">'SpecialUsers'</span><span
+								style="color: #007700">][</span><span
+								style="color: #DD0000">'canpruneadminlog'</span><span
+								style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #DD0000">'1'</span><span
+								style="color: #007700">;
+								<br>
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+								style="color: #FF8000">//&nbsp;&nbsp;&nbsp;&nbsp;******&nbsp;USERS&nbsp;WITH&nbsp;QUERY&nbsp;RUNNING&nbsp;PERMISSIONS&nbsp;******
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;users&nbsp;specified&nbsp;here&nbsp;will&nbsp;be&nbsp;allowed&nbsp;to&nbsp;run&nbsp;queries&nbsp;from&nbsp;the&nbsp;control&nbsp;panel.
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;See&nbsp;the&nbsp;above&nbsp;entries&nbsp;for&nbsp;more&nbsp;information&nbsp;on&nbsp;the&nbsp;format.
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;Please&nbsp;note&nbsp;that&nbsp;the&nbsp;ability&nbsp;to&nbsp;run&nbsp;queries&nbsp;is&nbsp;quite&nbsp;powerful.&nbsp;You&nbsp;may&nbsp;wish
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;to&nbsp;remove&nbsp;all&nbsp;user&nbsp;IDs&nbsp;from&nbsp;this&nbsp;list&nbsp;for&nbsp;security&nbsp;reasons.
+								<br></span><span style="color: #0000BB">$config</span><span
+								style="color: #007700">[</span><span style="color: #DD0000">'SpecialUsers'</span><span
+								style="color: #007700">][</span><span style="color: #DD0000">'canrunqueries'</span><span
+								style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #DD0000">''</span><span
+								style="color: #007700">;
+								<br>
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+								style="color: #FF8000">//&nbsp;&nbsp;&nbsp;&nbsp;******&nbsp;UNDELETABLE&nbsp;/&nbsp;UNALTERABLE&nbsp;USERS&nbsp;******
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;users&nbsp;specified&nbsp;here&nbsp;will&nbsp;not&nbsp;be&nbsp;deletable&nbsp;or&nbsp;alterable&nbsp;from&nbsp;the&nbsp;control&nbsp;panel&nbsp;by&nbsp;any&nbsp;users.
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;To&nbsp;specify&nbsp;more&nbsp;than&nbsp;one&nbsp;user,&nbsp;separate&nbsp;userids&nbsp;with&nbsp;commas.
+								<br></span><span style="color: #0000BB">$config</span><span
+								style="color: #007700">[</span><span style="color: #DD0000">'SpecialUsers'</span><span
+								style="color: #007700">][</span><span
+								style="color: #DD0000">'undeletableusers'</span><span
+								style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #DD0000">''</span><span
+								style="color: #007700">;
+								<br>
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+								style="color: #FF8000">//&nbsp;&nbsp;&nbsp;&nbsp;******&nbsp;SUPER&nbsp;ADMINISTRATORS&nbsp;******
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;users&nbsp;specified&nbsp;below&nbsp;will&nbsp;have&nbsp;permission&nbsp;to&nbsp;access&nbsp;the&nbsp;administrator&nbsp;permissions
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;page,&nbsp;which&nbsp;controls&nbsp;the&nbsp;permissions&nbsp;of&nbsp;other&nbsp;administrators
+								<br></span><span style="color: #0000BB">$config</span><span
+								style="color: #007700">[</span><span style="color: #DD0000">'SpecialUsers'</span><span
+								style="color: #007700">][</span><span
+								style="color: #DD0000">'superadministrators'</span><span
+								style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #DD0000">'1'</span><span
+								style="color: #007700">;
+								<br>
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+								style="color: #FF8000">//&nbsp;******&nbsp;CACHE&nbsp;CONFIGURATION&nbsp;*****
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Here&nbsp;you&nbsp;can&nbsp;configure&nbsp;different&nbsp;methods&nbsp;for&nbsp;caching&nbsp;items.
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;The&nbsp;following&nbsp;are&nbsp;the&nbsp;cacheing&nbsp;classes&nbsp;that&nbsp;can&nbsp;be&nbsp;used.
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;vB_Cache_Db&nbsp;-&nbsp;This&nbsp;setting&nbsp;stores&nbsp;the&nbsp;data&nbsp;in&nbsp;the&nbsp;database
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;vB_Cache_Memcache&nbsp;-&nbsp;This&nbsp;stores&nbsp;the&nbsp;data&nbsp;in&nbsp;memcache
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;vB_Cache_Memory&nbsp;-&nbsp;This&nbsp;setting&nbsp;uses&nbsp;php's&nbsp;memory&nbsp;while&nbsp;a&nbsp;page&nbsp;is&nbsp;being&nbsp;generated.
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Each&nbsp;cache&nbsp;area&nbsp;can&nbsp;use&nbsp;its&nbsp;own&nbsp;cache&nbsp;type.
+								<br></span><span style="color: #0000BB">$config</span><span
+								style="color: #007700">[</span><span style="color: #DD0000">'Cache'</span><span
+								style="color: #007700">][</span><span style="color: #DD0000">'class'</span><span
+								style="color: #007700">][</span><span style="color: #0000BB">0</span><span
+								style="color: #007700">]&nbsp;=&nbsp;</span><span
+								style="color: #DD0000">'vB_Cache_Db'</span><span
+								style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//regular&nbsp;cache
+								<br></span><span style="color: #0000BB">$config</span><span
+								style="color: #007700">[</span><span style="color: #DD0000">'Cache'</span><span
+								style="color: #007700">][</span><span style="color: #DD0000">'class'</span><span
+								style="color: #007700">][</span><span style="color: #0000BB">1</span><span
+								style="color: #007700">]&nbsp;=&nbsp;</span><span
+								style="color: #DD0000">'vB_Cache_Memory'</span><span
+								style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//fastest&nbsp;cache
+								<br></span><span style="color: #0000BB">$config</span><span
+								style="color: #007700">[</span><span style="color: #DD0000">'Cache'</span><span
+								style="color: #007700">][</span><span style="color: #DD0000">'class'</span><span
+								style="color: #007700">][</span><span style="color: #0000BB">2</span><span
+								style="color: #007700">]&nbsp;=&nbsp;</span><span
+								style="color: #DD0000">'vB_Cache_Db'</span><span
+								style="color: #007700">;&nbsp;</span><span
+								style="color: #FF8000">//largest&nbsp;cache&nbsp;and&nbsp;longest&nbsp;life.
+								<br>
+								<br>
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;******&nbsp;DATASTORE&nbsp;CACHE&nbsp;CONFIGURATION&nbsp;*****
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Here&nbsp;you&nbsp;can&nbsp;configure&nbsp;different&nbsp;methods&nbsp;for&nbsp;caching&nbsp;datastore&nbsp;items.
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;vB_Datastore_Filecache&nbsp;&nbsp;-&nbsp;to&nbsp;use&nbsp;includes/datastore/datastore_cache.php
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;vB_Datastore_APC&nbsp;-&nbsp;to&nbsp;use&nbsp;APC
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;vB_Datastore_XCache&nbsp;-&nbsp;to&nbsp;use&nbsp;XCache
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;vB_Datastore_Memcached&nbsp;-&nbsp;to&nbsp;use&nbsp;a&nbsp;Memcache&nbsp;server,&nbsp;more&nbsp;configuration&nbsp;below
+								<br>//&nbsp;$config['Datastore']['class']&nbsp;=&nbsp;'vB_Datastore_Filecache';
+								<br>
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;********&nbsp;DATASTORE&nbsp;PREFIX&nbsp;******
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;If&nbsp;you&nbsp;are&nbsp;using&nbsp;a&nbsp;PHP&nbsp;Caching&nbsp;system&nbsp;(APC,&nbsp;XCache,&nbsp;eAccelerator)&nbsp;with&nbsp;more
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;than&nbsp;one&nbsp;set&nbsp;of&nbsp;forums&nbsp;installed&nbsp;on&nbsp;your&nbsp;host,&nbsp;you&nbsp;*may*&nbsp;need&nbsp;to&nbsp;use&nbsp;a&nbsp;prefix
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;so&nbsp;that&nbsp;they&nbsp;do&nbsp;not&nbsp;try&nbsp;to&nbsp;use&nbsp;the&nbsp;same&nbsp;variable&nbsp;within&nbsp;the&nbsp;cache.
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;This&nbsp;works&nbsp;in&nbsp;a&nbsp;similar&nbsp;manner&nbsp;to&nbsp;the&nbsp;database&nbsp;table&nbsp;prefix.
+								<br>//&nbsp;$config['Datastore']['prefix']&nbsp;=&nbsp;'';
+								<br>
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;It&nbsp;is&nbsp;also&nbsp;necessary&nbsp;to&nbsp;specify&nbsp;the&nbsp;hostname&nbsp;or&nbsp;IP&nbsp;address&nbsp;and&nbsp;the&nbsp;port&nbsp;the&nbsp;server&nbsp;is&nbsp;listening&nbsp;on
+								<br>/*
+								<br>$config['Datastore']['class']&nbsp;=&nbsp;'vB_Datastore_Memcached';
+								<br>$i&nbsp;=&nbsp;0;
+								<br>//&nbsp;First&nbsp;Server
+								<br>$i++;
+								<br>$config['Misc']['memcacheserver'][$i]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;'127.0.0.1';
+								<br>$config['Misc']['memcacheport'][$i]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;11211;
+								<br>$config['Misc']['memcachepersistent'][$i]&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;true;
+								<br>$config['Misc']['memcacheweight'][$i]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;1;
+								<br>$config['Misc']['memcachetimeout'][$i]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;1;
+								<br>$config['Misc']['memcacheretry_interval'][$i]&nbsp;=&nbsp;15;
+								<br>*/
+								<br>
+								<br>//&nbsp;******&nbsp;The&nbsp;following&nbsp;options&nbsp;are&nbsp;only&nbsp;needed&nbsp;in&nbsp;special&nbsp;cases&nbsp;******
+								<br>
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;******&nbsp;MySQLI&nbsp;OPTIONS&nbsp;*****
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;When&nbsp;using&nbsp;MySQL&nbsp;4.1+,&nbsp;MySQLi&nbsp;should&nbsp;be&nbsp;used&nbsp;to&nbsp;connect&nbsp;to&nbsp;the&nbsp;database.
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;If&nbsp;you&nbsp;need&nbsp;to&nbsp;set&nbsp;the&nbsp;default&nbsp;connection&nbsp;charset&nbsp;because&nbsp;your&nbsp;database
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;is&nbsp;using&nbsp;a&nbsp;charset&nbsp;other&nbsp;than&nbsp;latin1,&nbsp;you&nbsp;can&nbsp;set&nbsp;the&nbsp;charset&nbsp;here.
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;If&nbsp;you&nbsp;don't&nbsp;set&nbsp;the&nbsp;charset&nbsp;to&nbsp;be&nbsp;the&nbsp;same&nbsp;as&nbsp;your&nbsp;database,&nbsp;you
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;may&nbsp;receive&nbsp;collation&nbsp;errors.&nbsp;&nbsp;Ignore&nbsp;this&nbsp;setting&nbsp;unless&nbsp;you
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;are&nbsp;sure&nbsp;you&nbsp;need&nbsp;to&nbsp;use&nbsp;it.
+								<br>//&nbsp;$config['Mysqli']['charset']&nbsp;=&nbsp;'utf8';
+								<br>
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;Optionally,&nbsp;PHP&nbsp;can&nbsp;be&nbsp;instructed&nbsp;to&nbsp;set&nbsp;connection&nbsp;parameters&nbsp;by&nbsp;
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;reading&nbsp;from&nbsp;the&nbsp;file&nbsp;named&nbsp;in&nbsp;'ini_file'.&nbsp;Please&nbsp;use&nbsp;a&nbsp;full&nbsp;path&nbsp;to&nbsp;
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;file.
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;Example:
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;$config['Mysqli']['ini_file']&nbsp;=&nbsp;'c:\program&nbsp;files\MySQL\MySQL&nbsp;Server&nbsp;4.1\my.ini';
+								<br></span><span style="color: #0000BB">$config</span><span
+								style="color: #007700">[</span><span style="color: #DD0000">'Mysqli'</span><span
+								style="color: #007700">][</span><span style="color: #DD0000">'ini_file'</span><span
+								style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #DD0000">''</span><span
+								style="color: #007700">;
+								<br>
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+								style="color: #FF8000">//&nbsp;********&nbsp;IMAGE&nbsp;PROCESSING&nbsp;OPTIONS&nbsp;********
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Images&nbsp;that&nbsp;exceed&nbsp;either&nbsp;dimension&nbsp;below&nbsp;will&nbsp;not&nbsp;be&nbsp;resized&nbsp;by&nbsp;vBulletin.&nbsp;
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;If&nbsp;you&nbsp;need&nbsp;to&nbsp;resize&nbsp;larger&nbsp;images,&nbsp;alter&nbsp;these&nbsp;settings.
+								<br></span><span style="color: #0000BB">$config</span><span
+								style="color: #007700">[</span><span style="color: #DD0000">'Misc'</span><span
+								style="color: #007700">][</span><span style="color: #DD0000">'maxwidth'</span><span
+								style="color: #007700">]&nbsp;=&nbsp;</span><span
+								style="color: #0000BB">2592</span><span style="color: #007700">;
+								<br></span><span style="color: #0000BB">$config</span><span
+								style="color: #007700">[</span><span style="color: #DD0000">'Misc'</span><span
+								style="color: #007700">][</span><span style="color: #DD0000">'maxheight'</span><span
+								style="color: #007700">]&nbsp;=&nbsp;</span><span
+								style="color: #0000BB">1944</span><span style="color: #007700">;
+								<br>
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+								style="color: #FF8000">//&nbsp;&nbsp;********&nbsp;SPECIAL&nbsp;SETTINGS&nbsp;********
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;following&nbsp;are&nbsp;settings/permissions&nbsp;that&nbsp;are&nbsp;not&nbsp;normally&nbsp;used&nbsp;but&nbsp;
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;are&nbsp;here&nbsp;for&nbsp;reference.&nbsp;Please&nbsp;be&nbsp;careful&nbsp;using&nbsp;them.&nbsp;Do&nbsp;not&nbsp;enable&nbsp;or&nbsp;
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;uncomment&nbsp;without&nbsp;understanding&nbsp;what&nbsp;they&nbsp;do&nbsp;first.&nbsp;
+								<br>
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;This&nbsp;allows&nbsp;you&nbsp;to&nbsp;disable&nbsp;modifications&nbsp;and&nbsp;extensions&nbsp;to&nbsp;the&nbsp;software.&nbsp;
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;your&nbsp;site&nbsp;is&nbsp;not&nbsp;functioning&nbsp;well&nbsp;after&nbsp;installing&nbsp;or&nbsp;using&nbsp;a&nbsp;third&nbsp;
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;party&nbsp;modification,&nbsp;please&nbsp;enable&nbsp;this.
+								<br>//&nbsp;define(“DISABLE_HOOKS”,&nbsp;true);
+								<br>
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;This&nbsp;allows&nbsp;you&nbsp;to&nbsp;shut&nbsp;down&nbsp;all&nbsp;mail&nbsp;that&nbsp;is&nbsp;being&nbsp;sent&nbsp;by&nbsp;vBulletin.&nbsp;
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;This&nbsp;is&nbsp;useful&nbsp;for&nbsp;test&nbsp;environments
+								<br>//&nbsp;define(“DISABLE_MAIL”,&nbsp;true);
+								<br>
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;This&nbsp;allows&nbsp;you&nbsp;to&nbsp;enter&nbsp;debug&nbsp;mode,&nbsp;which&nbsp;is&nbsp;for&nbsp;support&nbsp;or&nbsp;development
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;to&nbsp;help&nbsp;understand&nbsp;how&nbsp;pages&nbsp;are&nbsp;built.&nbsp;This&nbsp;should&nbsp;NEVER&nbsp;be&nbsp;enabled&nbsp;in
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;a&nbsp;live&nbsp;environment.
+								<br>//$config['Misc']['debug']&nbsp;=&nbsp;true;
+								<br>
+								<br>
+								<br>/*======================================================================*\
+								<br>||&nbsp;####################################################################
+								<br>||&nbsp;#&nbsp;Downloaded:&nbsp;00:00,&nbsp;Thur&nbsp;Oct&nbsp;15th&nbsp;2015
+								<br>||&nbsp;#&nbsp;CVS:&nbsp;$RCSfile$&nbsp;-&nbsp;$Revision:&nbsp;88&nbsp;$
+								<br>||&nbsp;####################################################################
+								<br>\*======================================================================*/</span>
+						</span>
+					</code></div>
+			</div>
+			

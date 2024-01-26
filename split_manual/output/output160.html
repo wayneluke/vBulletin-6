@@ -1,0 +1,138 @@
+<table class="headingtable" cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tbody>
+					<tr valign="bottom">
+						<td>
+							<h4 style="display:inline"><a name="item165"></a>Adding and Editing Notices</h4>
+						</td>
+						<td>
+							<div style="font:11px tahoma; text-align:right"><a
+									href="https://www.vbulletin.com/docs/onepage/#link165">Back to Top</a></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			Path to Add a New Announcement: <span class="Mprocess">Notices &gt; Notices Manager</span> and then click
+			<strong>Add New Notice</strong> or <span class="Mprocess">Notices &gt; Add New Notice</span>.<br>
+			<br>
+			Path to Edit or Delete an Announcement: <span class="Mprocess">Announcements &gt; Announcement
+				Manager</span> and then click either <strong>Edit</strong> or <strong>Delete</strong><br>
+			<br>
+			The Notices Manager provides controls to create and edit notices for your site, and to set up criteria for
+			when each notice should appear.<br>
+			<br>
+			The top part of the page deals primarily with the text and HTML tagging, while the bottom of the page sets
+			up the display criteria.<div class="Mnote">
+				<div class="Mnotewarnheader">Note:</div>
+				<div class="Mnotewarninner">You must click <strong>Save</strong> for changes to take effect.</div>
+			</div>
+			<font size="3"><strong>Notice Details</strong></font><br>
+			<br>
+			&lt;&lt;&lt;Insert a screenshot of the top half of the Add New Notice page, through the “Dismissible” radio
+			buttons.&gt;&gt;&gt;<br>
+			<br>
+			<strong>Title</strong><br>
+			The title is an administrative convenience only to help in identifying notices. It is never shown to
+			visiting users. You can add multiple translations of the title text using the Translations link.<br>
+			<br>
+			<strong>Notice HTML</strong><br>
+			The Notice HTML textbox contains the text and HTML of the notice to be displayed to users when the active
+			criteria are met.<div class="Mwarn">
+				<div class="Mnotewarnheader">Warning:</div>
+				<div class="Mnotewarninner">vBulletin allows any valid HTML tags here, so be sure not to include any
+					tags that could potentially break your layout or allow site abuse.</div>
+			</div>You can use the special variables {userid}, {username}, {musername} and {sessionurl} in the HTML to
+			personalize the notice text. For example, <em>Hello, {username}, how are you?</em> is replaced in the actual
+			notice by <em>Hello, John Doe, how are you?</em> when John Doe is logged on.<br>
+			<br>
+			Here is a more complex example, making use of the {sessionurl} variable to make links within the site work
+			properly:<div class="Mcodecontainer">
+				<pre class="Mcodeblock">Hello, {musername].&lt;br/&gt;
+&lt;a href=”member.php?{sessionurl}u={userid}”View Your Profile&lt;/a&gt;
+</pre>
+			</div><strong>Display Order</strong><br>
+			The Display Order text box controls the order in which the notices are shown, both in the Notices Manager
+			and to visitors. Display order also controls the order in which notices are checked, so it's important for
+			the 'Notice x has not already been displayed' condition.<br>
+			<br>
+			<strong>Active</strong><br>
+			If a notice is not active, it is be displayed to visitors under any circumstances. The Active control is
+			useful to use when you want to temporarily disable a notice without actually deleting it completely.<br>
+			<br>
+			<strong>Persistent</strong><br>
+			A notice that is not persistent is displayed the first time a user visits the site and then disappears until
+			he or she visits again (it is displayed once per browser-session).<br>
+			<br>
+			<strong>Dismissible</strong><br>
+			A notice that is dismissible can be dismissed by the user after viewing.<br>
+			<br>
+			<font size="3"><strong>Display Criteria</strong></font><br>
+			<br>
+			The lower part of the form contains controls to set up display criteria.<br>
+			<br>
+			&lt;&lt;&lt;Insert a screenshot of the bottom half of the Add New Notice page, starting with “Display this
+			notice if...”&gt;&gt;&gt;<br>
+			<br>
+			To activate a criterion, check the box next to the criteria text, and then fill in any controls that are
+			part of that criterion.<br>
+			<br>
+			You can activate as many criteria as you like, but if any of the active criteria are not satisfied, the
+			notice will not show. The following is a list of criteria you can use:<br>
+			<br>
+			<strong>User Belongs to</strong><br>
+			Any user belonging to the selected usergroup will see the notice.<br>
+			<br>
+			<strong>User does not belong to usegroup</strong><br>
+			Any user that does not belong to the selected usegroup will see the notice.<br>
+			<br>
+			<strong>User is browsing forum</strong><br>
+			Any user browsing the selected forum will see the notice.<br>
+			<br>
+			<strong>User is brown browsing forum... or one of its child forums</strong><br>
+			Any user browsing the selected forum or one of its child forums will see the notice.<br>
+			<br>
+			<strong>User is browsing using style</strong><br>
+			Any user browsing the site using the selected style will see the notice.<br>
+			<br>
+			<strong>User has not visited for (x) days or more</strong><br>
+			Any user who has not visited the site for the entered number of days or more will see the notice.<br>
+			<br>
+			<strong>User has not posted for (x) days or more</strong><br>
+			Any user who has not posted for the entered number of days or more will see the notice.<br>
+			<br>
+			<strong>User’s post count is between (x) and (y) posts</strong><br>
+			Any user whose post count falls between the two entered numbers will see the notice.<br>
+			<br>
+			<strong>User has never posted</strong><br>
+			Any user who has never posted will see the notice.<br>
+			<br>
+			<strong>User has between (x) and (y) reputation points</strong><br>
+			Any user whose reputation points falls between the entered numbers will see the notice.<br>
+			<br>
+			<strong>User has between (x) and (y) infraction points</strong><br>
+			Any user whose infraction points falls between the entered numbers will see the notice.<br>
+			<br>
+			<strong>Users private message storage is between (x)% and (y)% full</strong><br>
+			Any user whose message storage falls between the entered numbers will see the notice.<br>
+			<br>
+			<strong>User’s username is</strong><br>
+			Any user who has a username that either matches or partially matches the entered username will see the
+			notice.<br>
+			<br>
+			<strong>User’s birthday is today</strong><br>
+			Any user who has a birthday on this day will see the notice.<br>
+			<br>
+			<strong>User landed on this page via search engine</strong><br>
+			Any user who landed on the page via a search engine will see the notice.<br>
+			<br>
+			<strong>User is in Global Ignore</strong><br>
+			Any user who is in Global Ignore will see the notice.<br>
+			<br>
+			<strong>The date is (dd-mm-yyyy) (user’s timezone/universal time)</strong><br>
+			Any user on at the entered date will see the notice.<br>
+			<br>
+			<strong> The time is between (hh:mm) and (hh:mm) (user’s timezone/universal time)</strong><br>
+			Any user on between the entered times will see the notice.<br>
+			<br>
+			<strong>Criteria for notice ... are not met</strong><br>
+			If the criteria for the notice are not met, a user will still see the notice.
+			

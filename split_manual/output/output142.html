@@ -1,0 +1,47 @@
+<table class="headingtable" cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tbody>
+					<tr valign="bottom">
+						<td>
+							<h5 style="display:inline"><a name="item147"></a>Using Phrases in Templates</h5>
+						</td>
+						<td>
+							<div style="font:11px tahoma; text-align:right"><a
+									href="https://www.vbulletin.com/docs/onepage/#link147">Back to Top</a></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			Phrases are generally straightforward to use in templates. Simple phrases (without any variable portions)
+			can be referenced like regular $variables; complex phrases are referenced similarly to template
+			conditionals.<br>
+			<br>
+			When referencing a phrase in a template, you need to know the following information:<br>
+			<br>
+			<strong>The phrase name (phrase_name)</strong><br>
+			The phrase name is what uniquely identifies a phrase and how phrases are referenced. Generally, the phrase
+			name reflects the phrase text directly; for example, the phrase with variable name <span
+				class="Mvar">poll_timeout</span> has the text of Poll Timeout.<br>
+			<br>
+			<strong>The phrase group</strong><br>
+			If the phrase is in a group, you can access it only on pages that load that group.<br>
+			<br>
+			To use a phrase in a template, you need to use the following constructs.<br>
+			<br>
+			<strong>phrase</strong>
+			<div class="Mcodecontainer">
+				<pre class="Mcodeblock">{vb:phrase phrase_name[, arguments for phrase...]}</pre>
+			</div>Inserts the specified phrase. If arguments are provided, they will be run through <span
+				class="Mvar">htmlspecialchars()</span>.<br>
+			<br>
+			Example:<div class="Mcodecontainer">
+				<pre class="Mcodeblock">{vb:phrase welcome}</pre>
+			</div><strong>rawphrase</strong>
+			<div class="Mcodecontainer">
+				<pre class="Mcodeblock">{vb:rawphrase phrase_name[, arguments for phrase...]}</pre>
+			</div>Inserts the specified phrase, but arguments bypass <span class="Mvar">htmlspecialchars()</span>.<br>
+			<br>
+			Example:<div class="Mcodecontainer">
+				<pre class="Mcodeblock">{vb:rawphrase message_by_x_on_y_at_z, {vb:link member, {vb:raw postinfo}}, {vb:raw postinfo.username}, {vb:raw postinfo.postdate}, {vb:raw postinfo.posttime}}
+</pre>
+			</div>For more information about template syntax, see &lt;&lt;&lt;doc link: Template Syntax&gt;&gt;&gt;.
+			

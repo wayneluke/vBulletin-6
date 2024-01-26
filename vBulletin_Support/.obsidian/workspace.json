@@ -1,0 +1,176 @@
+{
+  "main": {
+    "id": "7a595ccab26db605",
+    "type": "split",
+    "children": [
+      {
+        "id": "d92c76c11dc09bbe",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "5be92c2cb35546db",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "302695affca5f933",
+    "type": "split",
+    "children": [
+      {
+        "id": "51143a493216b038",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c0bc06554b9e0533",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "ca282a5862283dbb",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "341e89046eb66a37",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "80fc5872377e574f",
+    "type": "split",
+    "children": [
+      {
+        "id": "14bbd98d7f8e7502",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d49e00c4984ee612",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "f1350f58cfe2dee1",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "5129c04b0c1102a1",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "0f83b4c58a19eb79",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "5be92c2cb35546db",
+  "lastOpenFiles": [
+    "Configuration/Preserve EXIF Information.md",
+    "Configuration/Skip File Integrity Check on Upgrade.md",
+    "Site Builder/Add Footer Navigation Items.md",
+    "Troubleshooting/Browser Developer Tools.md",
+    "Configuration",
+    "Site Builder/Add Navigation Items.md",
+    "AdminCP/Single Sign-On.md",
+    "Site Builder/Site Builder.md",
+    "Installer/Use Uncompressed Download.md",
+    "Troubleshooting/Prevent PHP Warnings and Errors.md",
+    "Database/Update Site URL.md",
+    "Database/Fix data issues in user table.md",
+    "Database/Backup Command.md",
+    "Troubleshooting/Debug Mode by IP.md",
+    "Troubleshooting",
+    "How-To.md",
+    "Site Builder/Google Ads.md",
+    "Site Builder/Edit Module (Basics).md",
+    "Site Builder/Add Donation Button.md",
+    "Site Builder/Export Custom Pages.md",
+    "Installer/MD5 SUMS Not Writable.md",
+    "module.md",
+    "2023-12-15.md",
+    "Site Builder/Modules.md",
+    "Release Notes/6.0.3 Updates.md",
+    "Release Notes",
+    "Database",
+    "Installer",
+    "Frontend",
+    "AdminCP",
+    "Site Builder",
+    "Site Builder/Layouts.md"
+  ]
+}

@@ -1,0 +1,69 @@
+<table class="headingtable" cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tbody>
+					<tr valign="bottom">
+						<td>
+							<h3 style="display:inline"><a name="item390"></a>2) Backing-Up the Current Database</h3>
+						</td>
+						<td>
+							<div style="font:11px tahoma; text-align:right"><a
+									href="https://www.vbulletin.com/docs/onepage/#link390">Back to Top</a></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<table cellpadding="5" cellspacing="0" border="0">
+				<!--<tr><td nowrap="nowrap"><b>Step Num</b></td><td><b>Instruction</b></td></tr>-->
+				<tbody>
+					<tr valign="top">
+						<td class="Mstepnum">1</td>
+						<td class="Msteptext" width="100%">Telnet/SSH into the server where your vBulletin is currently
+							installed. We will call this <span class="Mmono">machine1</span>.</td>
+					</tr>
+					<tr valign="top">
+						<td class="Mstepnum">2</td>
+						<td class="Msteptext" width="100%">Type:<blockquote class="Mtype">mysqldump --opt -Q
+								-u<strong>USERNAME</strong> -p <strong>DATABASENAME</strong> &gt;
+								<strong>/PATH/TO/DUMP.SQL</strong></blockquote>In this line, you should change the
+							following:<ul>
+								<li><strong>USERNAME</strong> – this is the username you use to access MySQL. It is
+									specified in your config.php file.</li>
+								<li><strong>DATABASENAME</strong> – the name of the database which your vBulletin is
+									installed into. It is specified in your config.php file.</li>
+								<li><strong>/PATH/TO/DUMP.SQL</strong> – this is the path to the file that will be
+									outputted. If you are unsure what to put here, simply use <em>vb_backup.sql</em> or
+									something similar.</li>
+							</ul>Once you press enter, you will be prompted for the password you use to access MySQL.
+							This is also specified in your config.php file.</td>
+					</tr>
+					<tr valign="top">
+						<td class="Mstepnum">3</td>
+						<td class="Msteptext" width="100%">Once it has returned to the prompt, verify that
+							<em>DUMP.SQL</em> exists in the directory you specified. If you did not specify a full
+							directory, the file will be in the directory you are currently in.</td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="Mnote">
+				<div class="Mnotewarnheader">Note:</div>
+				<div class="Mnotewarninner">When moving servers you need to check the MySQL versions on both the old and
+					new servers. It is always best if the new server is running the same or a newer version of
+					MySQL.<br>
+					If the new server is running an older version of MySQL it would be best to seek out a different
+					host. If this is not possible, you will need to make a compatible dump of the database.<br>
+					This only applies between major version number, ie MySQL 5.x to MySQL 4.x.<br>
+					<br>
+					Add the following option to the mysqldump command:<br>
+					<br>
+					--compatible=name<br>
+					<br>
+					Produce output that is more compatible with other database systems or with older MySQL servers. The
+					value of name can be ansi, mysql323, mysql40, postgresql, oracle, mssql, db2, maxdb, no_key_options,
+					no_table_options, or no_field_options. To use several values, separate them by commas. These values
+					have the same meaning as the corresponding options for setting the server SQL mode.<br>
+					<br>
+					Please note that there may still be issues even using the --compatible option<br>
+					<br>
+					<a href="http://www.mysql.org/doc/refman/4.1/en/mysqldump.html" target="_blank">MySQL Manual</a>
+				</div>
+			</div>
+			

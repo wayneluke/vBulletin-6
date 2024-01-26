@@ -1,0 +1,39 @@
+<table class="headingtable" cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tbody>
+					<tr valign="bottom">
+						<td>
+							<h4 style="display:inline"><a name="item109"></a>Search Type</h4>
+						</td>
+						<td>
+							<div style="font:11px tahoma; text-align:right"><a
+									href="https://www.vbulletin.com/docs/onepage/#link109">Back to Top</a></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			This section will show the different search engines installed in vBulletin and allow you to switch between
+			them.<br>
+			<br>
+			In a new installation of vBulletin.0.4 and higher, there two search engines installed. The default is called
+			"DB Search" and is an indexed implementation stored in a number of tables within your database. This will
+			allow you to search all content types marked as "Searchable" when they are created/installed in your
+			system.<br>
+			<br>
+			The second search implementation uses Sphinx Search. Sphinx is an open source full text search server,
+			designed from the ground up with performance, relevance (aka search quality), and integration simplicity in
+			mind. It's written in C++ and works on Linux (RedHat, Ubuntu, etc), Windows, MacOS, Solaris, FreeBSD, and a
+			few other systems. To use this search engine, please see the instructions on <a
+				href="https://www.vbulletin.com/docs/html/main/acp_searchtype_install_sphinx" class="Mhop">Installing
+				Sphinx</a>.<br>
+			<br>
+			You may be able to find alternative search engines from third-party vendors or possibly at
+			http://www.vbulletin.org.<div class="Mnote">
+				<div class="Mnotewarnheader">Note:</div>
+				<div class="Mnotewarninner">Changing search implementations will require you to rebuild the search index
+					before the search function will return results. For the DB Search this can be done via Maintenance
+					&gt; Update Counters. Reindex can take a long time for large boards. Some high performance search
+					engines may provide a faster alternate method of doing a full reindex, consult the documentation
+					provided with your search type. Consult the documentation for your search type to learn how to
+					rebuild the search index for it.</div>
+			</div>
+			

@@ -1,0 +1,25 @@
+<table class="headingtable" cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tbody>
+					<tr valign="bottom">
+						<td>
+							<h3 style="display:inline"><a name="item322"></a>Hook</h3>
+						</td>
+						<td>
+							<div style="font:11px tahoma; text-align:right"><a
+									href="https://www.vbulletin.com/docs/onepage/#link322">Back to Top</a></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			A hook is a location in the vBulletin <a href="https://www.vbulletin.com/docs/html/main/what_is_php"
+				class="Mhop">PHP</a> code that triggers events, which can be used to execute external scripts or code;
+			such as for a <a href="https://www.vbulletin.com/docs/html/main/what_is_plugin" class="Mhop">plugin</a>. The
+			code is executed within the context and scope of the location of the hook.<br>
+			<br>
+			Hooks in the code look like this:<br>
+			<br>
+			<span class="Mmono">($hook = vBulletinHook::fetch_hook('<font color="red">unique_hook_id</font>')) ?
+				eval($hook) : false;</span><br>
+			<br>
+			In this instance, the hook is called 'unique_hook_id'.
+			

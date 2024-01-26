@@ -1,0 +1,93 @@
+<table class="headingtable" cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tbody>
+					<tr valign="bottom">
+						<td>
+							<h5 style="display:inline"><a name="item260"></a>Multiple Selection Checkbox</h5>
+						</td>
+						<td>
+							<div style="font:11px tahoma; text-align:right"><a
+									href="https://www.vbulletin.com/docs/onepage/#link260">Back to Top</a></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			To add a <strong>Multiple-Selection Checkbox</strong> field to the User Profile form, click on the following
+			to your left: <span class="Mprocess">User Profile Fields&gt; Add New User Profile Field</span> then select
+			<strong>Multiple-Selection Checkbox</strong> from the dropdown menu.<br>
+			<br>
+			The <strong>Multiple-Selection Checkbox</strong> form allows you to add a custom multiple-selection checkbox
+			field to the <strong>User Profile</strong> form.<div class="Mnote">
+				<div class="Mnotewarnheader">Note:</div>
+				<div class="Mnotewarninner">You must click <strong>Save</strong> for changes to take effect.</div>
+			</div><strong>Add New User Profile Field</strong>
+			<ul>
+				<li><strong>Title</strong><br>
+					The name of your Multiple-Selection Checkbox field.</li>
+				<li><strong>Description</strong><br>
+					This is the description of the field as shown to your users. You should describe here what the field
+					is intended for, and if it is required field or not, and/or if it is private from other users or
+					not. If you choose the limit the number of choices, you should also add that information here.</li>
+				<li><strong>Profile Field Category</strong><br>
+					It is possible to group custom user profile fields into categories so that they can be logically
+					grouped. The primary purpose of doing this is to allow different categories to be shown in different
+					tabs or blocks on a user's profile page (in addition to being shown in the 'About Me' tab). See the
+					<a href="https://www.vbulletin.com/docs/html/main/acp_userprofilefields_userprofilefieldcategories"
+						class="Mhop">User Profile Field Categories</a> article for more information.</li>
+				<li><strong>Limit Selection</strong> <em>Default: 0</em><br>
+					Maximum number of options the user may select. Set to <em>0</em> to allow the user to select all
+					options.</li>
+				<li><strong>Options</strong><br>
+					In this box, put each value that should appear as an option. Make sure to separate each option with
+					a new line carriage return ("Enter" key).<div class="Mnote">
+						<div class="Mnotewarnheader">Note:</div>
+						<div class="Mnotewarninner">You may have a maximum of 31 options in this field.</div>
+					</div>
+				</li>
+				<li><strong>Display Order</strong><br>
+					This sets the order in which fields are displayed. The default is to add it to the end of your
+					current fields. Display order starts at 1 and can be any whole positive number (don't use decimals
+					or fractions).</li>
+				<li><strong>Field Required</strong> <em>Default: No</em>
+					<ul>
+						<li><strong>Yes, at registration and profile updating</strong><br>
+							User will be required to complete this field at registration and when updating their
+							profile.</li>
+						<li><strong>Yes, always</strong><br>
+							User will be required to complete this field at registration. Enabling this setting will
+							force all users to complete it before they can continue using your forum. This applies only
+							if the field is shown on the "Edit Your Details" page.</li>
+						<li><strong>No</strong><br>
+							Completion of this field is optional.</li>
+						<li><strong>No, but display at registration</strong><br>
+							Completion of this field is optional but it will appear at registration.</li>
+					</ul>
+				</li>
+				<li><strong>Field Editable by User</strong> <em>Default: Yes</em>
+					<ul>
+						<li><strong>Yes</strong><br>
+							User may edit this field at any time.</li>
+						<li><strong>No</strong><br>
+							User may never edit this field.</li>
+						<li><strong>Only at registration</strong><br>
+							User may only edit this field at registration or if it is set to be required and it is
+							blank.</li>
+					</ul>
+				</li>
+				<li><strong>Private Field</strong> <em>Default: No</em><br>
+					If this is set to <em>Yes</em>, this field can be filled in by the user but will only be viewable to
+					those with the proper usergroup permission.</li>
+				<li><strong>Field Searchable on Members List</strong> <em>Default: Yes</em><br>
+					If this is set to <em>No</em>, users will not be able to search using this field on the
+					<strong>Member's List Advanced Search</strong>.</li>
+				<li><strong>Show on Members List</strong> <em>Default: Yes</em><br>
+					If this is set to <em>Yes</em>, this field will be displayed on the <strong>Member's List</strong>
+					for each user.</li>
+			</ul><strong>Display Page</strong>
+			<ul>
+				<li><strong>Which page displays this option?</strong> <em>Default: Edit Profile</em><br>
+					This controls what page the profile field is displayed on. Most likely you want to leave this on
+					"Edit Profile" but if you wish to create your own user options that can be manipulated via template
+					conditionals then select "Options". This field will then appear on the "Options" page of the User
+					CP. Also, this field will not appear when viewing a user's profile.</li>
+			</ul>
+			

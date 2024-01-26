@@ -1,0 +1,69 @@
+<table class="headingtable" cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tbody>
+					<tr valign="bottom">
+						<td>
+							<h5 style="display:inline"><a name="item93"></a>Censorship Options</h5>
+						</td>
+						<td>
+							<div style="font:11px tahoma; text-align:right"><a
+									href="https://www.vbulletin.com/docs/onepage/#link93">Back to Top</a></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			Path to Censorship options: <span class="Mprocess">Settings &gt; Options &gt; Censorship Options</span> <br>
+			<br>
+			These options allow you to censor certain words or other string on your site. Strings designated as censored
+			are replaced with one or more characters (for example, an asterisk). Strings that can be censored include
+			all message titles and messages.<br>
+			<br>
+			To apply censoring to existing posts, see <a
+				href="https://www.vbulletin.com/docs/html/main/acp_maintenance_tool_general_cache" class="Mhop">Rebuild
+				Post Cache</a>
+			<div class="Mnote">
+				<div class="Mnotewarnheader">Note:</div>
+				<div class="Mnotewarninner">You must click <strong>Save</strong> for changes to take effect.</div>
+			</div>
+			<div align="center"><img src="./vBulletin Manual_files/censorship-options.png" border="0" alt=""></div>
+			<br>
+			<strong>Censorship Enabled</strong> (<u>Yes</u>/No)<br>
+			Choose Yes to enable censorship and No to disable it.<br>
+			<br>
+			<br>
+			<strong>Character to Replace Censored Words</strong> (default: *)<br>
+			Enter the character that you want to replace a censored word or other string. <br>
+			<br>
+			For example, if you have censored the word ‘dog’ and you set the censor character to an asterisk (*), all
+			occurrences of ‘dog’ in message titles and messages appear as ‘***’.<br>
+			<br>
+			<br>
+			<strong>Censored Words</strong><br>
+			Enter all words you want censored in the provided field. Use spaces (NOT commas) to separate words. Do not
+			use quotation marks around your censor list.<br>
+			<br>
+			Correct:<div class="Mcodecontainer">
+				<pre class="Mcodeblock">dog cat boy</pre>
+			</div>Incorrect:<div class="Mcodecontainer">
+				<pre class="Mcodeblock">dog, cat, boy</pre>
+			</div>If you type ‘dog’, all words containing the string ‘dog’ are censored (for example, the word ‘dogma’
+			appears as ‘***ma’. You can censor only exact matches by putting the word in curly braces, for example
+			‘{dog}’. Your revised censor list (which will not censor ‘dogma’) should read ‘{dog} cat boy’.<br>
+			<br>
+			<br>
+			<strong>Blank Character Stripper</strong> (default: 160 173 u8205 u8204 u8237 u8238)<br>
+			You can prevent users from including certain characters in posts or other strings like usernames (for
+			example, non-breaking spaces (code 160) or soft hyphens (code 173)). <br>
+			<br>
+			Enter the codes you want to prevent in the provided field. Use spaces to separate codes and do not use
+			quotation marks. Prefix Unicode values with a ‘u’.<br>
+			<br>
+			Example:<div class="Mcodecontainer">
+				<pre class="Mcodeblock">160 173 u8205 u8204 u8237 u8238</pre>
+			</div>
+			<div class="Mnote">
+				<div class="Mnotewarnheader">Note:</div>
+				<div class="Mnotewarninner">Stripping characters with this setting might break some double-byte
+					character sets. If you are having problems with certain characters not displaying properly, try
+					removing the contents of this setting.</div>
+			</div>
+			

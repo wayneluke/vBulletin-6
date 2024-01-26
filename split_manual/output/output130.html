@@ -1,0 +1,73 @@
+<table class="headingtable" cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tbody>
+					<tr valign="bottom">
+						<td>
+							<h4 style="display:inline"><a name="item135"></a>Replacement Variables</h4>
+						</td>
+						<td>
+							<div style="font:11px tahoma; text-align:right"><a
+									href="https://www.vbulletin.com/docs/onepage/#link135">Back to Top</a></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			Replacement Variables are chunks of text that are replaced with alternative text by the system before being
+			displayed on screen.<br>
+			<br>
+			One use for replacement variables is to correct common spelling mistakes. For example, on the <a
+				href="https://www.vbulletin.com/forum" target="_blank">vBulletin Community Forums</a> a replacement
+			variable exists to replace all instances of the incorrect abbreviation for vBulletin “<strong>VBB</strong>”
+			with the correct abbreviation “<strong>vB</strong>”.<br>
+			<br>
+			Replacement variables can be used to insert commonly-used blocks of HTML. <br>
+			<br>
+			For example, a replacement variable could be set up to replace <span class="Mmono">&lt;tablestart&gt;</span>
+			with <span class="Mmono">&lt;table class="tborder" cellpadding="6" cellspacing="1" border="0" width="100%"
+				align="center"&gt;</span>.<br>
+			<br>
+			As another example, your templates could contain blocks of code like this:<div class="Mcodecontainer">
+				<pre class="Mcodeblock"><font color="#000080">&lt;tablestart&gt;</font>
+<font color="#008080">&lt;tr&gt;</font>
+    <font color="#008080">&lt;td class=<font color="#0000FF">"alt1"</font>&gt;</font>Cell contents...<font color="#008080">&lt;/td&gt;</font>
+<font color="#008080">&lt;/tr&gt;</font>
+<font color="#008080">&lt;/table&gt;</font>
+</pre>
+			</div>Before being displayed in a visitor's browser, the replacement variable system would identify the
+			<span class="Mmono">&lt;tablestart&gt;</span> replacement variable and replace it with the following:<div
+				class="Mcodecontainer">
+				<pre class="Mcodeblock"><font color="#008080">&lt;table class=<font color="#0000FF">"tborder"</font> cellpadding=<font color="#0000FF">"6"</font> cellspacing=<font color="#0000FF">"1"</font> border=<font color="#0000FF">"0"</font> width=<font color="#0000FF">"100%"</font> align=<font color="#0000FF">"center"</font>&gt;</font>
+<font color="#008080">&lt;tr&gt;</font>
+    <font color="#008080">&lt;td class=<font color="#0000FF">"alt1"</font>&gt;</font>Cell contents...<font color="#008080">&lt;/td&gt;</font>
+<font color="#008080">&lt;/tr&gt;</font>
+<font color="#008080">&lt;/table&gt;</font>
+</pre>
+			</div>Replacement variables in vBulletin are <strong>case insensitive</strong>, meaning that a replacement
+			variable set to replace for <em>word</em> will also replace <em>Word</em>, <em>wOrD</em> and
+			<em>WORD</em>.<br>
+			<br>
+			The replacement variable system is activated in the last stages of page processing before the HTML is
+			delivered to a visitor's browser. The system searches for target text in the completed, parsed templates.
+			<div class="Mwarn">
+				<div class="Mnotewarnheader">Warning:</div>
+				<div class="Mnotewarninner">Replacement can be useful, but replacement variables can break the
+					functionality of your site if used incorrectly.</div>
+			</div>For example, if you create a replacement variable to search for <em>html</em> and replace it with
+			<em>HTML</em>, any hyperlinks pointing to files with a .html suffix will have those links replaced with
+			.HTML, which is not the same file on a Unix web server, since Unix file paths are case sensitive.<br>
+			<br>
+			Worse still, if you create a replacement variable to turn every instance of the word <span
+				class="Mmono">home</span> into a hyperlink pointing to your home page: <span class="Mmono">&lt;a
+				href="home.html"&gt;home&lt;/a&gt;</span>.<br>
+			<br>
+			You might have the situation where the word 'home' is used in locations where creating a hyperlink would
+			cause invalid HTML, such as the following:<br>
+			<br>
+			<blockquote><span class="Mmono">&lt;img src="home.gif" alt="" /&gt;</span></blockquote>
+			<br>
+			...which would end up being delivered to the browser as the following:<br>
+			<br>
+			<blockquote><span class="Mmono">&lt;img src="<em>&lt;a href="home.html"&gt;home&lt;/a&gt;</em>.gif" alt=""
+					/&gt;</span></blockquote>
+			<br>
+			...which is invalid HTML and will not function correctly.
+			

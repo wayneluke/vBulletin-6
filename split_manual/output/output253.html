@@ -1,0 +1,125 @@
+<table class="headingtable" cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tbody>
+					<tr valign="bottom">
+						<td>
+							<h5 style="display:inline"><a name="item258"></a>Single Selection Menu</h5>
+						</td>
+						<td>
+							<div style="font:11px tahoma; text-align:right"><a
+									href="https://www.vbulletin.com/docs/onepage/#link258">Back to Top</a></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			To add a <strong>Single-Selection Menu</strong> field to the User Profile form, click on the following to
+			your left: <span class="Mprocess">User Profile Fields&gt; Add New User Profile Field</span> then select
+			<strong>Single-Selection Menu</strong> from the dropdown menu.<br>
+			<br>
+			The <strong>Single-Selection Menu</strong> form allows you to add a custom single-selection menu field to
+			the <strong>User Profile</strong> form.<div class="Mnote">
+				<div class="Mnotewarnheader">Note:</div>
+				<div class="Mnotewarninner">You must click <strong>Save</strong> for changes to take effect.</div>
+			</div><strong>Add New User Profile Field</strong>
+			<ul>
+				<li><strong>Title</strong><br>
+					The name of your Single-Selection Menu field.</li>
+				<li><strong>Description</strong><br>
+					This is the description of the field as shown to your users. You should describe here what the field
+					is intended for, and if it is required field or not, and/or if it is private from other users or
+					not.</li>
+				<li><strong>Profile Field Category</strong><br>
+					It is possible to group custom user profile fields into categories so that they can be logically
+					grouped. The primary purpose of doing this is to allow different categories to be shown in different
+					tabs or blocks on a user's profile page (in addition to being shown in the 'About Me' tab). See the
+					<a href="https://www.vbulletin.com/docs/html/main/acp_userprofilefields_userprofilefieldcategories"
+						class="Mhop">User Profile Field Categories</a> article for more information.</li>
+				<li><strong>Options</strong><br>
+					In this box, put each value that should appear as a menu item. Make sure to separate each option
+					with a new line carriage return ("Enter" key).</li>
+				<li><strong>Set Default</strong> <em>Default: Yes, Including a First Blank Item</em>
+					<ul>
+						<li><strong>None</strong><br>
+							The selected option will be a blank field. If you require this field, this will force the
+							user to make a choice.</li>
+						<li><strong>Yes, Including a First Blank Option</strong><br>
+							This sets the first option above as selected but also creates a blank option allowing the
+							user to choose nothing if this field isn't required.</li>
+						<li><strong>Yes, but No First Blank Option</strong><br>
+							This also sets the first option above as selected but doesn't allow the user to choose a
+							nothing since their is no empty option to choose from.</li>
+					</ul>
+				</li>
+				<li><strong>Display Order</strong><br>
+					This sets the order in which fields are displayed. The default is to add it to the end of your
+					current fields. Display order starts at 1 and can be any whole positive number (don't use decimals
+					or fractions).</li>
+				<li><strong>Field Required</strong> <em>Default: No</em>
+					<ul>
+						<li><strong>Yes, at registration and profile updating</strong><br>
+							User will be required to complete this field at registration and when updating their
+							profile.</li>
+						<li><strong>Yes, always</strong><br>
+							User will be required to complete this field at registration. Enabling this setting will
+							force all users to complete it before they can continue using your forum. This applies only
+							if the field is shown on the "Edit Your Details" page.</li>
+						<li><strong>No</strong><br>
+							Completion of this field is optional.</li>
+						<li><strong>No, but display at registration</strong><br>
+							Completion of this field is optional but it will appear at registration.</li>
+					</ul>
+				</li>
+				<li><strong>Field Editable by User</strong> <em>Default: Yes</em>
+					<ul>
+						<li><strong>Yes</strong><br>
+							User may edit this field at any time.</li>
+						<li><strong>No</strong><br>
+							User may never edit this field.</li>
+						<li><strong>Only at registration</strong><br>
+							User may only edit this field at registration or if it is set to be required and it is
+							blank.</li>
+					</ul>
+				</li>
+				<li><strong>Private Field</strong> <em>Default: No</em><br>
+					If this is set to <em>Yes</em>, this field can be filled in by the user but will only be viewable to
+					those with the proper usergroup permission.</li>
+				<li><strong>Field Searchable on Members List</strong> <em>Default: Yes</em><br>
+					If this is set to <em>No</em>, users will not be able to search using this field on the
+					<strong>Member's List Advanced Search</strong>.</li>
+				<li><strong>Show on Members List</strong> <em>Default: Yes</em><br>
+					If this is set to <em>Yes</em>, this field will be displayed on the <strong>Member's List</strong>
+					for each user.</li>
+			</ul><strong>Optional Input</strong><br>
+			<br>
+			<strong>
+				<font color="red">&lt;&lt;&lt;Screenshot of Optional Input section&gt;&gt;&gt;</font>
+			</strong>
+			<ul>
+				<li><strong>Allow user to input their own value for this option</strong> <em>Default: No</em><br>
+					If this is set to <em>Yes</em>, the user will be allowed to fill in a text input field as an
+					alternative to the options you have given for this field.</li>
+				<li><strong>Max length of allowed user input</strong> <em>Default: 100</em><br>
+					The maximum number of characters that the member will be allowed to input.</li>
+				<li><strong>Field Length</strong> <em>Default: 25</em><br>
+					The width of the input box in characters.</li>
+				<li><strong>Regular Expression</strong><br>
+					You may require this field's contents to match a PCRE-type regular expression. For example, you
+					could have a field that is for the user's ICQ number. Since ICQ numbers consist of only numerals,
+					you could write a regular expression to check for non-numerals.<br>
+					<br>
+					Example:<div class="Mcodecontainer">
+						<pre class="Mcodeblock">^[0-9]{7,8}$</pre>
+					</div>If you want to allow an empty response to be given, you need to account for it within the
+					regex:<div class="Mcodecontainer">
+						<pre class="Mcodeblock">^[0-9]{7,8}$|^$</pre>
+					</div>See <a href="http://us2.php.net/manual/en/function.preg-match.php" target="_blank">PHP.net</a>
+					for more information on regular expressions.<br>
+				</li>
+			</ul><strong>Display Page</strong>
+			<ul>
+				<li><strong>Which page displays this option?</strong> <em>Default: Edit Profile</em><br>
+					This controls what page the profile field is displayed on. Most likely you want to leave this on
+					"Edit Profile" but if you wish to create your own user options that can be manipulated via template
+					conditionals then select "Options". This field will then appear on the "Options" page of the User
+					CP. Also, this field will not appear when viewing a user's profile.</li>
+			</ul>[/*][/list]
+			

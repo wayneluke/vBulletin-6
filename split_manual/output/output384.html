@@ -1,0 +1,46 @@
+<table class="headingtable" cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tbody>
+					<tr valign="bottom">
+						<td>
+							<h3 style="display:inline"><a name="item393"></a>5) Bringing it Back Online</h3>
+						</td>
+						<td>
+							<div style="font:11px tahoma; text-align:right"><a
+									href="https://www.vbulletin.com/docs/onepage/#link393">Back to Top</a></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<table cellpadding="5" cellspacing="0" border="0">
+				<!--<tr><td nowrap="nowrap"><b>Step Num</b></td><td><b>Instruction</b></td></tr>-->
+				<tbody>
+					<tr valign="top">
+						<td class="Mstepnum">1</td>
+						<td class="Msteptext" width="100%">Open up includes/config.php and edit <span
+								class="Mvar">$config['MasterServer']['servername']</span>, <span
+								class="Mvar">$config['MasterServer']['username']</span>, <span
+								class="Mvar">$config['MasterServer']['password']</span>, and <span
+								class="Mvar">$config['Database']['dbname']</span> with the values that correspond with
+							the new server. If you are not sure what these values should be, please contact your new
+							host.</td>
+					</tr>
+					<tr valign="top">
+						<td class="Mstepnum">2</td>
+						<td class="Msteptext" width="100%">Upload the new config.php and the rest of the files (if they
+							still need to be uploaded).</td>
+					</tr>
+					<tr valign="top">
+						<td class="Mstepnum">3</td>
+						<td class="Msteptext" width="100%">Login to your admin control panel, go to the <em>vBulletin
+								Options</em> section, and change your <em>BB URL</em>, if necessary.</td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="Mnote">
+				<div class="Mnotewarnheader">Note:</div>
+				<div class="Mnotewarninner">If you are not using the default database cache in vBulletin, you will need
+					to flush your cache and restore it on the new server. These means updating your Memcache settings in
+					your config.php file. If you are using the filesystem to store your Datastore, you need to make sure
+					that includes/datastore/datastore.php is chmod 0777 so vBulletin can write to it.</div>
+			</div>
+			

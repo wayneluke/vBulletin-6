@@ -1,0 +1,162 @@
+<table class="headingtable" cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tbody>
+					<tr valign="bottom">
+						<td>
+							<h5 style="display:inline"><a name="item86"></a>General Settings</h5>
+						</td>
+						<td>
+							<div style="font:11px tahoma; text-align:right"><a
+									href="https://www.vbulletin.com/docs/onepage/#link86">Back to Top</a></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			Path to General Settings: <span class="Mprocess">Settings &gt; Options &gt; General Settings</span><br>
+			<br>
+			These options allow you to set meta tags and descriptions, set options for Quick Navigation, enable access
+			masks, and other similar functions.<div class="Mnote">
+				<div class="Mnotewarnheader">Note:</div>
+				<div class="Mnotewarninner">You must click <strong>Save</strong> for changes to take effect.</div>
+			</div>
+			<div align="center"><img src="./vBulletin Manual_files/general-settings.png" border="0" alt=""></div>
+			<br>
+			<br>
+			<strong>Meta Keywords</strong><br>
+			Enter the meta keywords for all pages. These keywords are used by some search engines to index your pages
+			with more relevance. Other search engines such as Google do not take keywords into account.<br>
+			<br>
+			All keywords you enter here will be put in the keywords meta tag in the header of every page. Separate
+			keywords or phrases with a single comma and no space.<br>
+			<br>
+			Example: <em>vbulletin,forum,bbs,discussion,jelsoft,bulletin board</em><br>
+			<br>
+			<br>
+			<strong>Meta Description</strong><br>
+			Enter the meta description for all pages. These keywords are used by some search engines to index your pages
+			more with more relevance. Other search engines such as Google do not take descriptions into account.<br>
+			<br>
+			The short description of your site that you enter here is placed in the meta description tag in the header
+			of every page. Most search engines accept a maximum of 255 characters for the description.<br>
+			<br>
+			Example: <em>This is a discussion forum powered by vBulletin. To find out about vBulletin, go to
+				http://www.vbulletin.com/.</em><br>
+			<br>
+			<strong>Use Quick Navigation Menu</strong><br>
+			The Quick Navigation menu appears by default on most pages and provides a quick jump to any of the forums on
+			your site as well as to several other places on your site (for example, search and private messaging). While
+			it can have a marginal impact on performance, typically you will only want to disable this if you have an
+			extremely large number of forums, in which case a large amount of HTML will be generated that will increase
+			the size of pages and bandwidth usage.<br>
+			<br>
+			<br>
+			<strong>Number of Pages Visible in Page Navigator</strong><br>
+			On thread and forum pages, as well as private messaging lists and some other places, if there are multiple
+			page number links to be displayed, this setting determines how many are shown on either side of the page
+			currently being viewed. <br>
+			Setting this to 0 causes all page links to be displayed.<br>
+			<br>
+			Example: <em>3</em><br>
+			<br>
+			<strong>Relative Jumps for Page Navigator</strong><br>
+			If a thread or forum requires multiple pages to be displayed, this option selects what pages can be jumped
+			to relative to the current one. For example, by adding 10 to the list, links will appear for current page
+			-10 and current page +10.<br>
+			<br>
+			Example: <em>10 50 100 500 1000</em><br>
+			<br>
+			<strong>Enable Access Masks</strong><br>
+			Access masks allow you to enable or disable access to a particular forum for individual user(s). To use
+			access masks, enable this option. This option also affects whether or not users will be able to see forums
+			they do not have access to on forumhome and forumdisplay. <br>
+			<br>
+			If this functionality is off, users see users they are prevented from accessing forum listings but not be
+			able to enter them. If this functionality is on, users will not see those forums at all.)<br>
+			<br>
+			<br>
+			<strong>Add Template Name in HTML Comments</strong><br>
+			Setting this to Yes adds the template name at the beginning and end of every template rendered on any page.
+			This is useful for debugging and analyzing the HTML code, but it should be turned it off to save bandwidth
+			when running in a production environment.<br>
+			<br>
+			When you are modifying templates, it is often helpful to have this setting enabled so you can view the
+			source of a page to determine which template(s) control it. In the course of normal usage, however, you will
+			usually want this disabled because it increases your page sizes and therefore bandwidth usage.<br>
+			<br>
+			<strong>Use Login "Strikes" System</strong><br>
+			Setting this to No disables the system that prevents a user (with a specific IP address) from logging in to
+			an account after entering an incorrect password 5 times.<br>
+			<br>
+			After the first failed login attempt, the user receives the following message:<br>
+			<br>
+			<blockquote>You have used 1 out of 5 login attempts. After all 5 have been used, you will be unable to log
+				in for 15 minutes.</blockquote>
+			<br>
+			After the fifth failed login attempt, the user receives the following message:<br>
+			<br>
+			<blockquote>Wrong username or password. You have used up your failed login quota! Please wait 15 minutes
+				before trying again. Don't forget that the password is case sensitive.</blockquote>
+			<br>
+			After the fifth failed attempt, the user is locked out for fifteen minutes and and email will be sent to the
+			email address associated with the account alerting them about the login failure.<br>
+			<br>
+			<br>
+			<strong>Enable Forum Leaders</strong><br>
+			Forum Leaders is a listing of your important user groups. The display of forum Moderators on this page is
+			controlled with this option; the display of other groups is controlled via the usergroup manager.<br>
+			<br>
+			<br>
+			<strong>Post Referrer Whitelist</strong><br>
+			For security purposes, vBulletin allows data to be submitted via post only from within the site’s domain. If
+			you are submitting post requests from a different domain or subdomain, you must add them here. <br>
+			<br>
+			For example, if you have multiple sites that tie into this site or if you have vB-integrated hacks that POST
+			data externally, then you may want to put those referrers on the whitelist.<br>
+			<br>
+			Enter domains in the form of ‘.domain.com’ (including the leading dot). Separate multiple domains with line
+			breaks.<br>
+			<br>
+			<strong>Thread/Forum Read Marking Type</strong><br>
+			This option controls how threads and forums are marked as read.<ul>
+				<li><em>Inactivity/Cookie Based</em>. <br>
+					Once a user has been inactive for a certain amount of time (the value of the Session Timeout option)
+					all threads and forums are considered read. Individual threads are marked as read within a session
+					using cookies.<br>
+				</li>
+				<li><em>Database (no automatic forum marking)</em>. <br>
+					This option uses the database to store thread and forum read times. This allows accurate read
+					markers to be kept indefinitely. However, in order for a forum to be marked read when all threads
+					are read, the user must view the list of threads for that forum.<br>
+					<br>
+					This option is more space- and processor-intensive than inactivity-based marking.<br>
+				</li>
+				<li><em>Database (automatic forum marking)</em>. <br>
+					This option is the same as a previous one, but forums are automatically marked as read when the last
+					new thread is read. <br>
+					<br>
+					This is the most usable option for end users, but the most processor intensive.<br>
+				</li>
+			</ul><strong>Database Read Marking Limit</strong><br>
+			The amount of time in days to store the thread and forum read times. All threads or forums without posts in
+			this many days are considered read.<br>
+			<br>
+			With Database Read Marking, the unread markers on threads and forums are persistent across forum sessions.
+			If a user does not read a thread that is marked as unread, then that thread will remain unread every time
+			the user visits the forum.<br>
+			<br>
+			This setting allows you to force unread markers to switch to "read" after so many days (for example, 10).
+			This would be the amount of time after which the user probably has no interest in reading that thread and
+			therefore does not need to know that it contains unread posts.<br>
+			<br>
+			<strong>Disable AJAX Features</strong><br>
+			AJAX uses JavaScript and other browser functionality to allow additional data to be retrieved without doing
+			a page refresh, such as posting with quick reply or editing a thread title inline.<br>
+			<br>
+			Due to the nature of AJAX, some functions may not work fully with non-Latin languages without additional
+			modules, such as IconV. For example, AJAX-based quick reply may work correctly on your site, but thread
+			subscription emails do not display correctly. If something like this occurs for you, you should select
+			"Disable Problematic AJAX Features".<br>
+			<br>
+			<strong>Enable Inline Moderation Authentication</strong><br>
+			Inline moderation actions require a user to re-authenticate prior to being performed. The timeout is based
+			on the admin control panel timeout, or one hour if that option is disabled.
+			

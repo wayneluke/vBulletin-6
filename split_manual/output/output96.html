@@ -1,0 +1,68 @@
+<table class="headingtable" cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tbody>
+					<tr valign="bottom">
+						<td>
+							<h5 style="display:inline"><a name="item101"></a>Error Handling &amp; Logging</h5>
+						</td>
+						<td>
+							<div style="font:11px tahoma; text-align:right"><a
+									href="https://www.vbulletin.com/docs/onepage/#link101">Back to Top</a></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			Path to Error Handling and Logging options: <span class="Mprocess">Settings &gt; Options &gt; Error Handling
+				and Logging</span><br>
+			<br>
+			<div align="center"><img src="./vBulletin Manual_files/error-handling-and-logging.png" border="0" alt="">
+			</div>
+			<br>
+			<strong>Log Database Errors to a File</strong><br>
+			To log all database errors to a file, enter the path to the file. The file will be saved as {filename}.log.
+			<div class="Mnote">
+				<div class="Mnotewarnheader">Note:</div>
+				<div class="Mnotewarninner">The directory in which this file is to be created must be writeable (chmod
+					777) by the web server.</div>
+			</div><strong>Log Failed Admin Control Panel Logins to a File</strong><br>
+			To log all failed Admin Control Panel login attempts to a file, enter the path to the file. The file will be
+			saved as {filename}.log.<br>
+			.<div class="Mnote">
+				<div class="Mnotewarnheader">Note:</div>
+				<div class="Mnotewarninner">The directory in which this file is to be created must be writeable (chmod
+					777) by the web server.</div>
+			</div><strong>Log PHP Errors to a File</strong><br>
+			To log all PHP fatal errors to a file, enter the path to the file. The file will be saved as {filename}.log.
+			<div class="Mnote">
+				<div class="Mnotewarnheader">Note:</div>
+				<div class="Mnotewarninner">The directory in which this file is to be created must be writeable (chmod
+					777) by the web server.</div>
+			</div><strong>Log Emails to a File</strong><br>
+			To log all emails to a file, enter the path to the file here. The file will be saved as {filename}.log. <br>
+			<br>
+			You should enable email logging only if you suspect problems with the email system within vBulletin.<div
+				class="Mnote">
+				<div class="Mnotewarnheader">Note:</div>
+				<div class="Mnotewarninner">The directory in which this file is to be created must be writeable (chmod
+					777) by the web server.</div>
+			</div><strong>Maximum File Size of Error Logs</strong> (default: 1048576)<div class="Mnote">
+				<div class="Mnotewarnheader">Note:</div>
+				<div class="Mnotewarninner">1048576 bytes = 1 megabyte</div>
+			</div>If you want your vBulletin error logs to be rotated when they reach a certain size, enter the maximum
+			file size in bytes.<br>
+			<br>
+			When a log file reaches this size, it will be renamed as <span class="Mvar">{filename}{unix
+				timestamp}.log</span> and a new file will be created.<br>
+			<br>
+			Set this value to 0 to disable log rotation.<br>
+			<br>
+			<br>
+			<strong>Disable Database Error Email Sending</strong> (yes/<u>no</u>)<br>
+			<br>
+			To prevent vBulletin from sending email to the $config['Database']['technicalemail'] address you specified
+			in config.php, set this value to Yes.<br>
+			<br>
+			Error reports about database connection errors will still be sent.<br>
+			<br>
+			We do not recommend that you set this value to Yes unless you are logging database errors to a file.<br>
+
+			

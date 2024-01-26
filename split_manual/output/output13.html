@@ -1,0 +1,70 @@
+<table class="headingtable" cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tbody>
+					<tr valign="bottom">
+						<td>
+							<h3 style="display:inline"><a name="item16"></a>Preparing the vBulletin Files for Upload
+								(Windows)</h3>
+						</td>
+						<td>
+							<div style="font:11px tahoma; text-align:right"><a
+									href="https://www.vbulletin.com/docs/onepage/#link16">Back to Top</a></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			To extract the files from the package, open the folder on your computer where you saved the vBulletin
+			package and right-click on its icon, then choose <strong>Extract All</strong> from the pop-up menu.<br>
+			<br>
+			<div align="center"><img src="./vBulletin Manual_files/extract.png" border="0" alt=""></div>
+			<br>
+			This will open a wizard to guide you through the unzipping progress. Accept the default options suggested
+			and the system will decompress the files from the zip package.<br>
+			<br>
+			<div align="center"><img src="./vBulletin Manual_files/extract-02.png" border="0" alt=""></div>
+			<br>
+			When the unzipping progress is complete, you will find that the process has created a new folder called
+			<strong>upload</strong> and another called <strong>do_not_upload</strong>.<br>
+			<br>
+			<strong>upload</strong> - This folder contains the vBulletin files that need to be uploaded to your web
+			server.<br>
+			<br>
+			However, before you upload the files you must make some changes to the vBulletin configuration files. The
+			first file is located in the upload folder itself and is called <strong>config.php.bkp.</strong> The second
+			file is located in the <strong>core/includes</strong> folder (within the <strong>upload</strong> folder) and
+			is called <strong>config.php.new</strong>.<br>
+			<br>
+			You will need to rename both files, so vBulletin will be able to use them.<br>
+			<br>
+			First you must do is to rename this file from <strong>config.php.bkp</strong> to <strong>config.php</strong>
+			(removing the temporary <em>.bkp</em> extension).<br>
+			<br>
+			<div align="center"><img src="./vBulletin Manual_files/rename-config-01.png" border="0" alt=""></div>
+			<br>
+			Second you must do is to rename this file from <strong>config.php.new</strong> to
+			<strong>config.php</strong> (removing the temporary <em>.new</em> extension).<br>
+			<br>
+			<div align="center"><img src="./vBulletin Manual_files/rename-config-02.png" border="0" alt=""></div>
+			<div class="Mnote">
+				<div class="Mnotewarnheader">Note:</div>
+				<div class="Mnotewarninner">vBulletin uses URL rewrites throughout the software. This is done using URL
+					Rewrites in an .htaccess file in the root of the vBulletin installation. However, to prevent custom
+					htaccess rules from being overwritten on a server, we don't provide this file directly. Instead, we
+					provide a 'dummy' file called <em>htaccess.txt</em>. If you don't have an existing .htaccess file in
+					the directory that you're installing vBulletin into, rename this file from <em>htaccess.txt</em> to
+					<em>.htaccess</em> (<strong>NOTE:</strong> The period <em>before</em> htaccess is important - you
+					must name the file as shown)<br>
+					<br>
+					If you do have an existing .htaccess file in the directory, you will need to copy the contents of
+					the <em>htaccess.txt</em> file into your existing .htaccess file.</div>
+			</div>The second folder is <strong>do_not_upload</strong> - This folder contains tools to perform various
+			tasks on your board<ul>
+				<li><strong>searchindex.php</strong> - This file will allow you to rebuild the default vBulletin search
+					index.</li>
+				<li><strong>vb_backup.sh</strong> - This file will allow you to run a database backup via SSH/Telnet or
+					a scheduled backup through cron.</li>
+				<li><strong>tools.php</strong> - This file must be uploaded to the admincp folder and allows you to
+					perform certain tasks should your board go down or you accidentally lock yourself out of the Admin
+					Control Panel. <strong><em>This file must be deleted immediately after use or it will cause a SEVERE
+							security problem.</em></strong></li>
+			</ul>
+			

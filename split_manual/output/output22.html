@@ -1,0 +1,102 @@
+<table class="headingtable" cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tbody>
+					<tr valign="bottom">
+						<td>
+							<h2 style="display:inline"><a name="item25"></a>Uploading vBulletin Scripts to Your Web
+								Server</h2>
+						</td>
+						<td>
+							<div style="font:11px tahoma; text-align:right"><a
+									href="https://www.vbulletin.com/docs/onepage/#link25">Back to Top</a></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			After your config.php files have been edited and saved it is time to upload the vBulletin scripts to your
+			web server. You are now ready for installation.<br>
+			<br>
+			The uploading process should be familiar to anyone who has published pages to a web site before, but a brief
+			description of the process is given here.<br>
+			<br>
+			Although there are several methods available to transfer the vBulletin files from your computer to your web
+			server, by far the most common method in use is transfer via FTP. Most operating systems have built-in tools
+			for opening FTP connections although they are often limited in their usefulness and many people opt to use a
+			third party FTP client application. For this example we will use <a href="https://filezilla-project.org/"
+				target="_blank">FileZilla</a>.<div class="Mnote">
+				<div class="Mnotewarnheader">Note:</div>
+				<div class="Mnotewarninner">We do not recommend using the built-in file transfer features in WYSIWYG
+					editors such as Adobe Dreamweaver® or Microsoft Expression Studio®. These programs often add
+					information to vBulletin's files or do not maintain their structure properly which will cause
+					problems while installing or upgrading the software. We also do not recommend using any web-based
+					file managers that your hosting service may provide as a solution. For best performance and
+					reliability you are recommended to use a stand alone FTP client like Smart FTP or Filezilla.</div>
+			</div>
+			<font size="3"><strong>Installing in a Sub-Directory</strong></font><br>
+			<br>
+			The easiest way to transfer the files is to upload the entire <strong>upload</strong> folder to the server.
+			Using FileZilla we do this by dragging the <strong>upload</strong> folder from its location on your
+			computer's hard disk to the web publishing folder on the server.<br>
+			<br>
+			<div align="center"><img src="./vBulletin Manual_files/1.png" border="0" alt=""></div>
+			<br>
+			Most FTP client applications will handle the file transfers automatically, but if for some reason your
+			application does not, you should make a note of the following:<ul>
+				<li><strong>All text files to be transferred in ASCII mode</strong><br>
+					All files containing plain text from the vBulletin package should be transferred in ASCII mode.<br>
+					Text file types you will find in vBulletin are: <em>.html, .php, .js, .xml, .css.</em></li>
+				<li><strong>All non-text files to be transferred in Binary mode</strong><br>
+					The remaining files, which are mostly images, should be transferred to your web server in binary
+					mode.<br>
+					Binary file types used in vBulletin are: <em>.gif, .png, .jpg, .ico.</em></li>
+			</ul>
+			<div class="Mnote">
+				<div class="Mnotewarnheader">Note:</div>
+				<div class="Mnotewarninner">The web publishing folder is usually called <em>public_html</em>,
+					<em>www</em> or <em>htdocs</em> and is located within your home directory. If you are unsure of
+					where to find your own web publishing folder, your host will be able to help you.</div>
+			</div>Depending upon the speed of your internet connection, uploading all the files could take several
+			minutes to complete. After completion, you should see that the web server now contains a folder called
+			<strong>upload</strong> containing a perfect copy of the files in the <strong>upload</strong> folder on your
+			computer's hard disk.<br>
+			<br>
+			<div align="center"><img src="./vBulletin Manual_files/2.png" border="0" alt=""></div>
+			<br>
+			When all the files have been uploaded successfully you should rename the <strong>upload</strong> folder on
+			the web server to the name you want to use for your forums directory. We will be calling it
+			<strong>forums</strong> for the purposes of this manual.<br>
+			<br>
+			<div align="center"><img src="./vBulletin Manual_files/3.png" border="0" alt=""></div>
+			<br>
+			<font size="3"><strong>Installing at the Domain Root</strong></font><br>
+			<br>
+			Alternately, if you’d rather have the installation at the root level of your site, you can upload all the
+			files contained in the <strong>upload</strong> folder directly into the web publishing folder on the server.
+			This will bring your visitors directly to the vBulletin site when they visit your website.<br>
+			<br>
+			Using FileZilla we do this by dragging the contents of the <strong>upload</strong> folder from its location
+			on your computer's hard disk to the web publishing folder on the server.<br>
+			<br>
+			<div align="center"><img src="./vBulletin Manual_files/4.png" border="0" alt=""></div>
+			<br>
+			Most FTP client applications will handle the file transfers automatically, but if for some reason your
+			application does not, you should make a note of the following:<ul>
+				<li><strong>All text files to be transferred in ASCII mode</strong><br>
+					All files containing plain text from the vBulletin package should be transferred in ASCII mode.<br>
+					Text file types you will find in vBulletin are: <em>.html, .php, .js, .xml, .css.</em></li>
+				<li><strong>All non-text files to be transferred in Binary mode</strong><br>
+					The remaining files, which are mostly images, should be transferred to your web server in binary
+					mode.<br>
+					Binary file types used in vBulletin are: <em>.gif, .png, .jpg, .ico.</em></li>
+			</ul>
+			<div class="Mnote">
+				<div class="Mnotewarnheader">Note:</div>
+				<div class="Mnotewarninner">The web publishing folder is usually called <em>public_html</em>,
+					<em>www</em> or <em>htdocs</em> and is located within your home directory. If you are unsure of
+					where to find your own web publishing folder, your host will be able to help you.</div>
+			</div>Depending upon the speed of your internet connection, uploading all the files could take several
+			minutes to complete. After completion, you should see that the web server now contains a perfect copy of the
+			files contained in the <strong>upload</strong> folder on your computer's hard disk.<br>
+			<br>
+			If all has gone well, you are now ready to run the installation script to prepare your database to run
+			vBulletin.
+			

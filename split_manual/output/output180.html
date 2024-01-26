@@ -1,0 +1,114 @@
+<table class="headingtable" cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tbody>
+					<tr valign="bottom">
+						<td>
+							<h5 style="display:inline"><a name="item185"></a>Tagging Options</h5>
+						</td>
+						<td>
+							<div style="font:11px tahoma; text-align:right"><a
+									href="https://www.vbulletin.com/docs/onepage/#link185">Back to Top</a></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			Path to Tagging Options: <span class="Mprocess">Settings &gt; Options &gt; Tagging Options</span><br>
+			<br>
+			<strong>Enable Thread Tagging</strong> (<u>Yes</u>/No)<br>
+			Whether or not to enable or disable the thread tagging system. You can choose which usergroups can apply
+			tags to threads in the usergroup permissions section.<br>
+			<br>
+			<strong>Tag Minimum Length</strong> (default: 3)<br>
+			The minimum number of characters in a tag name. This can be between 1 and 100.<br>
+			<br>
+			<strong>Tag Maximum Length</strong> (default:25)<br>
+			The maximum number of characters in a tag name. This can be between 0 and 100.<br>
+			<br>
+			<strong>Thread Tag Banned Words</strong> (default: none)<br>
+			These words will be checked in addition to those listed in includes/searchwords.php to form a list of words
+			whose use is banned in tagging.<br>
+			<br>
+			Separate each word with a space or carriage return.<br>
+			<br>
+			<strong>Thread Tag Allowed Words</strong> (default: none)<br>
+			Words entered here will be allowed as tags, regardless of whether or not their use would be otherwise
+			disallowed due to length, censorship, commonality etc.<br>
+			<br>
+			If a word is specified in the “Banned” words group and here, it will be allowed.<br>
+			<br>
+			Separate each word with a space or carriage return.<br>
+			<br>
+			<strong>Tag Separators</strong> (default: none)<br>
+			You can specify additional separators for tags. The comma is the default separator and cannot be removed,
+			regardless of what is set here.<br>
+			<br>
+			Place a space between each separator. For example, "| &amp;" would mean that tags would be separated by a
+			comma (,), pipe (|), or ampersand (&amp;). Separators can be multiple characters.<br>
+			<br>
+			If you want to include a space as a separator or within a separator, wrap the separator in { and }. For
+			example, to make space a separator, you would use "{ }". To put a space within a separator, you would use
+			"{| |}", This would mean that to separate tags you would have to enter "| |".<div class="Mnote">
+				<div class="Mnotewarnheader">Note:</div>
+				<div class="Mnotewarninner">Adding separators might make previous tags unusable. For example, if you had
+					a tag "American cars" and added space as a separator, users that try to add that tag will add two
+					tags, "American" and "cars".</div>
+			</div><strong>Maximum Tags per Thread</strong> (default: 25)<br>
+			The maximum total tags per thread. No user can add more tags than this to an individual thread.<br>
+			<br>
+			0 disables this.<br>
+			<br>
+			<strong>Maximum Tags Applied by Thread Starter</strong> (default: 5)<br>
+			The maximum number of tags the thread starter can apply. Even if this setting allows it, the number of tags
+			in a thread cannot exceed the "Maximum Tags per Thread" setting.<br>
+			<br>
+			0 disables this limit. To prevent a user from tagging a thread, use usergroup permissions.<br>
+			<br>
+			<strong>Maximum Tags Applied by Other Users</strong> (default: 2)<br>
+			The maximum number of tags users other than the thread starter can apply. Even if this setting allows it,
+			the number of tags in a thread cannot exceed the "Maximum Tags per Thread" setting.<br>
+			<br>
+			0 disables this limit. To prevent a user from tagging a thread, use user group permissions.<br>
+			<br>
+			<strong>Force Tags to be Lower Case</strong> (<u>Yes</u>/No)<br>
+			Whether or not "A" through "Z" will be replaced with "a" through "z" in tag names. Other characters will not
+			be changed.<br>
+			<br>
+			<strong>Tag Cloud: Number of Tags</strong> (default: 70)<br>
+			The maximum number of tags to display in the tag cloud.<br>
+			<br>
+			<strong>Tag Cloud: Number of Levels</strong> (default: 5)<br>
+			The number of levels to be shown in the tag cloud.<br>
+			<br>
+			By default, there are 5 levels named level1 to level5, with the font size growing from its smallest size at
+			level 1 to its largest at level 5.<br>
+			<br>
+			Increasing this value above 5 requires a template change.<br>
+			<br>
+			<strong>Tag Cloud: Cache Time</strong> (default: 30)<br>
+			Amount of time in minutes before the tag cloud data cache is regenerated.<br>
+			<br>
+			A value of 0 will generate the tag cloud on each view.<br>
+			<br>
+			<strong>Tag Cloud: Usage History (Days)</strong> (default: 365)<br>
+			The number of days’ worth of data that should be used to generate the usage-based tag cloud here.<br>
+			<br>
+			Tags added more than this many days ago will not change the size of the link in the cloud.<br>
+			<br>
+			<strong>Tag Cloud: Build Usergroup</strong><br>
+			The tag cloud pulls together data from threads in many channels. Users might not be able to see all the
+			threads that make up the tag cloud results. With this option, you can force the tag cloud to be built as if
+			it were viewed by a particular usergroup.<br>
+			<br>
+			Live permission checking is the most accurate, but disables the above specified caching.<br>
+			<br>
+			<strong>Enable Search Tag Cloud</strong> (<u>Yes</u>/No)<br>
+			Whether or not a tag cloud relating to the frequency of tag searches is shown at the bottom of the advanced
+			search.<br>
+			<br>
+			A usage-based tag cloud is always shown here.<br>
+			<br>
+			<strong>Search Tag Cloud: History (Days)</strong> (default: 30)<br>
+			Number of days the system will keep a record of tag searches for use in the search tag cloud.<br>
+			<br>
+			0 means to use all data available.<br>
+
+			

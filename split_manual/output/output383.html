@@ -1,0 +1,52 @@
+<table class="headingtable" cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tbody>
+					<tr valign="bottom">
+						<td>
+							<h3 style="display:inline"><a name="item392"></a>4) Restoring the Database on the New Server
+							</h3>
+						</td>
+						<td>
+							<div style="font:11px tahoma; text-align:right"><a
+									href="https://www.vbulletin.com/docs/onepage/#link392">Back to Top</a></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<table cellpadding="5" cellspacing="0" border="0">
+				<!--<tr><td nowrap="nowrap"><b>Step Num</b></td><td><b>Instruction</b></td></tr>-->
+				<tbody>
+					<tr valign="top">
+						<td class="Mstepnum">1</td>
+						<td class="Msteptext" width="100%">On the new server, if necessary, create the database which
+							your vBulletin will be installed in. Refer to your host for specific information on how this
+							is done.</td>
+					</tr>
+					<tr valign="top">
+						<td class="Mstepnum">2</td>
+						<td class="Msteptext" width="100%">Telnet/SSH into <span class="Mmono">machine2</span>.</td>
+					</tr>
+					<tr valign="top">
+						<td class="Mstepnum">3</td>
+						<td class="Msteptext" width="100%">Type:<blockquote class="Mtype">mysql -uUSERNAME -p NEWDBNAME
+								&lt; /PATH/TO/NEW/DUMP.SQL</blockquote>You should change the following parts of this
+							line:<ul>
+								<li><strong>USERNAME</strong> - this is the new username which you will use to access
+									MySQL. If you do not know this value, you should contact your host.</li>
+								<li><strong>NEWDBNAME</strong> - the name of the new database that you created in the
+									first part of this step.</li>
+								<li><strong>/PATH/TO/NEW/DUMP.SQL</strong> - this is the path to the backup file that
+									you transferred to this server in step 2.</li>
+							</ul>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="Mnote">
+				<div class="Mnotewarnheader">Note:</div>
+				<div class="Mnotewarninner">We recommend you use the method described above to restore your database, as
+					it is the most reliable. If you don't have access to SSH then there are alternate instructions on
+					restoring your database available in the <a
+						href="https://www.vbulletin.com/docs/html/main/manual_database_restore" class="Mhop">technical
+						section of the manual</a>.</div>
+			</div>
+			

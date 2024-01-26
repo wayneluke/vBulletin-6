@@ -1,0 +1,33 @@
+<table class="headingtable" cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tbody>
+					<tr valign="bottom">
+						<td>
+							<h3 style="display:inline"><a name="item416"></a>Restoring The Database via phpMyAdmin</h3>
+						</td>
+						<td>
+							<div style="font:11px tahoma; text-align:right"><a
+									href="https://www.vbulletin.com/docs/onepage/#link416">Back to Top</a></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			For purposes of this instruction,I am using phpMyAdmin version 2.5.6-rc1.<br>
+			<br>
+			Go to phpMyAdmin in your web broswer and select the database you wish to back up by clicking on the name. If
+			you have multiple databases, you will need to select the name from the drop menu.<br>
+			<br>
+			In the right-hand frame, you will see a row of links. Click <span class="Mlink"
+				title="Click the &#39;SQL&#39; link">[SQL]</span><br>
+			<br>
+			You will see a large input box for queries and below that you will see a smaller box labeled
+			<strong>Browse</strong>.<br>
+			<br>
+			Click the <span class="Mbutton" title="Click the &#39;Browse&#39; button">[Browse]</span> button, navigate
+			to and select the backup file on your home computer and click the <span class="Mbutton"
+				title="Click the &#39;Go&#39; button">[Go]</span>.<div class="Mwarn">
+				<div class="Mnotewarnheader">Warning:</div>
+				<div class="Mnotewarninner">There are sometimes file size limitations on importing a database backup
+					this way. If your database is too large, you might encounter PHP timeout errors. In that case, you
+					will need to attempt to restore your database via SSH/Telnet.</div>
+			</div>
+			

@@ -1,0 +1,26 @@
+<table class="headingtable" cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tbody>
+					<tr valign="bottom">
+						<td>
+							<h3 style="display:inline"><a name="item403"></a>2) Setting Up a New User for MySQL</h3>
+						</td>
+						<td>
+							<div style="font:11px tahoma; text-align:right"><a
+									href="https://www.vbulletin.com/docs/onepage/#link403">Back to Top</a></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			With MySQL installed and ready to store information, all that's left is to get the server running on your
+			computer. While you can run the server as the root user, or even as yourself (if, for example, you installed
+			the server in your own home directory), the best idea is to set up a special user on the system that can do
+			nothing but run the MySQL server. This will remove any possibility of someone using the MySQL server as a
+			way to break into the rest of your system. To create a special MySQL user, you'll need to log in as root and
+			type the following commands:<blockquote class="Mtype">/usr/sbin/groupadd mysqlgrp<br>
+				/usr/sbin/useradd -g mysqlgrp mysqlusr</blockquote>By default, MySQL stores all database information in
+			the var subdirectory of the directory to which it was installed. We want to make it so that nobody can
+			access that directory except our new MySQL user. The following commands will do this (I'm assuming you
+			installed MySQL to the /usr/local/mysql directory):<blockquote class="Mtype">cd /usr/local/mysql<br>
+				chown -R mysqlusr.mysqlgrp var<br>
+				chmod -R go-rwx var</blockquote>
+			

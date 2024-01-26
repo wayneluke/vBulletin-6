@@ -1,0 +1,522 @@
+<table class="headingtable" cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tbody>
+					<tr valign="bottom">
+						<td>
+							<h2 style="display:inline"><a name="item305"></a>vBulletin Template Syntax</h2>
+						</td>
+						<td>
+							<div style="font:11px tahoma; text-align:right"><a
+									href="https://www.vbulletin.com/docs/onepage/#link305">Back to Top</a></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			vBulletin expands on the vBulletin Markup used in templates. These are the new methods you can use for
+			manipulating and retrieving content from the API and Database.<br>
+			<br>
+			<font size="4"><strong>New Built-in Methods</strong></font><br>
+			<br>
+			<font size="3"> <strong>{vb:set}</strong></font><br>
+			{vb:set} is used for assigning template variables during the execution of a template.<table class="Mtable"
+				cellpadding="5" cellspacing="1" border="0" align="center">
+				<tbody>
+					<tr valign="top">
+						<td class="Mtd"><strong>Parameter Position</strong></td>
+						<td class="Mtd"><strong>Parameter</strong><strong> Name</strong></td>
+						<td class="Mtd"><strong>Type</strong></td>
+						<td class="Mtd"><strong>Required</strong></td>
+						<td class="Mtd"><strong>Description</strong></td>
+					</tr>
+					<tr valign="top">
+						<td class="Mtd">1</td>
+						<td class="Mtd">variable</td>
+						<td class="Mtd">string</td>
+						<td class="Mtd">Yes</td>
+						<td class="Mtd">The name of the variable being assigned</td>
+					</tr>
+					<tr valign="top">
+						<td class="Mtd">2</td>
+						<td class="Mtd">value</td>
+						<td class="Mtd">compilable code</td>
+						<td class="Mtd">Yes</td>
+						<td class="Mtd">The value being assigned</td>
+					</tr>
+				</tbody>
+			</table><strong>Code:</strong>
+			<div class="Mcodecontainer">
+				<pre class="Mcodeblock">{vb:set name, 'Adrian'}
+The value of $name is {vb:raw name}.
+</pre>
+			</div>The above example will output:<div class="Mcodecontainer">
+				<pre class="Mcodeblock">The value of $name is Adrian. 
+</pre>
+			</div><strong>
+				<font size="3">{vb:template}</font><br>
+			</strong> {vb:template} is used for including other templates in the current template.<table class="Mtable"
+				cellpadding="5" cellspacing="1" border="0" align="center">
+				<tbody>
+					<tr valign="top">
+						<td class="Mtd"><strong>Parameter Position</strong></td>
+						<td class="Mtd"><strong>Parameter</strong><strong> Name</strong></td>
+						<td class="Mtd"><strong>Type</strong></td>
+						<td class="Mtd"><strong>Required</strong></td>
+						<td class="Mtd"><strong>Description</strong></td>
+					</tr>
+					<tr valign="top">
+						<td class="Mtd">1</td>
+						<td class="Mtd">template</td>
+						<td class="Mtd">string</td>
+						<td class="Mtd">Yes</td>
+						<td class="Mtd">The name of the template to include</td>
+					</tr>
+					<tr valign="top">
+						<td class="Mtd">2...∞</td>
+						<td class="Mtd">[var=value]</td>
+						<td class="Mtd">compilable code</td>
+						<td class="Mtd">No</td>
+						<td class="Mtd">Variable to pass local to template</td>
+					</tr>
+				</tbody>
+			</table><strong>Template</strong>:<div class="Mcodecontainer">
+				<pre class="Mcodeblock">This is {vb:raw arg1}. Today is {vb:raw arg2}
+</pre>
+			</div><strong>Code</strong>:<div class="Mcodecontainer">
+				<pre class="Mcodeblock">{vb:template template, arg1="an example", arg2="Sunday"}
+</pre>
+			</div>The above example will output:<div class="Mcodecontainer">
+				<pre class="Mcodeblock">This is an example. Today is Sunday
+</pre>
+			</div><strong>
+				<font size="3">{vb:js}<br>
+				</font>
+			</strong>{vb:js} is used for including javascript files from filesystem easily before body close tag.<table
+				class="Mtable" cellpadding="5" cellspacing="1" border="0" align="center">
+				<tbody>
+					<tr valign="top">
+						<td class="Mtd"><strong>Parameter Position</strong></td>
+						<td class="Mtd"><strong>Parameter</strong><strong> Name</strong></td>
+						<td class="Mtd"><strong>Type</strong></td>
+						<td class="Mtd"><strong>Required</strong></td>
+						<td class="Mtd"><strong>Description</strong></td>
+					</tr>
+					<tr valign="top">
+						<td class="Mtd">1...∞</td>
+						<td class="Mtd">path[, ...]</td>
+						<td class="Mtd">relative path</td>
+						<td class="Mtd">Yes</td>
+						<td class="Mtd">Relative path of the javascript file to include</td>
+					</tr>
+				</tbody>
+			</table><strong>Code:<br>
+			</strong>
+			<div class="Mcodecontainer">
+				<pre class="Mcodeblock">{vb:js js/test.js, js/test1.js}
+</pre>
+			</div>The above example will output the following code before &lt;/body&gt;:<div class="Mcodecontainer">
+				<pre class="Mcodeblock"><font color="#800000">&lt;script type=<font color="#0000FF">"text/javascript"</font> src=<font color="#0000FF">"http://localhost/vb5/js/test.js?v=500a36"</font>&gt;</font><font color="#800000">&lt;/script&gt;</font>
+<font color="#800000">&lt;script type=<font color="#0000FF">"text/javascript"</font> src=<font color="#0000FF">"http://localhost/vb5/js/test1.js?v=500a36"</font>&gt;</font><font color="#800000">&lt;/script&gt;</font>
+</pre>
+			</div><strong>
+				<font size="3">{vb:cssextra}</font>
+			</strong><strong>
+				<font size="3"><br>
+				</font>
+			</strong>{vb:cssextra} is used for including css templates easily before head close tag (all css templates
+			are included in one request).<br>
+			<strong>
+				<font size="3"> <br>
+				</font>
+			</strong>
+			<table class="Mtable" cellpadding="5" cellspacing="1" border="0" align="center">
+				<tbody>
+					<tr valign="top">
+						<td class="Mtd"><strong>Parameter Position</strong></td>
+						<td class="Mtd"><strong>Parameter</strong><strong> Name</strong></td>
+						<td class="Mtd"><strong>Type</strong></td>
+						<td class="Mtd"><strong>Required</strong></td>
+						<td class="Mtd"><strong>Description</strong></td>
+					</tr>
+					<tr valign="top">
+						<td class="Mtd">1...∞</td>
+						<td class="Mtd">template[, ...]</td>
+						<td class="Mtd">string</td>
+						<td class="Mtd">Yes</td>
+						<td class="Mtd">The name of the css template</td>
+					</tr>
+				</tbody>
+			</table><strong>Code:</strong>
+			<div class="Mcodecontainer">
+				<pre class="Mcodeblock">{vb:cssextra test.css, test1.css}
+</pre>
+			</div>The above example will output the following code before &lt;/head&gt;:<div class="Mcodecontainer">
+				<pre class="Mcodeblock"><font color="#000080">&lt;link rel=<font color="#0000FF">"stylesheet"</font> type=<font color="#0000FF">"text/css"</font> href=<font color="#0000FF">"http://localhost/vb5/core/css.php?styleid=x<b><i>&amp;amp;</i></b>td=xxx<b><i>&amp;amp;</i></b>sheet=xxx.css,...,test.css,test1.csss?ts=xxxxxxxxxxx"</font> /&gt;</font>
+</pre>
+			</div><strong>
+				<font size="3"><br>
+				</font>
+			</strong><strong>
+				<font size="3">{vb:hook}</font>
+			</strong><br>
+			{vb:hook} is used for including templates hooks in current template.<br>
+			<strong>
+				<font size="3"><br>
+				</font>
+			</strong>
+			<table class="Mtable" cellpadding="5" cellspacing="1" border="0" align="center">
+				<tbody>
+					<tr valign="top">
+						<td class="Mtd"><strong>Parameter Position</strong></td>
+						<td class="Mtd"><strong>Parameter</strong><strong> Name</strong></td>
+						<td class="Mtd"><strong>Type</strong></td>
+						<td class="Mtd"><strong>Required</strong></td>
+						<td class="Mtd"><strong>Description</strong></td>
+					</tr>
+					<tr valign="top">
+						<td class="Mtd">1</td>
+						<td class="Mtd">hook</td>
+						<td class="Mtd">string</td>
+						<td class="Mtd">Yes</td>
+						<td class="Mtd">The name of the template hook</td>
+					</tr>
+				</tbody>
+			</table><strong>Code:</strong>
+			<div class="Mcodecontainer">
+				<pre class="Mcodeblock">{vb:hook test}
+</pre>
+			</div><strong>
+				<font size="3">{vb:redirect}</font>
+			</strong><br>
+			{vb:redirect} is used for perfoming a php redirect during the execution of a template.<br>
+			<strong>
+				<font size="3"><br>
+				</font>
+			</strong>
+			<table class="Mtable" cellpadding="5" cellspacing="1" border="0" align="center">
+				<tbody>
+					<tr valign="top">
+						<td class="Mtd"><strong>Parameter Position</strong></td>
+						<td class="Mtd"><strong>Parameter</strong><strong> Name</strong></td>
+						<td class="Mtd"><strong>Type</strong></td>
+						<td class="Mtd"><strong>Required</strong></td>
+						<td class="Mtd"><strong>Description</strong></td>
+					</tr>
+					<tr valign="top">
+						<td class="Mtd">1</td>
+						<td class="Mtd">url</td>
+						<td class="Mtd">url</td>
+						<td class="Mtd">Yes</td>
+						<td class="Mtd">The url of the page to redirect</td>
+					</tr>
+				</tbody>
+			</table><strong>Code:</strong>
+			<div class="Mcodecontainer">
+				<pre class="Mcodeblock">{vb:redirect 'http://www.google.com.ar/'}
+</pre>
+			</div><strong>
+				<font size="3">{vb:strcat}</font>
+			</strong><br>
+			{vb:strcat} is used for concatenating values to the given variable.<br>
+			<strong>
+				<font size="3"><br>
+				</font>
+			</strong>
+			<table class="Mtable" cellpadding="5" cellspacing="1" border="0" align="center">
+				<tbody>
+					<tr valign="top">
+						<td class="Mtd"><strong>Parameter Position</strong></td>
+						<td class="Mtd"><strong>Parameter</strong><strong> Name</strong></td>
+						<td class="Mtd"><strong>Type</strong></td>
+						<td class="Mtd"><strong>Required</strong></td>
+						<td class="Mtd"><strong>Description</strong></td>
+					</tr>
+					<tr valign="top">
+						<td class="Mtd">1</td>
+						<td class="Mtd">variable</td>
+						<td class="Mtd">string</td>
+						<td class="Mtd">Yes</td>
+						<td class="Mtd">The name of the variable being assigned</td>
+					</tr>
+					<tr valign="top">
+						<td class="Mtd">2...∞</td>
+						<td class="Mtd">string[, ...]</td>
+						<td class="Mtd">compiable code</td>
+						<td class="Mtd">No</td>
+						<td class="Mtd">The value being concatenated</td>
+					</tr>
+				</tbody>
+			</table><strong>Code:</strong>
+			<div class="Mcodecontainer">
+				<pre class="Mcodeblock">{vb:strcat test, 'This is a', ' test'}
+{vb:raw test}
+</pre>
+			</div>The above example will output the following:<div class="Mcodecontainer">
+				<pre class="Mcodeblock">This is a test
+</pre>
+			</div><strong>
+				<font size="3">{vb:strrepeat}</font>
+			</strong><br>
+			{vb:strrepeat} is used for repeating a string to the given variable.<br>
+			<strong>
+				<font size="3"><br>
+				</font>
+			</strong>
+			<table class="Mtable" cellpadding="5" cellspacing="1" border="0" align="center">
+				<tbody>
+					<tr valign="top">
+						<td class="Mtd"><strong>Parameter Position</strong></td>
+						<td class="Mtd"><strong>Parameter</strong><strong> Name</strong></td>
+						<td class="Mtd"><strong>Type</strong></td>
+						<td class="Mtd"><strong>Required</strong></td>
+						<td class="Mtd"><strong>Description</strong></td>
+					</tr>
+					<tr valign="top">
+						<td class="Mtd">1</td>
+						<td class="Mtd">input</td>
+						<td class="Mtd">variable</td>
+						<td class="Mtd">Yes</td>
+						<td class="Mtd">The string variable to be repeated</td>
+					</tr>
+					<tr valign="top">
+						<td class="Mtd">2</td>
+						<td class="Mtd">multiplier</td>
+						<td class="Mtd">variable</td>
+						<td class="Mtd">Yes</td>
+						<td class="Mtd">The positive integer variable of time the input should be repeated</td>
+					</tr>
+				</tbody>
+			</table><strong>Code:</strong>
+			<div class="Mcodecontainer">
+				<pre class="Mcodeblock">{vb:set input, '. '}
+{vb:set multipler, 10}
+{vb:strrepeat input {vb:raw multipler}}
+{vb:raw input}
+</pre>
+			</div>The above example will output the following:<div class="Mcodecontainer">
+				<pre class="Mcodeblock">. . . . . . . . . . 
+</pre>
+			</div><strong>
+				<font size="3">{vb:data}<br>
+				</font>
+			</strong>{vb:data} is used for setting an API class and method return value to the given variable.<br>
+			<strong>
+				<font size="3"><br>
+				</font>
+			</strong>
+			<table class="Mtable" cellpadding="5" cellspacing="1" border="0" align="center">
+				<tbody>
+					<tr valign="top">
+						<td class="Mtd"><strong>Parameter Position</strong></td>
+						<td class="Mtd"><strong>Parameter</strong><strong> Name</strong></td>
+						<td class="Mtd"><strong>Type</strong></td>
+						<td class="Mtd"><strong>Required</strong></td>
+						<td class="Mtd"><strong>Description</strong></td>
+					</tr>
+					<tr valign="top">
+						<td class="Mtd">1</td>
+						<td class="Mtd">variable</td>
+						<td class="Mtd">string</td>
+						<td class="Mtd">Yes</td>
+						<td class="Mtd">The name of the variable being assigned</td>
+					</tr>
+					<tr valign="top">
+						<td class="Mtd">2</td>
+						<td class="Mtd">controller</td>
+						<td class="Mtd">string</td>
+						<td class="Mtd">Yes</td>
+						<td class="Mtd">The name of the called controller</td>
+					</tr>
+					<tr valign="top">
+						<td class="Mtd">3</td>
+						<td class="Mtd">method</td>
+						<td class="Mtd">string</td>
+						<td class="Mtd">Yes</td>
+						<td class="Mtd">The name of the called method</td>
+					</tr>
+					<tr valign="top">
+						<td class="Mtd">4...∞</td>
+						<td class="Mtd">argument</td>
+						<td class="Mtd">compilable code</td>
+						<td class="Mtd">No</td>
+						<td class="Mtd">Variable to pass to called method</td>
+					</tr>
+				</tbody>
+			</table><strong>Code:</strong>
+			<div class="Mcodecontainer">
+				<pre class="Mcodeblock">{vb:data unread, content_privatemessage, getUnreadInboxCount}
+{vb:raw unread}
+</pre>
+			</div>vB_Api_<font color="#ff0000"><strong>Content_Privatemessage</strong></font>-&gt;<font color="#0000ff">
+				<strong>getUnreadInboxCount</strong></font>()<br>
+			<br>
+			The above example will output the count of undeleted notifications.<br>
+			<br>
+			<strong>
+				<font size="3">{vb:url}</font>
+			</strong><br>
+			{vb:url} is used for building an hyperlink url of the specified route.<br>
+			<strong>
+				<font size="3"><br>
+				</font>
+			</strong>
+			<table class="Mtable" cellpadding="5" cellspacing="1" border="0" align="center">
+				<tbody>
+					<tr valign="top">
+						<td class="Mtd"><strong>Parameter Position</strong></td>
+						<td class="Mtd"><strong>Parameter</strong><strong> Name</strong></td>
+						<td class="Mtd"><strong>Type</strong></td>
+						<td class="Mtd"><strong>Required</strong></td>
+						<td class="Mtd"><strong>Description</strong></td>
+					</tr>
+					<tr valign="top">
+						<td class="Mtd">1</td>
+						<td class="Mtd">route</td>
+						<td class="Mtd">string</td>
+						<td class="Mtd">Yes</td>
+						<td class="Mtd">The route identifier (routeid or name)</td>
+					</tr>
+					<tr valign="top">
+						<td class="Mtd">2</td>
+						<td class="Mtd">data</td>
+						<td class="Mtd">array</td>
+						<td class="Mtd">No</td>
+						<td class="Mtd">Data for building route</td>
+					</tr>
+					<tr valign="top">
+						<td class="Mtd">3</td>
+						<td class="Mtd">extra</td>
+						<td class="Mtd">array</td>
+						<td class="Mtd">No</td>
+						<td class="Mtd">Additional data to be added</td>
+					</tr>
+					<tr valign="top">
+						<td class="Mtd">4</td>
+						<td class="Mtd">options</td>
+						<td class="Mtd">array</td>
+						<td class="Mtd">No</td>
+						<td class="Mtd">Options for building URL<br>
+							noBaseUrl: skips adding the baseurl</td>
+					</tr>
+				</tbody>
+			</table><strong>Code:</strong>
+			<div class="Mcodecontainer">
+				<pre class="Mcodeblock">{vb:url 'lostpw'}
+</pre>
+			</div>The above example will output the following:<div class="Mcodecontainer">
+				<pre class="Mcodeblock">http://localhost/vb5/lostpw
+</pre>
+			</div><strong>
+				<font size="3">{vb:debugvardump}</font>
+			</strong><br>
+			{vb:debugvardump} is used for dumping information about a variable.<br>
+			<strong>
+				<font size="3"><br>
+				</font>
+			</strong>
+			<table class="Mtable" cellpadding="5" cellspacing="1" border="0" align="center">
+				<tbody>
+					<tr valign="top">
+						<td class="Mtd"><strong>Parameter Position</strong></td>
+						<td class="Mtd"><strong>Parameter</strong><strong> Name</strong></td>
+						<td class="Mtd"><strong>Type</strong></td>
+						<td class="Mtd"><strong>Required</strong></td>
+						<td class="Mtd"><strong>Description</strong></td>
+					</tr>
+					<tr valign="top">
+						<td class="Mtd">1</td>
+						<td class="Mtd">expression</td>
+						<td class="Mtd">variable</td>
+						<td class="Mtd">Yes</td>
+						<td class="Mtd">The variable you want to dump</td>
+					</tr>
+				</tbody>
+			</table><strong>Code:</strong>
+			<div class="Mcodecontainer">
+				<pre class="Mcodeblock">{vb:debugvardump $user}
+</pre>
+			</div>The above example will output the dump of user variable into a nice red box.<br>
+			<br>
+			<strong>
+				<font size="3">{vb:php}</font>
+			</strong><br>
+			{vb:php} is used to run allowed php functions during the execution of a template.<br>
+			<strong>
+				<font size="3"><br>
+				</font>
+			</strong>
+			<table class="Mtable" cellpadding="5" cellspacing="1" border="0" align="center">
+				<tbody>
+					<tr valign="top">
+						<td class="Mtd"><strong>Parameter Position</strong></td>
+						<td class="Mtd"><strong>Parameter</strong><strong> Name</strong></td>
+						<td class="Mtd"><strong>Type</strong></td>
+						<td class="Mtd"><strong>Required</strong></td>
+						<td class="Mtd"><strong>Description</strong></td>
+					</tr>
+					<tr valign="top">
+						<td class="Mtd">1</td>
+						<td class="Mtd">function name</td>
+						<td class="Mtd">string</td>
+						<td class="Mtd">Yes</td>
+						<td class="Mtd">The name of the function</td>
+					</tr>
+					<tr valign="top">
+						<td class="Mtd">2...∞</td>
+						<td class="Mtd">string[, ...]</td>
+						<td class="Mtd">compiable code</td>
+						<td class="Mtd">No</td>
+						<td class="Mtd">Arguments of the function</td>
+					</tr>
+				</tbody>
+			</table><strong>Code:</strong>
+			<div class="Mcodecontainer">
+				<pre class="Mcodeblock">{vb:set test, {vb:php implode, ',', {vb:raw variable}}}
+</pre>
+			</div>PHP Equivalent:<div class="Mcodecontainer">
+				<div class="Mcodeblock"><code><span style="color: #000000">
+							<span style="color: #0000BB">&lt;?php
+								<br>
+								<br>$test&nbsp;</span><span style="color: #007700">=&nbsp;</span><span
+								style="color: #0000BB">implode</span><span style="color: #007700">(</span><span
+								style="color: #DD0000">','</span><span style="color: #007700">,&nbsp;</span><span
+								style="color: #0000BB">$variable</span><span style="color: #007700">);</span>
+						</span>
+					</code></div>
+			</div>Allowed functions:<ul>
+				<li>implode()</li>
+				<li>explode()</li>
+				<li>array_merge()</li>
+				<li>array_intersect()</li>
+				<li>array_intersect_key()</li>
+				<li>array_keys()</li>
+				<li>array_push()</li>
+				<li>array_pop()</li>
+				<li>array_shift()</li>
+				<li>array_unshift()</li>
+				<li>array_unique()</li>
+				<li>array()</li>
+				<li>current()</li>
+				<li>str_repeat()</li>
+				<li>str_pad()</li>
+				<li>strip_tags()</li>
+				<li>strtolower()</li>
+				<li>strtoupper()</li>
+				<li>trim()</li>
+				<li>substr()</li>
+				<li>vbstrtolower()</li>
+			</ul>
+			<table class="headingtable" style="page-break-before:always" cellpadding="0" cellspacing="0" border="0"
+				width="100%">
+				<tbody>
+					<tr valign="bottom">
+						<td>
+							<h1 style="display:inline"><a name="item306"></a>Appendix: Terminology</h1>
+						</td>
+						<td>
+							<div style="font:11px tahoma; text-align:right"><a
+									href="https://www.vbulletin.com/docs/onepage/#link306">Back to Top</a></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+			

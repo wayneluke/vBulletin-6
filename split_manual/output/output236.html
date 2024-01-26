@@ -1,0 +1,74 @@
+<table class="headingtable" cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tbody>
+					<tr valign="bottom">
+						<td>
+							<h7 style="display:inline"><a name="item241"></a>Promotions Example 2: Limit Access</h7>
+						</td>
+						<td>
+							<div style="font:11px tahoma; text-align:right"><a
+									href="https://www.vbulletin.com/docs/onepage/#link241">Back to Top</a></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<strong>How to limit access until <em>x</em> posts made:</strong><br>
+			<br>
+			As with <a href="https://www.vbulletin.com/docs/html/main/acp_permissions_tools_promotions_examples1"
+				class="Mhop">Example 1</a>, some admins prefer to limit the access that a new user has until they
+			‘prove’ themselves. This can be used for the following purposes (note these are not exhaustive):<br>
+			<br>
+			- Avatar size (or ability to have one!)<br>
+			- Signature usage (ability to have or limit what can be used)<br>
+			- Ability to use Blogs<br>
+			- Access to specific Channels<br>
+			<br>
+			For this example, we will use the following criteria:<br>
+			<br>
+			- Initial Usergroup: <em>Registered Users</em><br>
+			- ‘Full Member’ Usergroup: <em>Full Members</em><br>
+			- Number of Posts before Promotion: <em>10</em><br>
+			<br>
+			As all new users go into the Registered Users usergroup by default, simply adjust the permissions for this
+			group to what you wish them to have. Then, you need to setup the usergroup for those members who will have
+			full access. To do this, create a new usergroup based off the Registered Users usergroup and set the
+			permissions to give them the enhanced level of access.<br>
+			<br>
+			For more information on usergroups and permissions, please see <a
+				href="https://www.vbulletin.com/docs/html/main/acp_usergroup_permissions" class="Mhop">this section of
+				the manual</a> relating to these.<br>
+			<br>
+			Once you have your usergroups setup to your needs, you should create the appropriate Promotion. Using the
+			criteria above, your Promotions screen should look like this:<br>
+			<br>
+			<strong>
+				<font color="red">&lt;&lt;&lt;Screenshot of Promotions screen with the following criteria&gt;&gt;&gt;
+				</font>
+			</strong><br>
+			<br>
+			Explanation:<ul>
+				<li><strong>Usergroup</strong><br>
+					This is the usergroup that the users are currently a member of, i.e. Registered Users. The Promotion
+					will only apply to these users.</li>
+				<li><strong>Posts</strong><br>
+					These are the number of posts that a user should have made before they can be promoted, in this case
+					10.</li>
+				<li><strong>Promotion Strategy</strong><br>
+					As this example will have a user promoted after 10 posts have been made, this should be set to
+					‘Posts’</li>
+				<li><strong>Promotion Type</strong><br>
+					Set this option to ‘Primary Usergroup’. When the Promotions Scheduled Task runs, the user will then
+					have their Primary Usergroup changed.</li>
+				<li><strong>Move User to Usergroup</strong><br>
+					This should be set to the new usergroup that was setup earlier, i.e. Full Members’</li>
+			</ul>Note that the ‘Reputation Level’ and ‘Days Registered’ values although completed will have no effect on
+			this Promotion as the Strategy has been set to ‘Posts’. Once the above have been set, click the
+			<strong>Save</strong> button. <br>
+			<br>
+			Now complete, this Promotion will move active users from the ‘Registered Users’ usergroup to the ‘Approved
+			Members’ usergroup once they have made 10 posts in your forum.<div class="Mnote">
+				<div class="Mnotewarnheader">Note:</div>
+				<div class="Mnotewarninner">To promote users using other criteria, simply set the relevant ‘Days
+					Registered’ value, or ‘Reputation Level’ if promoting users after they receive ‘<em>x</em>’
+					reputation points and set the ‘Promotion Strategy’ to the appropriate option.</div>
+			</div>
+			

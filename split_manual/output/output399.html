@@ -1,0 +1,64 @@
+<table class="headingtable" cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tbody>
+					<tr valign="bottom">
+						<td>
+							<h3 style="display:inline"><a name="item408"></a>Setting-up a MySQL Database in cPanel</h3>
+						</td>
+						<td>
+							<div style="font:11px tahoma; text-align:right"><a
+									href="https://www.vbulletin.com/docs/onepage/#link408">Back to Top</a></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			For purposes of this manual, I am using screenshots from the cPanel X theme. Your cPanel theme may differ,
+			but the instructions will remain virtually the same.<br>
+			The only notable difference is if you are using the cPanel Advanced theme. If that's the case, click the
+			<span class="Mbutton" title="Click the &#39;Advanced Tools&#39; button">[Advanced Tools]</span> then the
+			<span class="Mbutton" title="Click the &#39;MySQL Databases&#39; button">[MySQL Databases]</span> and join
+			us again at the next step.<br>
+			For all others, you should see a screen something like the one in the figure below. Click the <span
+				class="Mbutton" title="Click the &#39;MySQL Databases&#39; button">[MySQL Databases]</span> icon.<p
+				class="Mfig"><img src="./vBulletin Manual_files/cpanel1.png" border="0" alt=""></p>On this screen, you
+			will enter the database name you want in the blank next to <span class="Mbutton"
+				title="Click the &#39;db:&#39; button">[db:]</span> then click <span class="Mbutton"
+				title="Click the &#39;Add DB&#39; button">[Add DB]</span>.<p class="Mfig"><img
+					src="./vBulletin Manual_files/cpanel2.png" border="0" alt=""></p>Once you have clicked <span
+				class="Mbutton" title="Click the &#39;Add DB&#39; button">[Add DB]</span> you will be brought to a
+			redirect screen confirming the creation of the database. Click the <span class="Mbutton"
+				title="Click the &#39;back&#39; button">[back]</span> or <span class="Mbutton"
+				title="Click the &#39;Go Back&#39; button">[Go Back]</span> link to return to the main MySQL screen.<br>
+			<br>
+			Now we have to create the database user and password. Scroll down the screen until you see this:<p
+				class="Mfig"><img src="./vBulletin Manual_files/cpanel3.png" border="0" alt=""></p>Enter the database
+			username and password you want in the appropriate blanks and click the <span class="Mbutton"
+				title="Click the &#39;Add User&#39; button">[Add User]</span>.<br>
+			<br>
+			Once you have clicked <span class="Mbutton" title="Click the &#39;Add User&#39; button">[Add User]</span>
+			you will be brought to a redirect screen confirming the creation of the username and password. Click the
+			<span class="Mbutton" title="Click the &#39;back&#39; button">[back]</span> or <span class="Mbutton"
+				title="Click the &#39;Go Back&#39; button">[Go Back]</span> link to return to the main MySQL screen.<br>
+			<br>
+			Now you have to add the user to the database so they can have access and control. Scroll until you see this:
+			<p class="Mfig"><img src="./vBulletin Manual_files/cpanel4.png" border="0" alt=""></p>Using the drop-down
+			menus, make sure you have selected the proper user and database, then click <span class="Mbutton"
+				title="Click the &#39;Add User to DB&#39; button">[Add User to DB]</span>.<br>
+			<br>
+			Again, you will be sent to the redirect screen confirming the addition of the user to the database. Again,
+			click the <span class="Mbutton" title="Click the &#39;back&#39; button">[back]</span> or <span
+				class="Mbutton" title="Click the &#39;Go Back&#39; button">[Go Back]</span> link to return to the main
+			MySQL screen. You should see something like this:<p class="Mfig"><img
+					src="./vBulletin Manual_files/cpanel5.png" border="0" alt=""></p>These are the database name,
+			username and password you will use in the config.php file.<div class="Mnote">
+				<div class="Mnotewarnheader">Note:</div>
+				<div class="Mnotewarninner">cPanel will always preface the database name and database username with your
+					main account username and an underscore.<br>
+					If you chose the database name <span class="Mbutton"
+						title="Click the &#39;forums&#39; button">[forums]</span> and the database username <span
+						class="Mbutton" title="Click the &#39;user&#39; button">[user]</span> your database will be
+					<span class="Mbutton"
+						title="Click the &#39;mainusername_forums&#39; button">[mainusername_forums]</span> and your
+					database username will be <span class="Mbutton"
+						title="Click the &#39;mainusername_user&#39; button">[mainusername_user]</span></div>
+			</div>
+			

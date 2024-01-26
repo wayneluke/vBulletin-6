@@ -1,0 +1,106 @@
+<table class="headingtable" cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tbody>
+					<tr valign="bottom">
+						<td>
+							<h2 style="display:inline"><a name="item29"></a>Common Installation Issues</h2>
+						</td>
+						<td>
+							<div style="font:11px tahoma; text-align:right"><a
+									href="https://www.vbulletin.com/docs/onepage/#link29">Back to Top</a></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<strong>After installing, there are no images or CSS in the AdminCP?</strong><br>
+			A. Make sure that you're accessing the AdminCP from site/admincp and not site/core/admincp. Also make sure
+			that the Site URL setting under Settings -&gt; Options -&gt; Site Name / URL / Contact Details has /core at
+			the end of it.<br>
+			<br>
+			<strong>None of the links work when I click on them on the front end.</strong><br>
+			Make sure that you have mod_rewrite (Apache) or URL Rewrite (IIS) enabled on your site. Upload the
+			corresponding .htaccess or web.config file found in your upload directory.<br>
+			<br>
+			If that do not resolve the problem, make sure there are no spaces or hidden characters in your /config.php.
+			These can cause PHP errors that confuse the vBulletin Routers and prevent redirects from happening
+			correctly.<br>
+			<br>
+			<strong>My vBulletin is installed in a sub-directory and the .htaccess doesn't work properly. However it
+				does work in the parent directory.</strong><br>
+			You will need to add a RewriteBase Directive to your .htaccess file. In the .htaccess file find the line
+			that says <span class="Mmono">RewriteEngine On</span>. After it place the following line:<br>
+			<span class="Mmono">RewriteBase /pathtovbulletin/</span><br>
+			<br>
+			<span class="Mmono">pathtovbulletin</span> should be the path from your website root or /.<br>
+			<br>
+			<strong>My hosting provider will not allow mod_rewrite or URL Rewrite to be installed.</strong><br>
+			Unfortunately, you will need to find a new hosting provider to continue to use vBulletin.<br>
+			<br>
+			<strong>What do I do with the old vBulletin 4.X files?</strong><br>
+			They should be deleted so they do not provide conflicts with the new system. You will want to maintain the
+			directories for your attachments or custom user uploads.<br>
+			<br>
+			<strong>What if I use a web server other than Apache or IIS?</strong><br>
+			We do not currently support other webservers. Please view the <a href="https://www.vbulletin.com/forum/"
+				target="_blank">community forums</a> as there may be community supplied solutions to other web server
+			configurations.<br>
+			<br>
+			<strong>When I click the Site Home Page in the Admincp, it leads me to a blank page</strong><br>
+			You need to access your vBulletin forums from <span class="Mmono">forumroot</span> and <span
+				class="Mmono">forumroot/admincp</span>. It should not be accessed via the <span
+				class="Mmono">forumroot/core</span> directory except for the installation and upgrade wizards.<br>
+			<br>
+			<strong>My host requires using mod_fcgid or phpSUExec on my server and vBulletin does not work.</strong><br>
+			You can try updating your .htaccess file with the following change:<br>
+			<br>
+			Find - <br>
+			RewriteRule ^(.*)$ index.php/$1 [L]<br>
+			<br>
+			Change To - <br>
+			RewriteRule ^(.*)$ index.php?/$1 [L]<br>
+			<br>
+			<strong>I have Javascript turned off and vBulletin does not work.</strong><br>
+			Javascript is required to use vBulletin.<br>
+			<br>
+			<strong>I can't access Site Builder on my phone.</strong><br>
+			This is by design.
+			<table class="headingtable" style="page-break-before:always" cellpadding="0" cellspacing="0" border="0"
+				width="100%">
+				<tbody>
+					<tr valign="bottom">
+						<td>
+							<h1 style="display:inline"><a name="item30"></a>Upgrading vBulletin</h1>
+						</td>
+						<td>
+							<div style="font:11px tahoma; text-align:right"><a
+									href="https://www.vbulletin.com/docs/onepage/#link30">Back to Top</a></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			From time to time it will be necessary to upgrade your vBulletin installation to the latest version, either
+			to gain new features or to fix newly discovered bugs in PHP, MySQL or vBulletin itself.<br>
+			<br>
+			You can upgrade to the latest version of vBulletin from the following vBulletin versions:<ul>
+				<li>Any version of vBulletin</li>
+				<li>Any version of vBulletin 4, from version 4.0.0 Beta 1 to the latest version.</li>
+				<li>Any version of vBulletin 3 from version 3.6.0 and newer. If your vBulletin version is older than
+					3.8.0, it is recommended that you upgrade to at least vBulletin 3.8.0 before you can upgrade to
+					vBulletin.</li>
+			</ul>The upgrade process differs depending upon the version of vBulletin currently installed on your web
+			server.<br>
+			<br>
+			When upgrading, the first step is always the same, in that you must log in to the vBulletin Members' Area
+			and download the latest vBulletin package available, as described in the <a
+				href="https://www.vbulletin.com/docs/html/main/downloadpackage" class="Mhop">installation
+				instructions</a>.<div class="Mwarn">
+				<div class="Mnotewarnheader">Warning:</div>
+				<div class="Mnotewarninner">We <strong>strongly</strong> recommend that you back up your database prior
+					to any upgrade. This will allow you to restore your data should anything happen during the upgrade.
+					The chance of a catastrophic failure is very remote but it can happen.<br>
+					<br>
+					A document detailing how to back up your database is available in the <em>Technical Documents</em>
+					section of the vBulletin Manual's Appendices, <a
+						href="https://www.vbulletin.com/docs/html/main/manual_database_backup" class="Mhop">here</a>.
+				</div>
+			</div>
+			

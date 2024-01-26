@@ -1,0 +1,82 @@
+<table class="headingtable" cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tbody>
+					<tr valign="bottom">
+						<td>
+							<h3 style="display:inline"><a name="item386"></a>Restricting Access to Your Files</h3>
+						</td>
+						<td>
+							<div style="font:11px tahoma; text-align:right"><a
+									href="https://www.vbulletin.com/docs/onepage/#link386">Back to Top</a></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			Restricting unauthorized access to your files is one of the most important things you can do. If someone has
+			access to your files, they can alter them to send data to them or they can access your database directly
+			with the information given.<br>
+			<br>
+			The most common method of authorizing someone is called "Basic Authorization. The Basic authentication
+			method transmits user names and passwords across the network in plaintext or unencrypted form. A computer
+			vandal could use a network monitoring tool to intercept this information. You can use your Web server's
+			encryption features, in combination with Basic authentication, to secure user account information
+			transmitted across the network. <br>
+			<br>
+			<strong>.htaccess</strong><br>
+			.htaccess is how you can easily secure files in Apache. It allows you to use Apache's configuration
+			directives without editing the default configuration file (httpd.conf). This makes it useful for communities
+			on shared or virtual hosting or dedicated hosting. <br>
+			<br>
+			There are a lot of things you can do with .htaccess but we are concerned with denying access to specific
+			files and directories. <br>
+			<br>
+			<strong>NTAUTH</strong><br>
+			Windows comes with a permissions system often referred to as NTAUTH. It is part of the NTFS file system and
+			integrated into IIS and other server technologies in Windows. For instructions on how to use this to protect
+			your server please see Microsoft's IIS Documentation:<br>
+			<a href="http://www.microsoft.com/windows2000/en/server/iis/default.asp?url=/windows2000/en/server/iis/htm/core/iiabasc.htm"
+				target="_blank">http://www.microsoft.com/windows2000/en/server/iis/default.asp?url=/windows2000/en/server/iis/htm/core/iiabasc.htm</a><br>
+			<br>
+			<strong>Alternatives to NTAUTH</strong><br>
+			<a href="http://www.troxo.com/products/iispassword/" target="_blank">IISPassword</a> is a free utility that
+			can be installed on your IIS server. IISPassword uses Basic HTTP Authentication for password protecting web
+			sites on IIS, just like htaccess works on Apache. That makes your password protected Apache web site
+			compatible with IIS, and vice versa. <br>
+			<br>
+			<strong>CHMOD, or File Permissions on your Unix/Linux System</strong><br>
+			You can control who has access to files on your servers beyond whether a web browser can call them up and
+			have the server execute them. This is based on file permissions and can help to protect your files if
+			someone gains unauthorized access to another portion of the machine. File permissions will help protect your
+			site more on a shared server which has many people accessing it than they will on a server that only you
+			have access to. However it is a good practice to only give the minimum permissions that you need to give and
+			allow your site to work properly.<br>
+			<br>
+			In our case, the web server application needs to be able to read your vBulletin files as long as PHP is
+			installed as an Apache or ISAPI Module. If you are using the CGI executable, then they will probably need
+			Execute permissions as well. In Linux and Unix, you change permissions using a tool called CHMOD which lets
+			you set the permissions. <br>
+			<br>
+			CHMOD can use either bitkeys, a series of numbers to designate permissions, or letters to represent the
+			permissions. Both of these can be confusing to the uninitiated. Using the numbers results in more concise
+			commands with the same number of control. You will see these commonly referred to in technical
+			documents.<br>
+			<br>
+			To set the permissions for your vBulletin files, with PHP as a Apache or ISAPI module, you would type the
+			following in your command prompt on the server:<div class="Mcodecontainer">
+				<pre class="Mcodeblock">chmod 644 *</pre>
+			</div>This tells the server that the owner of the file (you) has permission to read and write to the files
+			but everyone else only has permission to read them.<br>
+			<br>
+			If your hosting provider tells you that you need Read and Write permissions on your files then you would use
+			this command:<div class="Mcodecontainer">
+				<pre class="Mcodeblock">chmod 755 *</pre>
+			</div>A more indepth tutorial on CHMOD can be found here: <a href="http://catcode.com/teachmod/index.html"
+				target="_blank">http://catcode.com/teachmod/index.html</a><br>
+			<br>
+			Most modern SFTP clients can handle this automatically though a properties dialog on the context menu. Refer
+			to your client software for documentation on how to do this. <br>
+			<br>
+			Please Note: If an attacker gets root access to your machine, there is no way to protect your files with
+			permissions. They will be able to access everything. If this happens you will need a recent backup so you
+			can recover your site.<br>
+
+			

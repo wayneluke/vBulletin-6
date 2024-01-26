@@ -1,0 +1,141 @@
+<table class="headingtable" cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tbody>
+					<tr valign="bottom">
+						<td>
+							<h5 style="display:inline"><a name="item104"></a>Message Attachment Options</h5>
+						</td>
+						<td>
+							<div style="font:11px tahoma; text-align:right"><a
+									href="https://www.vbulletin.com/docs/onepage/#link104">Back to Top</a></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			Path to Message Attachment Options: <span class="Mprocess">Settings &gt; Options &gt; Message Attachment
+				Options</span>.<br>
+			<br>
+			Following are the vBulletin options related to message attachments.<div class="Mnote">
+				<div class="Mnotewarnheader">Note:</div>
+				<div class="Mnotewarninner">You must click <strong>Save</strong> for changes to take effect.</div>
+			</div><strong>Limit Space Taken Up By Attachments (Total)</strong> (default: 0)<br>
+			Maximum disk space (in bytes) that all attachments can occupy.<br>
+			<br>
+			Set the option to ‘0’ for no space limit.<br>
+			<br>
+			<strong>Attachments Per Reply</strong> (default: 5)<br>
+			Number of files that can be attached to a single reply. <br>
+			<br>
+			Set the option to ‘0’ for no attachment limit.<br>
+			<br>
+			<strong>Attachment Upload Inputs</strong> (default: 1)<br>
+			Number of attachment upload input boxes to be displayed on the upload form.<br>
+			<br>
+			<strong>Attachment URL Inputs</strong> (default: 1)<br>
+			Number of attachment URL input boxes to be displayed on the upload form.<br>
+			<br>
+			<strong>Allow Deletion of Attachments Beyond Edit Time Limit</strong> (<strong>Yes</strong>/No)<br>
+			Whether or not users can delete attachments, even if the reply edit time limit has been exceeded.<br>
+			<br>
+			If you have attachment quotas enabled then you need to enable this option to allow users to delete
+			attachments once they reach their quota. Users still need permission to edit replies in the channel for this
+			to apply.<br>
+			<br>
+			<strong>Allow Deletion of Attachments in Closed Topics</strong> (Yes/<strong>No</strong>)<br>
+			Whether or not users can delete attachments from topics that are closed. <br>
+			<br>
+			If you have attachment quotas enabled then you might need to enable this option to allow users to delete
+			attachments once they reach their quota. Users still need permission to edit replies in the channel for this
+			to apply. <br>
+			<br>
+			If Allow Deletion of Attachments Beyond Edit Time Limit (above) is set to ‘No’, then this option applies
+			only up to the edit time limit setting.<br>
+			<br>
+			<strong>Allow Duplicate Attached Images</strong> (<strong>Yes</strong>/No)<br>
+			Checks for attachments posted by the user who is making the reply.<br>
+			<br>
+			<strong>Resize Images</strong> (<strong>Yes</strong>/No)<br>
+			Authorizes the system to try to resize images that are larger than your maximum allowed dimensions or
+			filesize. <br>
+			<br>
+			The resize attempt might fail if the image is too large to be successfully processed or if the image type is
+			not supported for resizing. <br>
+			<br>
+			When this option is enabled, limit the Attachment Input options above to one; otherwise the uploading of
+			multiple large images by one user could overburden your server resources.<br>
+			<br>
+			<strong>View Attached Images Inline</strong> (default: Yes, display thumbnails)<br>
+			Other choices are ‘No’; ‘Yes, full size’; and ‘Yes, full size, but only if the reply has only one
+			attachment’.<br>
+			<br>
+			If this option is set to any variant of ‘Yes’, you also need to set the Thumbnail Creation option (below) to
+			a variant of ‘Yes’.<br>
+			<br>
+			Set this to ‘No’ if you want to preserve bandwidth or server processor resources.<br>
+			<br>
+			<strong>Thumbnail Creation</strong> (default: Yes)<br>
+			Whether or not to all thumbnail creation.<br>
+			<br>
+			Other choices are ‘No’; ‘Yes, with border’; ‘Yes, with dimensions’; and ‘Yes, with border and
+			dimensions’.<br>
+			<br>
+			If your version of PHP supports image functions, setting this option to ‘Yes’ enables the creation of
+			thumbnails for images. This is the “master switch” to enable/disable thumbnail display. <br>
+			<br>
+			Go to <span class="Mprocess">Attachments &gt; Attachment Manager &gt; Edit &gt; Display</span> to choose the
+			image types to be thumbnailed.<div class="Mnote">
+				<div class="Mnotewarnheader">Note:</div>
+				<div class="Mnotewarninner">You must rebuild the attachment thumbnails via <span
+						class="Mprocess">Maintenance &gt; Update Counters &gt; Rebuild Attachment Thumbnails</span>
+					after changing this setting.</div>
+			</div><strong>Thumbnail Size</strong> (default: 280)<br>
+			Number representing the maximum height and width (in pixels) of the thumbnail.<br>
+			<br>
+			The image will be resized so that the longest side is no larger than this setting.<br>
+			<br>
+			If you are changing this value and have existing image attachments on your channels, you need to rebuild
+			your thumbnails to update the existing attachments.<br>
+			<br>
+			<strong>Thumbnail Quality</strong> (default: 75)<br>
+			Number representing the quality of thumbnails of filetype JPG. <br>
+			<br>
+			We recommend trying first 75. Other choices are ‘65’, ‘85’, and ‘95’.<br>
+			<br>
+			<strong>Thumbnails Per Row</strong> (default: 5)<br>
+			Number of thumbnails per line that you want to display on a user's reply, assuming you allow more than one
+			attachment per reply.<br>
+			<br>
+			This is an approximate number, depending on thumbnail size and browser width. It will only display as many
+			thumbnails as possible without causing a horizontal slidebar.<br>
+			<br>
+			<strong>Thumbnail Color</strong> (default: #000000)<br>
+			Standard web color code for the border and label of the thumbnail.<br>
+			<br>
+			<strong>Use Image Lightbox</strong> (default: Yes, Click)<br>
+			Whether or not to use an image lightbox, and the action that will display the lightbox.<br>
+			<br>
+			Other choices are ‘No’; ‘Yes, Hover’; and ‘Yes, Click or Hover’.<br>
+			<br>
+			Use the lightbox for quick display of attached image thumbnails rather than instantly loading the full size
+			image on a new page.<br>
+			<br>
+			<strong>Asset Manager - Enable</strong> (default: Yes, Flash Upload by Default)<br>
+			Whether or not to enable the vBulletin Asset Manager.<br>
+			<br>
+			Other choices are ‘No’; and ‘Yes, Ajax Upload by Default’.<br>
+			<br>
+			The asset manager is an enhanced interface for uploading files. It allows users to reuse their existing
+			attachments. Some older browsers might have problems using the interface.<br>
+			<br>
+			Users can also choose to disable the asset manager from within their profiles.<br>
+			<br>
+			<strong>Asset Manager - Assets Per Page</strong> (default: 20)<br>
+			Maximum number of assets to display before displaying page navigation.<br>
+			<br>
+			This number must be at least ‘1’.<br>
+			<br>
+			<strong>Advanced Insert Image Popup - Enable</strong> (<strong>Yes</strong>/No)<br>
+			Whether or not to turn on the Advanced Insert Image dialog, which allows users to insert images from their
+			computer or retrieve images referenced from a URL and store them locally.<br>
+			<br>
+			Disabling this option displays the legacy URL attachment dialog.
+			

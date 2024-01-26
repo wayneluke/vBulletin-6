@@ -1,0 +1,111 @@
+<table class="headingtable" cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tbody>
+					<tr valign="bottom">
+						<td>
+							<h2 style="display:inline"><a name="item42"></a>How to Patch Your Site</h2>
+						</td>
+						<td>
+							<div style="font:11px tahoma; text-align:right"><a
+									href="https://www.vbulletin.com/docs/onepage/#link42">Back to Top</a></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			From time to time, it's necessary to issue a Security Patch (or Patch Level) release for vBulletin software.
+			This differs from the normal upgrade routine so this short article will clarify exactly what needs to be
+			done when we announce a Patch Level (PL) release.<br>
+			<br>
+			A patch level release contains fixes for only the most critical issues in the previous release. In most
+			cases, these are released to address a security issue. However they can be released for data integrity
+			issues as well.<br>
+			<br>
+			A patch level is designed to be installed directly over top of your existing installation, with <em>no other
+				action</em>. You do <em>not</em> need to run any upgrade scripts.<br>
+			<br>
+			<font size="3"><strong>Download The Patch</strong></font><br>
+			<br>
+			A Patch Level release doesn't come as a full set of files. As such, it doesn't appear in the normal download
+			location. To access the Patch Release, first login to the vBulletin Members Area. In the left hand
+			navigation within the 'Support Services' section, click on the <a
+				href="http://members.vbulletin.com/patches.php" target="_blank">Patches/Security Patches</a> link and
+			you will see a screen showing all Patch Level releases for your Licenses.<br>
+			<br>
+			Patch Packages are cumulative so you only need the latest one available for your version. <strong>You cannot
+				use a Patch to upgrade your site.</strong><br>
+			<br>
+			Simply click on the Patch for the version you're currently running and you will be taken to the download
+			page, where you will be given options for how to download the Patch. The following options are available via
+			the 'More Download Options' radio button should you need to change these before downloading the ZIP file (in
+			the majority of cases, these will not need to be altered):<ul>
+				<li><strong>PHP File Extension</strong> - As a general rule, web servers will use .php as the extension
+					for PHP scripts, but some servers may use a different extension, or you may simply wish to use a
+					different extension out of your own preference. Various extensions are available here for you to
+					choose.</li>
+				<li><strong>Download File Format</strong> - This option allows you to choose the compression format of
+					the package you are about to download. Most people will want to download the <em>.zip</em> package
+					as Windows® has built-in support for zip files. However, if you are downloading the package directly
+					to a Linux server you may prefer to use the tarball (<em>.tar.gz</em>) format.</li>
+				<li><strong>CGI Shebang</strong> - This option will only be of use to you if your server runs PHP as a
+					CGI rather than as a web server module. If your server runs PHP as a CGI and requires a shebang
+					(such as <em>#!/usr/bin/php</em>) then you can enter the required text here and it will
+					automatically be inserted into whichever PHP files in vBulletin require its use.</li>
+			</ul>When you have set the download options you can click the <strong>Download</strong> button to start the
+			download. When the download prompt window appears, you should choose the <strong>Save</strong> option and
+			choose a directory on your computer in which to save the package.<br>
+			<br>
+			<font size="3"><strong>Updating Files On Your Server</strong></font><br>
+			<br>
+			With Patch Level releases, the preparation work is very small - simply extract the ZIP package to your local
+			machine! Once you've done this, you will notice that there is no <strong>upload</strong> folder. A Patch
+			Level release only contains the files that are being fixed so will not see a complete installation
+			package<br>
+			<br>
+			Before you do this <strong>you should close your forums</strong>. This will help eliminate any potential db
+			errors as people attempt to access your forums before the upgrade is complete.<br>
+			<br>
+			It will also be a good idea at this point to take a backup of your site and database. While the database
+			won't be updated with a Patch Level release, it's useful to have an up-to-date backup in any case. For more
+			information on backing up your database, please see this section of the Online Manual.<br>
+			<br>
+			Connect to your FTP server using your FTP client of choice. Select the Patch Level files in the local pane
+			and open the existing old files in the remote pane, then drag the new folders/files to the remote
+			window.<br>
+			<br>
+			You will most likely be prompted by the FTP client at this point to ask if you want to overwrite the
+			existing files. You should confirm this prompt, telling the FTP client that yes, you do want to overwrite
+			the existing files. If the prompt gives you the option to overwrite all existing files without prompting
+			again, use this option.<br>
+			<br>
+			Once the files are uploaded, that's your installation patched! There are no scripts to run and you can
+			re-open your forums to users again.<br>
+			<br>
+			This is not a full upgrade. You do not need to run any upgrade scripts to complete the upgrade.<div
+				class="Mnote">
+				<div class="Mnotewarnheader">Note:</div>
+				<div class="Mnotewarninner">Patch Level Releases are only supported for their targeted version. If you
+					are using a previous version, you will need to perform a complete upgrade for full functionality and
+					support. Patch Levels will only be released for the latest version in an active vBulletin series.
+				</div>
+			</div>
+			<table class="headingtable" style="page-break-before:always" cellpadding="0" cellspacing="0" border="0"
+				width="100%">
+				<tbody>
+					<tr valign="bottom">
+						<td>
+							<h1 style="display:inline"><a name="item43"></a>Administrators</h1>
+						</td>
+						<td>
+							<div style="font:11px tahoma; text-align:right"><a
+									href="https://www.vbulletin.com/docs/onepage/#link43">Back to Top</a></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			An administrator is often (but not always) the owner of the vBulletin product. There can be more than one
+			administrator in a system, though they must be given the proper permissions. administrators handle
+			everything from announcements, to site settings, to usergroups, to user permissions and even Stylevars. In
+			addition to this, they have all the rights of a moderator as well as those of a regular user.<br>
+			<br>
+			This section only deals with the administrator’s administrative capabilities and options. It does not deal
+			with moderator or user options.
+			

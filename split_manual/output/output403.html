@@ -1,0 +1,53 @@
+<table class="headingtable" cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tbody>
+					<tr valign="bottom">
+						<td>
+							<h3 style="display:inline"><a name="item412"></a>Backing Up The Database via SSH/Telnet</h3>
+						</td>
+						<td>
+							<div style="font:11px tahoma; text-align:right"><a
+									href="https://www.vbulletin.com/docs/onepage/#link412">Back to Top</a></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			In order to back up your database via SSH or Telnet you will require 2 things:<br>
+			<br>
+			1) <a href="https://www.vbulletin.com/docs/html/main/what_is_ssh" class="Mhop">SSH</a> or <a
+				href="https://www.vbulletin.com/docs/html/main/what_is_telnet" class="Mhop">Telnet</a> access to your
+			site. You will need to check with your hosting company to see if this is available.<br>
+			<br>
+			2) An SSH/Telnet Client, such as PuTTy.<br>
+			<br>
+			Open your SSH/Telnet client and log into your website. The command line prompt you will see will vary by
+			OS.<br>
+			For most hosting companies, this will bring you into the FTP root folder.<br>
+			<br>
+			Type in the following to create a backup in the current directory:<br>
+			<br>
+			<span class="Mtype">mysqldump --opt -Q -u <strong>dbusername</strong> -p <strong>databasename</strong> &gt;
+				backupname.sql</span><br>
+			<br>
+			Or to create a backup in a separate directory (signified by /path/to/) type:<br>
+			<br>
+			<span class="Mtype">mysqldump --opt -Q -u <strong>dbusername</strong> -p <strong>databasename</strong> &gt;
+				/path/to/backupname.sql</span><br>
+			<br>
+			You will be prompted for the database password. Enter it and the database will backup.<br>
+			<br>
+			If your hosting company has you on a remote MySQL server, such as mysql.yourhost.com, you will need to add
+			the servername to the command line. The servername will be the same as in your config.php. The command line
+			will be:<br>
+			<br>
+			Current directory:<br>
+			<br>
+			<span class="Mtype">mysqldump --opt -Q -h <strong>servername</strong> -u <strong>dbusername</strong> -p
+				<strong>databasename</strong> &gt; backupname.sql</span><br>
+			<br>
+			Separate directory:<br>
+			<br>
+			<span class="Mtype">mysqldump --opt -Q -h <strong>servername</strong> -u <strong>dbusername</strong> -p
+				<strong>databasename</strong> &gt; /path/to/backupname.sql</span><br>
+			<br>
+			You can then, if you wish, download the backup to your home computer.
+			

@@ -1,0 +1,76 @@
+<table class="headingtable" cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tbody>
+					<tr valign="bottom">
+						<td>
+							<h3 style="display:inline"><a name="item387"></a>Securing your Config.php File</h3>
+						</td>
+						<td>
+							<div style="font:11px tahoma; text-align:right"><a
+									href="https://www.vbulletin.com/docs/onepage/#link387">Back to Top</a></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			The config.php has several settings that can help protect your vBulletin installation. These settings are
+			listed below. Since these are security features, less is more. Give out as few permissions as possible,
+			otherwise your forum will not be as secure. Ultimately you should only include yourself as the owner in any
+			of the settings. It is recommended to leave the "Users with Query Running Permissions" setting empty until
+			you need to actually run a query. At that time, change the setting and reupload your config.php. The change
+			will take effect immediately. When you are done running your queries, change the setting back to the
+			default. With this one setting and your password, an attacker has complete control of your database.<div
+				class="Mcodecontainer">
+				<pre class="Mcodeblock">// ****** USERS WITH ADMIN LOG VIEWING PERMISSIONS ******
+// The users specified here will be allowed to view the admin log in the control panel.
+// Users must be specified by *ID number* here. To obtain a user's ID number,
+// view their profile via the control panel. If this is a new installation, leave
+// the first user created will have a user ID of 1. Seperate each userid with a comma.
+$config['SpecialUsers']['canviewadminlog'] = '1';
+// ****** USERS WITH ADMIN LOG PRUNING PERMISSIONS ******
+// The users specified here will be allowed to remove ("prune") entries from the admin
+// log. See the above entry for more information on the format.
+$config['SpecialUsers']['canpruneadminlog'] = '1';
+// ****** USERS WITH QUERY RUNNING PERMISSIONS ******
+// The users specified here will be allowed to run queries from the control panel.
+// See the above entries for more information on the format.
+// Please note that the ability to run queries is quite powerful. You may wish
+// to remove all user IDs from this list for security reasons.
+$config['SpecialUsers']['canrunqueries'] = '';
+// ****** UNDELETABLE / UNALTERABLE USERS ******
+// The users specified here will not be deletable or alterable from the control panel by any users.
+// To specify more than one user, separate userids with commas.
+$config['SpecialUsers']['undeletableusers'] = '';
+The section of code to look for is:
+// ****** UNDELETABLE / UNALTERABLE USERS ******
+// The users specified here will not be deletable or alterable from the control panel by any users.
+// To specify more than one user, separate userids with commas.
+$config['SpecialUsers']['undeletableusers'] = '';
+</pre>
+			</div><strong>Securing your config.php file</strong><br>
+			Making sure no one edits this file after you upload it to the server is a large priority. If an attacker can
+			change the contents of this file they can easily take control of your community. The first thing you want to
+			do is restrict access to this file via file permissions. Make sure no one can access this except you. Use
+			the techniques described under Restricting Access to secure this file.<br>
+			<br>
+			One thing you might consider doing is denying access via a Web Browser at all times. This file only needs to
+			be read internally via PHP and should not be accessed with a Web Browser. On most installations, this would
+			never occur. However should your version of PHP stop working for some reason, then the file can be served as
+			plain text and any prying eyes can see it. You can counter this on the webserver level with tools like
+			.htaccess and NTFS Permissions.<br>
+			<br>
+			Here is an example .htaccess file that would prevent access to the config.php. You would place this file
+			within your /includes directory.<br>
+			<br>
+			Apache 2.2:<div class="Mcodecontainer">
+				<pre class="Mcodeblock">&lt;Files config.php&gt;
+order deny,allow
+deny from all
+&lt;/Files&gt;</pre>
+			</div>Apache 2.4:<div class="Mcodecontainer">
+				<pre class="Mcodeblock">&lt;Files "config.php"&gt;  
+  Require all denied
+&lt;/Files&gt;
+</pre>
+			</div>For details on securing this file in IIS on a Windows Server please see:<br>
+			<a href="http://www.microsoft.com/windows2000/en/server/iis/htm/core/iidfpsc.htm"
+				target="_blank">http://www.microsoft.com/windows2000/en/server/iis/htm/core/iidfpsc.htm</a>
+			

@@ -1,0 +1,95 @@
+<table class="headingtable" cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tbody>
+					<tr valign="bottom">
+						<td>
+							<h3 style="display:inline"><a name="item407"></a>Setting-up a MySQL Database on the Command
+								Line</h3>
+						</td>
+						<td>
+							<div style="font:11px tahoma; text-align:right"><a
+									href="https://www.vbulletin.com/docs/onepage/#link407">Back to Top</a></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			If you have root access to your web server, you can set up a new database for vBulletin to use via the MySQL
+			command line.<table cellpadding="5" cellspacing="0" border="0">
+				<!--<tr><td nowrap="nowrap"><b>Step Num</b></td><td><b>Instruction</b></td></tr>-->
+				<tbody>
+					<tr valign="top">
+						<td class="Mstepnum">1</td>
+						<td class="Msteptext" width="100%">Firstly, you will need to log in to your server via SSH or
+							Telnet as the root user, or some other user with permission to control MySQL at the root
+							level. Windows users can use Command Prompt.</td>
+					</tr>
+					<tr valign="top">
+						<td class="Mstepnum">2</td>
+						<td class="Msteptext" width="100%">Next, you will need to start the MySQL command line tool by
+							typing something along these lines:<blockquote class="Mtype">/usr/local/mysql/bin/mysql
+								-u<strong>root</strong> -p</blockquote>on Windows it willl be similar to:<blockquote
+								class="Mtype">c:\mysql\bin\mysql -u<strong>root</strong> -p</blockquote>The system will
+							then ask you to provide the MySQL root password to continue.</td>
+					</tr>
+					<tr valign="top">
+						<td class="Mstepnum">3</td>
+						<td class="Msteptext" width="100%">When you have completed the login to MySQL you will see a
+							<span class="Mmono">mysql&gt;</span> command prompt. To see the list of databases that
+							already exist, type the following:<blockquote class="Mtype">SHOW DATABASES;</blockquote>You
+							will then be given a list of the databases that already exist. The name you choose for your
+							new database <strong>must</strong> be unique, so ensure that the name you want to give to
+							your new database is not already in use.</td>
+					</tr>
+					<tr valign="top">
+						<td class="Mstepnum">4</td>
+						<td class="Msteptext" width="100%">After you have decided upon a name, you can run the query to
+							create the new database. For this example, we will call the database
+							<em>example_database</em>.<br>
+							<br>
+							Type the following, replacing the name of the database with the name you have chosen:
+							<blockquote class="Mtype">CREATE DATABASE <strong>example_database</strong>;</blockquote>
+						</td>
+					</tr>
+					<tr valign="top">
+						<td class="Mstepnum">5</td>
+						<td class="Msteptext" width="100%">Having created the database, we will now create a MySQL user
+							account with permission to access the new database. Doing this is a security precaution, as
+							it's never a good idea to have PHP scripts talking to MySQL with root privileges.<br>
+							<br>
+							In this example, we will name our new user <em>example_user</em> and give the account a
+							password of <em>p4ssw0rd</em>. Replace those values as appropriate when you type the
+							following:<blockquote class="Mtype">GRANT ALL ON <strong>example_database</strong>.*<br>
+								TO <strong>example_user</strong>@localhost IDENTIFIED BY '<strong>p4ssw0rd</strong>';
+							</blockquote>
+						</td>
+					</tr>
+				</tbody>
+			</table>Your new database and new user are ready to be used. Based on the example names given in this
+			document, you should enter the following values into <a
+				href="https://www.vbulletin.com/docs/html/main/editconfig" class="Mhop">config.php</a>:<div
+				class="Mcodecontainer">
+				<div class="Mcodeblock"><code><span style="color: #000000">
+							<span style="color: #0000BB">$config</span><span style="color: #007700">[</span><span
+								style="color: #DD0000">'Database'</span><span style="color: #007700">][</span><span
+								style="color: #DD0000">'dbname'</span><span
+								style="color: #007700">]&nbsp;=&nbsp;</span><span
+								style="color: #DD0000">'example_database'</span><span style="color: #007700">;
+								<br></span><span style="color: #0000BB">$config</span><span
+								style="color: #007700">[</span><span style="color: #DD0000">'MasterServer'</span><span
+								style="color: #007700">][</span><span style="color: #DD0000">'servername'</span><span
+								style="color: #007700">]&nbsp;=&nbsp;</span><span
+								style="color: #DD0000">'localhost'</span><span style="color: #007700">;
+								<br></span><span style="color: #0000BB">$config</span><span
+								style="color: #007700">[</span><span style="color: #DD0000">'MasterServer'</span><span
+								style="color: #007700">][</span><span style="color: #DD0000">'username'</span><span
+								style="color: #007700">]&nbsp;=&nbsp;</span><span
+								style="color: #DD0000">'example_user'</span><span style="color: #007700">;
+								<br></span><span style="color: #0000BB">$config</span><span
+								style="color: #007700">[</span><span style="color: #DD0000">'MasterServer'</span><span
+								style="color: #007700">][</span><span style="color: #DD0000">'password'</span><span
+								style="color: #007700">]&nbsp;=&nbsp;</span><span
+								style="color: #DD0000">'p4ssw0rd'</span><span style="color: #007700">;&nbsp;
+								<br></span><span style="color: #0000BB"></span>
+						</span>
+					</code></div>
+			</div>
+			

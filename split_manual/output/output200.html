@@ -1,0 +1,79 @@
+<table class="headingtable" cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tbody>
+					<tr valign="bottom">
+						<td>
+							<h6 style="display:inline"><a name="item205"></a>User Banning Options</h6>
+						</td>
+						<td>
+							<div style="font:11px tahoma; text-align:right"><a
+									href="https://www.vbulletin.com/docs/onepage/#link205">Back to Top</a></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			To get to the <strong>User Banning Options</strong> panel, click on the following to your left: <span
+				class="Mprocess">Settings &gt; Options &gt; User Banning Options</span>.<br>
+			<br>
+			This section of the Admin Control Panel allows you to set the banning options for your forum, including IP
+			bans.<div class="Mnote">
+				<div class="Mnotewarnheader">Note:</div>
+				<div class="Mnotewarninner">You must click <strong>Save</strong> for changes to take effect.</div>
+			</div>
+			<ul>
+				<li><strong>Enable Banning Options</strong> (Yes/<u>No</u>)<br>
+					Banning allows you to stop certain IP addresses and email addresses from registering and posting to
+					the forum.</li>
+				<li><strong>Banned IP Addresses</strong><br>
+					Use this option to prevent certain IP addresses from accessing any part of your board.<br>
+					<br>
+					If you enter a complete IP address (242.21.11.7), only that IP will be banned.<br>
+					If you enter a partial IP (243.21.11. or 243.21.11), any IPs that begin with the partial IP will be
+					banned. For example, banning 243.21.11 will prevent 243.21.11.7 from accessing your board. However,
+					243.21.115.7 would still be able to access your board.<br>
+					<br>
+					You may also use an '*' as a wildcard for increased flexibility. For example, if you enter
+					243.21.11*, many IPs will be banned including: 243.21.11.7, 243.21.115.7, 243.21.119.225.<div
+						class="Mwarn">
+						<div class="Mnotewarnheader">Warning:</div>
+						<div class="Mnotewarninner">Use this option with caution. Entering an incorrect IP can result in
+							banning yourself or other genuine users from your forums.</div>
+					</div>
+				</li>
+				<li><strong>Banned Email Addresses</strong><br>
+					You may ban any email addresses from registering and posting. Type in the complete email address
+					(user@example.com), or use a partial email address (as in @example.com).<br>
+					<br>
+					Note that partial email addresses are matched from the <em>end</em> of the address unless you enable
+					<strong>Aggressive Email Banning</strong> (see below). Therefore if you ban '@example.com' you will
+					ban 'user@example.com', but if you ban '@example' that user will <em>not</em> be banned. If you
+					enable <strong>Aggressive Email Banning</strong>, 'user@example.com' would be banned by
+					'@example'.<br>
+					<br>
+					If the email address of a user attempting to register or change their email address matches any of
+					the addresses you specify here will see a no-permission error. For example, if you have banned
+					'example.com' then a user attempting to use 'someone@example.com' will be rejected.</li>
+				<li><strong>Aggressive Email Banning</strong> (Yes/<u>No</u>)<br>
+					If this option is enabled, incomplete addresses are matched anywhere in the email address when
+					checking for banned emails, not just the end.<br>
+					<br>
+					For example, if this option is enabled 'yahoo' will block any email address with 'yahoo' in it. If
+					this option is disabled, no emails will be banned unless the ban was changed to 'yahoo.com'.</li>
+				<li><strong>Allow User to Keep Banned Email Addresses</strong> (<u>Yes</u>/No)<br>
+					If you ban an email address and a user already uses that address, a problem will occur. Using this
+					option, you can specify whether the user will have to enter a new email address in their profile
+					when they next modify their email address, or whether the user can just keep the email address which
+					you have banned.</li>
+				<li><strong>Global Ignore</strong><br>
+					This option allows you to effectively add a user or users to every member's 'Ignore List'. However,
+					users in this list can still see their own posts and threads.<br>
+					<br>
+					Enter a list of userid numbers into the textbox, separated by spaces (for example: 4 12 68 102).<div
+						class="Mnote">
+						<div class="Mnotewarnheader">Note:</div>
+						<div class="Mnotewarninner">If you change this option, you need to rebuild thread and then forum
+							information in <a href="https://www.vbulletin.com/docs/html/main/item_name"
+								class="Mhop">Maintenance &gt; Update Counters</a>.</div>
+					</div>
+				</li>
+			</ul>
+			

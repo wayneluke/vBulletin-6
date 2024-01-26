@@ -1,0 +1,75 @@
+<table class="headingtable" cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tbody>
+					<tr valign="bottom">
+						<td>
+							<h2 style="display:inline"><a name="item418"></a>Using Forum, Blog or CMS in a Subdirectory.
+							</h2>
+						</td>
+						<td>
+							<div style="font:11px tahoma; text-align:right"><a
+									href="https://www.vbulletin.com/docs/onepage/#link418">Back to Top</a></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<strong>Running your forums in multiple directories.</strong><br>
+			With vBulletin 4.1.1, you have gained the ability to run your forum components in different directories.
+			This includes subdirectories of your primary installation directory and sibling directories. However due to
+			the way that the forums and blog are implemented, it is a little different than other software packages.
+			Implementing this on your site is fairly straightforward though.<br>
+			<br>
+			<strong>Components Supported</strong><br>
+			Currently vBulletin supports running the CMS, Forum, and Blogs in directories other than your primary
+			installation directory. <br>
+			<br>
+			<strong><br>
+				Uploading the files.</strong><br>
+			In your 4.1.1 package there are a number of new files located within the Do Not Upload Folder to implement
+			this functionality. You need to upload these files first. Go into your Do Not Upload folder and you will see
+			four subfolders. These are named – blog, forum, cms and rewrite. <br>
+			<br>
+			You need to upload the folders that correspond to the components that you want to run in a sub-directory on
+			your website. For our example today, we're going to concentrate on the forum directory. Upload this to your
+			forum root directory using your favorite file transfer tool.<br>
+			<br>
+			<strong>Using Mod_Rewrite?</strong><br>
+			If you are using mod_rewrite friendly URLs, you need to upload the .htaccess for your components as well.
+			These are in the rewrite directory and get uploaded to their corresponding directories on the server.<br>
+			<br>
+			Note: Only .htaccess files are provided at this time. If you are using IIS 7 with the URL Rewrite addon, you
+			can import the .htaccess files within IIS Manager to create the appropriate web.config files. Consult the
+			help files in IIS Manager for instructions.<br>
+			<br>
+			<strong>vBulletin Settings</strong><br>
+			Once you have the files uploaded, you need to update some settings in your Admin Control Panel. Log in to
+			your Admin Control Panel and go to:<br>
+			<br>
+			Settings → Options → Site Name / URL / Contact Details.<br>
+			<br>
+			Here you will find new options for the URLS of your different components. They exist for Forums, CMS and
+			Blogs. These need to be set to the same directories that you uploaded the files to earlier.<br>
+			<br>
+			Forum Component URL <br>
+			If this is specified it will override the Forum URL setting for Forum specific pages. You may specify an
+			absolute URL or a URL relative to the main Forum URL<br>
+			<br>
+			Examples: <br>
+			If vBulletin is located at http://example.com/vbulletin then entering a value of "forum" will result in the
+			forum being located at http://example.com/vbulletin/forum.<br>
+			A value of "http://www.example.com/forum" will result in the forum being located at
+			http://www.example.com/forum. <br>
+			<br>
+			All vBulletin URLs must have the same host name. <br>
+			<br>
+			<strong>Cookies</strong><br>
+			You need to set your cookie path so that it is inclusive of all your vBulletin directories. If your cookie
+			path is the default of '/' then you don't need to change anything. However if you changed this for any
+			reason, it may need to be updated. For example, if vBulletin is located at www.host.com/mysite/vbulletin but
+			the forum is located at www.mysite.com/mysite/forum then a cookie path of "mysite" will work, but a cookie
+			path of "mysite/vbulletin" will not work because the cookies will not be sent to pages in the mysite/forum
+			directory. <br>
+			<br>
+			Note: Changing the cookies for your site will invalidate all cookies for your users. They will be logged out
+			and must log back in.<br>
+
+			

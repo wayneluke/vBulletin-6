@@ -1,0 +1,181 @@
+<table class="headingtable" cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tbody>
+					<tr valign="bottom">
+						<td>
+							<h5 style="display:inline"><a name="item95"></a>User Registration Options</h5>
+						</td>
+						<td>
+							<div style="font:11px tahoma; text-align:right"><a
+									href="https://www.vbulletin.com/docs/onepage/#link95">Back to Top</a></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			Path to User Registration Options: <span class="Mprocess">Settings &gt; Options &gt; User Registration
+				Options</span><br>
+			<br>
+			The User Registration options allow you to control how new user registrations are handled on your site. <br>
+			<br>
+			You can activate the COPPA (Children’s Online Privacy Protection Act) registration system to comply with
+			COPPA laws that require children under the age of 13 to get parental consent before they can post.<div
+				class="Mnote">
+				<div class="Mnotewarnheader">Note:</div>
+				<div class="Mnotewarninner">You must click <strong>Save</strong> for changes to take effect.</div>
+			</div>
+			<div align="center"><img src="./vBulletin Manual_files/user-registration-options.png" border="0" alt="">
+			</div>
+			<br>
+			<strong>Allow New User Registrations</strong> (<u>Yes</u>/No)<br>
+			<br>
+			Temporarily (or permanently) allow or prevent anyone new from registering. <br>
+			<br>
+			If you set this option to No, anyone attempting to register is told that you are not accepting new
+			registrations at this time.<br>
+			<br>
+			<br>
+			<strong>Use COPPA Registration System</strong> (default: Enable COPPA)<br>
+			<br>
+			Use the COPPA registration system, which complies with COPPA laws and requires children under the age of 13
+			to get parental consent before they can post.<br>
+			<br>
+			For more info about this law, go to <a
+				href="https://business.ftc.gov/documents/bus45-how-comply-childrens-online-privacy-protection-rule"
+				target="_blank">http://business.ftc.gov/documents/bus45-how-comply-childrens-online-privacy-protection-rule</a>.<br>
+			<br>
+			<br>
+			<strong>COPPA Registration System Cookie Check</strong> (<u>Yes</u>/No)<br>
+			<br>
+			If you select Yes, the vBulletin system saves a cookie to the user's computer if an age under 13 is entered.
+			Subsequent registration attempts will fail, no matter what age is entered. This applies only if the previous
+			option is set to either ‘Enable COPPA’ or ‘Deny registration for users under 13 years’.<br>
+			<br>
+			<br>
+			<strong>Moderate New Members</strong> (<u>Yes</u>/No)<br>
+			<br>
+			Allows you to validate new members before they are classified as registered members and are allowed to
+			post.<br>
+			<br>
+			<br>
+			<strong>Send Welcome Email</strong> (<u>Yes</u>/No)<br>
+			<br>
+			If you select Yes, a welcome email that uses the email body/subject phrases for 'welcomemail' is sent to new
+			users.<div class="Mnote">
+				<div class="Mnotewarnheader">Note:</div>
+				<div class="Mnotewarninner">If you require emails to be verified, this email is sent after the user has
+					activated his or her account. If you moderate new memberships, no welcome mail is sent since the
+					user is already receiving an email as part of the moderation mechanism.</div>
+			</div><strong>Welcome Private Message</strong><br>
+			<br>
+			If you select Yes, a welcome private message (PM) is sent to new users. Input the username of the user from
+			which this PM is to be sent. To alter or translate this message, use the email body/subject phrases for
+			'welcomepm'.<div class="Mnote">
+				<div class="Mnotewarnheader">Note:</div>
+				<div class="Mnotewarninner">If you require emails to be verified, this message is sent after the user
+					has activated his or her account. You must also ensure that <em>Receive Private Messages</em> is
+					enabled in the <strong>Default Registration Options</strong>.</div>
+			</div><strong>Email Address to Notify About New Members</strong><br>
+			<br>
+			The email address you enter receives an email message when a new user signs up. Leave the option blank to
+			disable this function.<br>
+			<br>
+			<br>
+			<strong>Allow Multiple Registrations Per User</strong> (Yes/<u>No</u>)<br>
+			<br>
+			By default, vBulletin stops users from signing up for multiple names by checking for a cookie on the user's
+			machine. If one exists, the user cannot not sign up for additional names. However, this does not stop users
+			from logging out and then registering new accounts.<br>
+			<br>
+			If you want to allow users to sign up for multiple names, select Yes for this option, so they are not be
+			blocked from registering additional usernames.<br>
+			<br>
+			<br>
+			<strong>Verify Email Address in Registration</strong><br>
+			<br>
+			If you set this option to Yes, new members are not allowed to post messages until they go to a link that is
+			sent to them in an email when they sign up.<br>
+			<br>
+			If a user's account is not activated by the user visiting the link, it will remain in the Users Awaiting
+			Activation usergroup.<br>
+			<br>
+			<br>
+			<strong>Require Unique Email Addresses</strong> (<u>Yes</u>/No)<br>
+			<br>
+			The default for this option is to require unique email addresses for each registered user. This means that
+			no two users can have the same email address.<br>
+			<br>
+			You can disable this requirement by setting this option to No.<br>
+			<br>
+			<br>
+			<strong>Minimum Username Length</strong> (default: 3)<br>
+			<br>
+			Enter the minimum number of characters in a valid username.<br>
+			<br>
+			<br>
+			<strong>Maximum Username Length</strong> (default: 25)<br>
+			<br>
+			Enter the maximum number of characters in a valid username.<br>
+			<br>
+			<br>
+			<strong>Illegal User Names</strong><br>
+			<br>
+			Enter names that you do not want people to be able to register. If any of the strings are included within
+			the username, the user is given an error message. <br>
+			<br>
+			For example, if you make the name <em>John</em> illegal, the name <em>John</em>athan is also be
+			disallowed.<br>
+			<br>
+			Separate names with spaces.<br>
+			<br>
+			<br>
+			<strong>Username Regular Expression</strong><br>
+			<br>
+			Use this option to require that the username match a regular expression (<a
+				href="http://us2.php.net/manual/en/function.preg-match.php" target="_blank">PCRE</a>).<br>
+			To disable this function leave the option blank. <br>
+			<br>
+			Examples:<br>
+			^[A-Z]+$ - Characters from A-Z only<br>
+			^[A-Z ]+$ - Characters from A-Z including space<br>
+			^[A-Z0-9 ]+$ - Alphanumeric characters including space<br>
+			^((?!&amp;#\d+;)[\x20-\x7E])+$ - ASCII characters from 32-127<br>
+			<br>
+			<br>
+			<strong>User Referrer</strong> (<u>Yes</u>/No)<br>
+			<br>
+			If you enable the User Referrer system, a user who visits your site through a link that contains
+			<em>referrerid=xxx</em> gives referral credit to the owner of the referrerid when they register (where
+			<em>xxx</em> is the userid of the referring user).<br>
+			<br>
+			<br>
+			<strong>Default Registration Options</strong><br>
+			<br>
+			The user options on the New User creation form in the Admin control panel, as well as the New User
+			registration form default to the settings you specify here, which include:<br>
+			<br>
+			<blockquote>Receive Admin Emails<br>
+				Invisible Mode<br>
+				Display Email<br>
+				Receive Private Messages<br>
+				Send Notification Email When a Private Message is Received<br>
+				Pop up a Notification Box When a Private Message is Received<br>
+				Enable Visitor Messaging<br>
+				Limit usage of Visitor Messages to Contacts and Moderators<br>
+				Allow vCard Download<br>
+				Display Signatures<br>
+				Display Avatars<br>
+				Display Images<br>
+				Display Reputation<br>
+				Automatic Thread Subscription Mode<br>
+				Message Editor Interface<br>
+				Thread Display Mode<br>
+				Require Birthday</blockquote>
+			<br>
+			<br>
+			<strong>Username Reuse Delay</strong> (default: 365)<br>
+			<br>
+			When a username is changed, you can prevent users from registering with that original name for a certain
+			length of time. <br>
+			<br>
+			Use this setting to determine the time before a deleted or previous username can be reused, or set it to 0
+			to disable this function.
+			

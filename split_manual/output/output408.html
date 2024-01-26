@@ -1,0 +1,223 @@
+<table class="headingtable" cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tbody>
+					<tr valign="bottom">
+						<td>
+							<h2 style="display:inline"><a name="item417"></a>The vBulletin Datastore</h2>
+						</td>
+						<td>
+							<div style="font:11px tahoma; text-align:right"><a
+									href="https://www.vbulletin.com/docs/onepage/#link417">Back to Top</a></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			To improve performance, vBulletin caches certain information which isn't updated often in the datastore, so
+			that it doesn't have to be rebuilt every time it's needed. <br>
+			<br>
+			Examples for this are<ul>
+				<li>forumcache - A serialized array with all the forums along with their options and permissions </li>
+				<li>options - A serialized array with all the information set in the vBulletin Options</li>
+				<li>profilefield - A serialized array of all the profile fields and their options.</li>
+			</ul>The datastore data is stored in the datastore database table by default, but certain settings in the
+			config.php file allow this to be saved in other places, to improve performance:<div class="Mcodecontainer">
+				<div class="Mcodeblock"><code><span style="color: #000000">
+							<span style="color: #0000BB"></span><span
+								style="color: #FF8000">/*&nbsp;####&nbsp;DATASTORE&nbsp;CACHE&nbsp;CONFIGURATION&nbsp;&nbsp;####
+								<br>Here&nbsp;you&nbsp;can&nbsp;configure&nbsp;different&nbsp;methods&nbsp;for&nbsp;caching&nbsp;datastore&nbsp;items.
+								<br>vB_Datastore_Filecache&nbsp;-&nbsp;to&nbsp;use&nbsp;includes/datastore/datastore_cache.php
+								<br>vB_Datastore_APCu&nbsp;-&nbsp;to&nbsp;use&nbsp;APCu&nbsp;(which&nbsp;replaces&nbsp;APC)
+								<br>vB_Datastore_XCache&nbsp;-&nbsp;to&nbsp;use&nbsp;XCache&nbsp;(not&nbsp;available&nbsp;for&nbsp;PHP&nbsp;7+)
+								<br>vB_Datastore_Memcache&nbsp;-&nbsp;to&nbsp;use&nbsp;one&nbsp;or&nbsp;more&nbsp;Memcache&nbsp;servers,&nbsp;more&nbsp;configuration&nbsp;below.
+								<br>vB_Datastore_Redis&nbsp;-&nbsp;to&nbsp;use&nbsp;one&nbsp;or&nbsp;more&nbsp;Redis&nbsp;servers,&nbsp;more&nbsp;configuration&nbsp;options&nbsp;below.&nbsp;*/
+								<br>//&nbsp;$config['Datastore']['class']&nbsp;=&nbsp;'vB_Datastore_Filecache';&nbsp;
+								<br></span><span style="color: #0000BB"></span>
+						</span>
+					</code></div>
+			</div>In version 4.2.5, five options are available: <br>
+			<br>
+			<strong>vB_Datastore_Filecache </strong><br>
+			This option saves the datastore data in the /includes/datastore/datastore_cache.php file. Reading from the
+			filesystem is generally less load-intensive than querying the database. <br>
+			<br>
+			To use this option, you'll need to make sure that the /includes/datastore/datastore_cache.php file is
+			writable and readable by PHP. Usually this is chmod 777. Then, uncomment the following line in the
+			config.php file.<div class="Mcodecontainer">
+				<div class="Mcodeblock"><code><span style="color: #000000">
+							<span style="color: #0000BB"></span><span
+								style="color: #FF8000">//&nbsp;$config['Datastore']['class']&nbsp;=&nbsp;'vB_Datastore_Filecache';&nbsp;
+								<br></span><span style="color: #0000BB"></span>
+						</span>
+					</code></div>
+			</div><strong>vB_Datastore_APCu </strong><br>
+			This option saves the datastore data in shared memory using <a
+				href="https://en.wikipedia.org/wiki/List_of_PHP_accelerators#Alternative_PHP_Cache_.28APC.29"
+				target="_blank">APCu</a> on a server. APCu is replacing APC.<br>
+			<br>
+			To use this option, replace the following line:<div class="Mcodecontainer">
+				<div class="Mcodeblock"><code><span style="color: #000000">
+							<span style="color: #0000BB"></span><span
+								style="color: #FF8000">//&nbsp;$config['Datastore']['class']&nbsp;=&nbsp;'vB_Datastore_Filecache';&nbsp;
+								<br></span><span style="color: #0000BB"></span>
+						</span>
+					</code></div>
+			</div>...with this one:<div class="Mcodecontainer">
+				<div class="Mcodeblock"><code><span style="color: #000000">
+							<span style="color: #0000BB">$config</span><span style="color: #007700">[</span><span
+								style="color: #DD0000">'Datastore'</span><span style="color: #007700">][</span><span
+								style="color: #DD0000">'class'</span><span
+								style="color: #007700">]&nbsp;=&nbsp;</span><span
+								style="color: #DD0000">'vB_Datastore_APCu'</span><span style="color: #007700">;&nbsp;
+								<br></span><span style="color: #0000BB"></span>
+						</span>
+					</code></div>
+			</div><strong>vB_Datastore_Memcache </strong><br>
+			This option saves the datastore data on a <a href="https://en.wikipedia.org/wiki/Memcached"
+				target="_blank">memcached</a> server. This is a fast memory caching system which can also be run on a
+			different server to reduce load on the main server. <br>
+			<br>
+			To use this option, a memcached server has to be set up first. <br>
+			<br>
+			To use this option, replace the following line:<div class="Mcodecontainer">
+				<div class="Mcodeblock"><code><span style="color: #000000">
+							<span style="color: #0000BB"></span><span
+								style="color: #FF8000">//&nbsp;$config['Datastore']['class']&nbsp;=&nbsp;'vB_Datastore_Filecache';&nbsp;
+								<br></span><span style="color: #0000BB"></span>
+						</span>
+					</code></div>
+			</div>...with this one:<div class="Mcodecontainer">
+				<div class="Mcodeblock"><code><span style="color: #000000">
+							<span style="color: #0000BB">$config</span><span style="color: #007700">[</span><span
+								style="color: #DD0000">'Datastore'</span><span style="color: #007700">][</span><span
+								style="color: #DD0000">'class'</span><span
+								style="color: #007700">]&nbsp;=&nbsp;</span><span
+								style="color: #DD0000">'vB_Datastore_Memcache'</span><span
+								style="color: #007700">;&nbsp;
+								<br></span><span style="color: #0000BB"></span>
+						</span>
+					</code></div>
+			</div>Additionally, the following section of the config.php file has to be set up with the correct
+			IP/Servername and Port respectively. All lines need to be uncommented.<div class="Mcodecontainer">
+				<div class="Mcodeblock"><code><span style="color: #000000">
+							<span style="color: #0000BB"></span><span
+								style="color: #FF8000">/*&nbsp;####&nbsp;MEMCACHE&nbsp;SETTINGS&nbsp;####&nbsp;*/
+								<br></span><span style="color: #0000BB">$config</span><span
+								style="color: #007700">[</span><span style="color: #DD0000">'Misc'</span><span
+								style="color: #007700">][</span><span
+								style="color: #DD0000">'memcacheServers'</span><span
+								style="color: #007700">]&nbsp;=&nbsp;array(
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;array(
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+								style="color: #DD0000">'server'&nbsp;</span><span
+								style="color: #007700">=&gt;&nbsp;</span><span
+								style="color: #DD0000">'127.0.0.1'</span><span style="color: #007700">,
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+								style="color: #DD0000">'port'&nbsp;</span><span
+								style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">11211
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">),
+								<br>);&nbsp;
+								<br></span><span style="color: #0000BB">$config</span><span
+								style="color: #007700">[</span><span style="color: #DD0000">'Misc'</span><span
+								style="color: #007700">][</span><span style="color: #DD0000">'memcacheRetry'</span><span
+								style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #0000BB">15</span><span
+								style="color: #007700">;&nbsp;</span><span
+								style="color: #FF8000">//&nbsp;Retry&nbsp;time&nbsp;in&nbsp;seconds.
+								<br></span><span style="color: #0000BB">$config</span><span
+								style="color: #007700">[</span><span style="color: #DD0000">'Misc'</span><span
+								style="color: #007700">][</span><span
+								style="color: #DD0000">'memcacheTimeout'</span><span
+								style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #0000BB">1</span><span
+								style="color: #007700">;&nbsp;</span><span
+								style="color: #FF8000">//&nbsp;Connect&nbsp;timeout&nbsp;in&nbsp;seconds.
+								<br></span><span style="color: #0000BB">$config</span><span
+								style="color: #007700">[</span><span style="color: #DD0000">'Misc'</span><span
+								style="color: #007700">][</span><span
+								style="color: #DD0000">'memcachePersistent'</span><span
+								style="color: #007700">]&nbsp;=&nbsp;</span><span
+								style="color: #0000BB">true</span><span style="color: #007700">;&nbsp;</span><span
+								style="color: #FF8000">//&nbsp;Persistent&nbsp;connections.&nbsp;&nbsp;&nbsp;&nbsp;
+								<br></span><span style="color: #0000BB"></span>
+						</span>
+					</code></div>
+			</div><strong>vB_Datastore_XCache</strong><br>
+			This option is not available for versions of PHP from 7+. <br>
+			<br>
+			To use this option, replace the following line:<div class="Mcodecontainer">
+				<div class="Mcodeblock"><code><span style="color: #000000">
+							<span style="color: #0000BB"></span><span
+								style="color: #FF8000">//&nbsp;$config['Datastore']['class']&nbsp;=&nbsp;'vB_Datastore_Filecache';&nbsp;
+								<br></span><span style="color: #0000BB"></span>
+						</span>
+					</code></div>
+			</div>...with this one:<div class="Mcodecontainer">
+				<div class="Mcodeblock"><code><span style="color: #000000">
+							<span style="color: #0000BB">$config</span><span style="color: #007700">[</span><span
+								style="color: #DD0000">'Datastore'</span><span style="color: #007700">][</span><span
+								style="color: #DD0000">'class'</span><span
+								style="color: #007700">]&nbsp;=&nbsp;</span><span
+								style="color: #DD0000">'vB_Datastore_XCache'</span><span style="color: #007700">;&nbsp;
+								<br></span><span style="color: #0000BB"></span>
+						</span>
+					</code></div>
+			</div><strong>vB_Datastore_Redis</strong><br>
+			<br>
+			Redis is an open source (BSD licensed), in-memory data structure store. <br>
+			<br>
+			To use this option, replace the following line:<div class="Mcodecontainer">
+				<div class="Mcodeblock"><code><span style="color: #000000">
+							<span style="color: #0000BB"></span><span
+								style="color: #FF8000">//&nbsp;$config['Datastore']['class']&nbsp;=&nbsp;'vB_Datastore_Filecache';&nbsp;
+								<br></span><span style="color: #0000BB"></span>
+						</span>
+					</code></div>
+			</div>...with this one:<div class="Mcodecontainer">
+				<div class="Mcodeblock"><code><span style="color: #000000">
+							<span style="color: #0000BB">$config</span><span style="color: #007700">[</span><span
+								style="color: #DD0000">'Datastore'</span><span style="color: #007700">][</span><span
+								style="color: #DD0000">'class'</span><span
+								style="color: #007700">]&nbsp;=&nbsp;</span><span
+								style="color: #DD0000">'vB_Datastore_Redis'</span><span style="color: #007700">;&nbsp;
+								<br></span><span style="color: #0000BB"></span>
+						</span>
+					</code></div>
+			</div>To configure this, the following section of the config.php file has to be set up with the correct
+			IP/Servername and Port respectively. All lines need to be uncommented.<div class="Mcodecontainer">
+				<div class="Mcodeblock"><code><span style="color: #000000">
+							<span style="color: #0000BB"></span><span
+								style="color: #FF8000">/*&nbsp;####&nbsp;REDIS&nbsp;SETTINGS&nbsp;####&nbsp;*/
+								<br></span><span style="color: #0000BB">$config</span><span
+								style="color: #007700">[</span><span style="color: #DD0000">'Misc'</span><span
+								style="color: #007700">][</span><span style="color: #DD0000">'redisServers'</span><span
+								style="color: #007700">]&nbsp;=&nbsp;array(
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;array(
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+								style="color: #DD0000">'addr'&nbsp;</span><span
+								style="color: #007700">=&gt;&nbsp;</span><span
+								style="color: #DD0000">'127.0.0.1'</span><span style="color: #007700">,
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+								style="color: #DD0000">'port'&nbsp;</span><span
+								style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">6379
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">),
+								<br>);
+								<br></span><span style="color: #0000BB">$config</span><span
+								style="color: #007700">[</span><span style="color: #DD0000">'Misc'</span><span
+								style="color: #007700">][</span><span style="color: #DD0000">'redisRetry'</span><span
+								style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #0000BB">100</span><span
+								style="color: #007700">;&nbsp;</span><span
+								style="color: #FF8000">//&nbsp;Retry&nbsp;time&nbsp;in&nbsp;milliseconds.
+								<br></span><span style="color: #0000BB">$config</span><span
+								style="color: #007700">[</span><span style="color: #DD0000">'Misc'</span><span
+								style="color: #007700">][</span><span style="color: #DD0000">'redisTimeout'</span><span
+								style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #0000BB">3</span><span
+								style="color: #007700">;&nbsp;</span><span
+								style="color: #FF8000">//&nbsp;Connect&nbsp;timeout&nbsp;in&nbsp;seconds.
+								<br></span><span style="color: #0000BB">$config</span><span
+								style="color: #007700">[</span><span style="color: #DD0000">'Misc'</span><span
+								style="color: #007700">][</span><span style="color: #DD0000">'redisMaxDelay'</span><span
+								style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #0000BB">10</span><span
+								style="color: #007700">;&nbsp;</span><span
+								style="color: #FF8000">//&nbsp;Slave&nbsp;out&nbsp;of&nbsp;sync,&nbsp;timeout&nbsp;in&nbsp;seconds.&nbsp;
+								<br></span><span style="color: #0000BB"></span>
+						</span>
+					</code></div>
+			</div>
+			

@@ -1,0 +1,6 @@
+---
+aliases:
+  - Widgets
+  - Module
+  - module
+---

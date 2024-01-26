@@ -1,0 +1,79 @@
+<table class="headingtable" cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tbody>
+					<tr valign="bottom">
+						<td>
+							<h5 style="display:inline"><a name="item90"></a>Cookie and HTTP Header Options</h5>
+						</td>
+						<td>
+							<div style="font:11px tahoma; text-align:right"><a
+									href="https://www.vbulletin.com/docs/onepage/#link90">Back to Top</a></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			Path to Cookie and HTTP Header options: <span class="Mprocess">Settings &gt; Options &gt; Cookie and HTTP
+				Header Options</span> <br>
+			<br>
+			These options allow you to control cookie settings, gzip compression, HTTP headers, and to redirect
+			messages.<div class="Mnote">
+				<div class="Mnotewarnheader">Note:</div>
+				<div class="Mnotewarninner">You must click <strong>Save</strong> for changes to take effect.</div>
+			</div>
+			<div align="center"><img src="./vBulletin Manual_files/cookies-http-header.png" border="0" alt=""></div>
+			<br>
+			<strong>Session Timeout</strong> (default: 900)<br>
+			The time in seconds that a user must remain inactive before any unread posts are marked read. This setting
+			also controls how long a user will remain on Who's Online after their last activity.<br>
+			<br>
+			<strong>Path to Save Cookies</strong> (default: /)<br>
+			The path to which the cookie is saved. If you run more than one forum on the same domain, it will be
+			necessary to set this to the individual directories of the forums. Otherwise, just leave it as / .<div
+				class="Mnote">
+				<div class="Mnotewarnheader">Note:</div>
+				<div class="Mnotewarninner">Your path should always end in a forward-slash; for example, /forums/ or
+					/vbulletin/.</div>
+			</div>
+			<div class="Mwarn">
+				<div class="Mnotewarnheader">Warning:</div>
+				<div class="Mnotewarninner">Entering an invalid setting can leave you unable to log in to your forum.
+					Change this setting only if you absolutely need to do so.</div>
+			</div><strong>Cookie Domain</strong> (default: blank)<br>
+			This option sets the domain on which the cookie is active. The most common reason to change this setting is
+			that you have two different urls to your forum, i.e. example.com and forums.example.com. To allow users to
+			stay logged into the forum if they visit via either url, you would set this to .example.com (note the domain
+			begins with a dot.<div class="Mwarn">
+				<div class="Mnotewarnheader">Warning:</div>
+				<div class="Mnotewarninner">We recommend that you leave this setting blank. Entering an invalid setting
+					can leave you unable to log in to your site.</div>
+			</div><strong>GZIP HTML Output</strong> (<u>Yes</u>/No)<br>
+			Selecting Yes allows vBulletin to GZIP compress the HTML output of pages, thus reducing bandwidth
+			requirements. This will be used only on clients that support it, and are HTTP 1.1 compliant. There will be a
+			small performance overhead.<br>
+			This feature requires the ZLIB library.<br>
+			If you are already using mod_gzip on your server, do not enable this option.<br>
+			<br>
+			<strong>GZIP Compression Level</strong> (range: 0-9; default 1; recommended: 1)<br>
+			Set the level of GZIP compression you want to use on the output. <br>
+			<br>
+			<strong>Add Standard HTTP Headers</strong> (Yes/<u>No</u>)<br>
+			<br>
+			If enabled, vBulletin will send 200 OK HTTP headers.<br>
+			Because this option does not work with some combinations of web servers, it is off by default. Some IIS
+			setups might need it turned on.<br>
+			<br>
+			<strong>Add No-Cache HTTP Headers</strong> (Yes/<u>No</u>)<br>
+			Selecting Yes will cause vBulletin to add no-cache HTTP headers. These are very effective, so adding them
+			may cause server load to increase due to an increase in page requests.<br>
+			<br>
+			<strong>Remove Redirection Message Pages</strong> (<u>Yes</u>/No)<br>
+			Enabling this option will remove the update pages that are displayed after a user makes a post, starts a
+			search, etc. These pages provide assurance to users that their information has been processed by the site.
+			Disabling these pages will save you bandwidth and may lessen the load of the site on your server.<div
+				class="Mnote">
+				<div class="Mnotewarnheader">Note:</div>
+				<div class="Mnotewarninner">Some pages will still use the use the redirection page when cookies are
+					involved to prevent some potential problems.</div>
+			</div><strong>Disable IE8 Compatibility Mode</strong> (Yes/<u>No</u>)<br>
+			You can disable the IE7 compatibility mode of Internet Explorer 8 with this option. This will force the IE8
+			browser to render all pages in IE8 mode.
+			

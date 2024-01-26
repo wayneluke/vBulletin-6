@@ -1,0 +1,29 @@
+<table class="headingtable" cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tbody>
+					<tr valign="bottom">
+						<td>
+							<h3 style="display:inline"><a name="item402"></a>1) Compiling and Installing MySQL</h3>
+						</td>
+						<td>
+							<div style="font:11px tahoma; text-align:right"><a
+									href="https://www.vbulletin.com/docs/onepage/#link402">Back to Top</a></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			With the program downloaded, you should make sure you're logged in as <em>root</em> before proceeding with
+			the installation, unless you only want to install MySQL in your own home directory. Begin by unpacking the
+			downloaded file and moving into the directory that is created:<blockquote class="Mtype">tar xfz
+				mysql-version.tar.gz<br>
+				cd mysql-version</blockquote>Next you need to configure the MySQL install. Unless you really know what
+			you're doing, all you should have to do is tell it where to install. I recommend /usr/local/mysql:
+			<blockquote class="Mtype">./configure --prefix=/usr/local/mysql</blockquote>After sitting through the
+			screens and screens of configuration tests, you'll eventually get back to a command prompt. You're ready to
+			compile MySQL:<blockquote class="Mtype">make</blockquote>After even more screens of compilation, you'll
+			again be returned to the command prompt. You're now ready to install your newly compiled program:<blockquote
+				class="Mtype">make install</blockquote>MySQL is now installed, but before it can do anything useful its
+			database files need to be installed too. Still in the directory you installed from, type the following
+			command:<blockquote class="Mtype">scripts/mysql_install_db</blockquote>With that done, you can delete the
+			directory you've been working in, which just contains all the source files and temporary installation files.
+			If you ever need to reinstall, you can just re-extract the mysql-version.tar.gz file.
+			

@@ -24,7 +24,7 @@ sudo yum install mariadb-server   # For CentOS/RHEL
 brew install mariadb              # For MacOS
 ```
 
-#### Secure Your Database installation:
+#### Secure Your Database installation
 
 After installation, run the following command to secure your MariaDB installation and set the root password:
 
@@ -40,7 +40,8 @@ Examples:
 
 ```bash
 sudo apt install php libapache2-mod-php   # For Debian/Ubuntu
-sudo yum install php php-mysql           # For CentOS/RHEL
+sudo yum install php php-mysql            # For CentOS/RHEL
+brew install php                          # Install via Homebrew
 ```
 
 ### Enable PHP module in Apache:
@@ -51,7 +52,7 @@ After installing PHP, enable the PHP module in Apache using the following comman
 sudo a2enmod php
 ``` 
 
-### Configure Apache to handle .htaccess:
+### Configure Apache to handle .htaccess
 
 By default, Apache may not be configured to read .htaccess files. To enable this, make sure the AllowOverride directive is set appropriately in the Apache configuration file.
 
@@ -65,6 +66,7 @@ Save the changes and restart Apache for the changes to take effect:
 ```bash
 sudo service apache2 restart   # For Debian/Ubuntu
 sudo systemctl restart httpd   # For CentOS/RHEL
+brew services restart https    # Through Homebrew
 ```
 
 ### Test PHP
@@ -79,8 +81,8 @@ phpinfo();
 2. Place the test.php file in the web server's root directory (e.g., /var/www/html).
 3. Access the PHP file through your web browser by visiting http://your_server_ip/test.php or http://localhost/test.php. If PHP is configured correctly, you should see the PHP information page.
 
-/* Should I include this? */
-## Security considerations:
+
+## Security considerations
 
 - Keep both PHP and MariaDB versions up to date.
 - Use At Rest Encryption on your database.

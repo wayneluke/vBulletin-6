@@ -1,0 +1,53 @@
+<table class="headingtable" cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tbody>
+					<tr valign="bottom">
+						<td>
+							<h6 style="display:inline"><a name="item130"></a>Inheritance Example</h6>
+						</td>
+						<td>
+							<div style="font:11px tahoma; text-align:right"><a
+									href="https://www.vbulletin.com/docs/onepage/#link130">Back to Top</a></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			Path to Style Manager: <span class="Mprocess">Styles &amp; Templates &gt; Style Manager</span><br>
+			<br>
+			The concept of inheritance as it applies to styles in vBulletin is best illustrated with an example of a
+			common use for the system: customizing the look and feel of a site. You accomplish this by editing the
+			colors used by vBulletin, and by editing the header and footer templates.<br>
+			<br>
+			Assume that you want to customize your header and footer templates, but you also want to offer a choice of
+			three possible color schemes to your users: we’ll call these the Red, Green, and Blue schemes.<br>
+			<br>
+			You could create three new styles (Red, Green, and Blue) and customize the header and footer templates in
+			each style. That is a valid solution, but has one serious disadvantage: if you decide you want to alter the
+			HTML in the customized header template, you will need to edit the template in each of the three styles
+			individually.<br>
+			<br>
+			&lt;&lt;&lt;Insert a screenshot of the initial page of the Style Manager with Red, Green, and Blue styles
+			checked.&gt;&gt;&gt;<br>
+			<br>
+			A more manageable solution would involve creating a single new style, called something like “Custom Header /
+			Footer” and setting up the customizations that apply to all three styles in that file. <br>
+			<br>
+			&lt;&lt;&lt;Insert a screenshot of the initial page of the Style Manager with the Red, Green, and Blue
+			styles removed, and a style called Custom Header / Footer inserted (and checked) in their
+			place.&gt;&gt;&gt;<br>
+			<br>
+			Then to offer the three color variants, you would create three more styles (Red, Green, and Blue) as child
+			styles of the Custom Header / Footer style.<br>
+			<br>
+			&lt;&lt;&lt;Insert a screenshot of the initial page of the Style Manager with the Red, Green, and Blue
+			styles re-inserted as child styles of Custom Header / Footer.&gt;&gt;&gt;<br>
+			<br>
+			Each of these child styles inherits the customized header and footer templates from the Custom Header /
+			Footer parent style, so you do not need to edit that template in the child styles. If you choose to change
+			the HTML of either the header or footer templates at some point in the future, you need only to edit those
+			templates in the parent style: the changes are automatically inherited by the three child styles.<br>
+			<br>
+			This is a simple example, involving only the site color scheme and the header and footer templates. However,
+			vBulletin allows you to create much more elaborate customizations that individually customize every template
+			and every CSS attribute of a style. Each of those customized attributes can be inherited by all child
+			styles.
+			

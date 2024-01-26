@@ -1,0 +1,578 @@
+/* GLOBAL TO ALL PAGES */
+html{background-color: none; background:none;}
+body{background-color: none; background:none;}
+a:link, a:visited, a:active
+{
+	font-family: 'Ubuntu', sans-serif;
+	color: #009dcb;
+	text-decoration:none;
+}
+a:hover
+{
+	color: #009dcb;
+	text-decoration:underline;
+}
+
+.button
+{
+	font: bold 11px tahoma, verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+
+.versionselect
+{
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+input,select,textarea { font:12px Arial, Helvetica, sans-serif; vertical-align:middle; color:#2f2f2f; }
+input.input-text,select,textarea { background:#fff; border:1px solid #b0b4b8; }
+input.input-text,textarea { padding:2px; }
+select { padding: 4px; }
+select option { padding-right:10px; }
+select.multiselect option { border-bottom:1px solid #b6b6b6; padding:2px 5px; }
+select.multiselect option:last-child { border-bottom:0; }
+/* TOP FRAME */
+#body_toppanel
+{
+	background: transparent url('./main-background.png') repeat-x scroll 0 -30px;
+	margin: 0px;
+	padding: 0px;
+}
+#toppanel {
+	font-family: 'Ubuntu', sans-serif;
+}
+#toppanel h1 { font-size: 23px; color:#001c32; margin:0; padding-left:4px; font-family: 'Ubuntu', sans-serif; font-weight:bold;}
+#toppanel p { font-size: 12px; color:#333333; font-family: 'Ubuntu', sans-serif; padding-bottom:7px; padding-left:4px;}
+#toppanel .manual-version-bar{
+	height:34px;
+	border:#C2C5C9 solid 1px;
+	background: transparent url('./vbulletin_sprites_gradients.png') repeat-x scroll 0 -235px;
+	vertical-align:middle;
+	padding-top: 6px;
+	padding-left: 7px;
+	/*background: url("vbulletin_sprites_gradients.png");
+	background-position: -230px -40px;
+	background-repeat:repeat-x;*/
+}
+
+#toppanel .downloadtext { padding-left: 10px; font-size: 12px; color:#333333; font-family: 'Ubuntu', sans-serif;}
+#toppanel .downloadtext a { font-size: 12px; color:#009dcb; font-family: 'Ubuntu', sans-serif; text-decoration:none;}
+#toppanel .downloadtext a:hover {text-decoration:underline;}
+
+/* MAIN FRAME */
+
+#body_main
+{
+	margin: 0px;
+	padding: 0px;
+	background-color:#FFF;
+	border: #d4d6d9 solid 1px;
+	font-family: 'Ubuntu', sans-serif;
+	color: #000;
+}
+
+	#body_main img {
+	    max-width: 100%;
+	}
+	
+	.headingtable
+	{
+		font-family: 'Ubuntu', sans-serif;
+		font-size:12px;
+		color: #738FBF;
+		padding: 5px;
+		border-bottom: 1px solid #0B198C;
+		margin: 25px 0px 10px 0px;
+	}
+
+/* The header bar */
+	#header
+	{
+		background-color: #EFEFEF;
+		padding: 5px;
+		font-family: 'Ubuntu', sans-serif;
+		font-size:12px;
+		border-bottom: 1px solid #D4D6D9;
+	}
+		#header a.navbits { font-family: 'Ubuntu', sans-serif; font-size:11px; color: #898989; text-decoration:none; }
+		#header a.navbits:hover { color: #009dcb; text-decoration: underline;}
+		
+		#header a.navbitsactive { font-family: 'Ubuntu', sans-serif; font-size:11px; color: #009dcb; text-decoration:none; }
+		#header a.navbitsactive:hover { color: #009dcb; text-decoration: underline;}
+
+/* The div pretending to be the body element */
+	#body
+	{
+		/*width: 750px;*/
+		margin-left: 20px;
+		margin-right: 20px;
+		margin-top: 5px;
+	}
+
+/* The bar containing the item title */
+	#titlebar
+	{
+		color: #009dcb;
+		font-family: 'Ubuntu', sans-serif;
+		font-size:21px;
+		font-weight:bold;
+		margin-top: 24px;
+		margin-bottom: 26px;
+		/*border-bottom: 1px solid #0B198C; */
+	}
+
+/* The copyright notice */
+	#copyright
+	{
+		color: #869BBF;
+		text-align: center;
+		margin-top: 20px;
+		font-family: 'Ubuntu', sans-serif;
+		font-size:12px;
+	}
+
+/* The links at the bottom of each page */
+	#childlinks
+	{
+		font-family: 'Ubuntu', sans-serif;
+		font-size:12px;
+	}
+
+		.linkgrouptitle
+		{
+			margin-top: 20px;
+		}
+
+		.linkgroup
+		{
+			margin: 10px 20px 0px 20px;
+		}
+
+			.itemdisplay_navlink
+			{
+				padding: 5px;
+			}
+
+/* The div containing the manual HTML content */
+#content
+{
+	background-color:#FFFFFF;
+	font-family: 'Ubuntu', sans-serif;
+	font-size:12px;
+	padding-bottom: 20px;
+	/*border-bottom: 1px solid #0B198C;*/
+}
+
+	#content ul
+	{
+		margin-top: 2px;
+	}
+
+	#content li
+	{
+		margin: 10px;
+	}
+
+	.Mcodecontainer
+	{
+		text-align: center;
+		margin: 20px auto 20px auto;
+	}
+
+		.Mcodeblock
+		{
+			text-align: left;
+			background-color: #F5F5FF;
+			width: auto;
+			overflow: auto;
+			padding: 10px;
+			border: 1px solid #0B198C;
+		}
+
+	.Mnote
+	{
+		border: 1px solid #0B198C;
+		background-color: #F5F5FF;
+		padding: 4px;
+		margin: 20px auto 20px auto;
+	}
+
+	.Mwarn
+	{
+		border: 1px solid #FF0000;
+		background-color: #F5F5FF;
+		padding: 4px;
+		margin: 20px auto 20px auto;
+	}
+
+		.Mnotewarnheader
+		{
+			font-family: 'Ubuntu', sans-serif;
+			font-size:12px;
+			font-weight: bold;
+		}
+
+		.Mnotewarninner
+		{
+			margin: 2px 12px 6px 12px;
+		}
+
+	.Mvar
+	{
+		color: #505050;
+		font-family: 'Ubuntu', sans-serif;
+		white-space: nowrap;
+	}
+
+	.Mscreen
+	{
+		font-style: italic;
+		font-family: monospace;
+	}
+
+	.Mtype
+	{
+		background-color: #DDDDDD;
+		color: black;
+		font-family: monospace;
+		/*padding: 4px;*/
+	}
+
+	.Mmono
+	{
+		color: #404040;
+		font-family: monospace;
+	}
+
+	.Mbutton
+	{
+		font-family: tahoma;
+		font-weight: bold;
+		white-space: nowrap;
+	}
+
+	.Mlink
+	{
+		font-weight: bold;
+	}
+
+	.Mkey
+	{
+		font-family: monospace;
+		font-weight: normal;
+	}
+
+	.Mgoto
+	{
+		 color: #FF0000;
+		 font-style: italic;
+	}
+
+	.Mprocess
+	{
+		color: #738FBF;
+		font: bold 11px tahoma;
+	}
+		.Mprocess a:link, .Mprocess a:visited, .Mprocess a:active
+		{
+			color: #738FBF;
+			text-decoration: none;
+		}
+		.Mprocess a:hover
+		{
+			color: #738FBF;
+			text-decoration: underline;
+		}
+
+	.Mdef
+	{
+		border-bottom: 1px dashed #FF0000;
+	}
+
+	.Mtable
+	{
+		margin: 15px 0px 15px 0px;
+		color: #000000;
+		background-color: #0B198C;
+	}
+
+	.Mstepnum
+	{
+		text-align: center;
+		font: bold 18pt tahoma;
+		padding-right: 10px;
+	}
+
+	.Msteptext
+	{
+	}
+
+	.Mtd
+	{
+		padding: 5px;
+		color: #000000;
+		background-color: #FFFFFF;
+	}
+
+	.Mfig
+	{
+		text-align: center;
+	}
+
+	.Mhop
+	{
+	}
+
+/* NAVIGATION / TOC FRAME */
+
+#tochtml
+{
+	margin:0px;
+	padding:0px;
+}
+
+.bginput
+{
+	font: 11px tahoma;
+}
+
+#ManualSearch {
+	padding:1px 10px 5px 9px;
+	width:175px;
+}
+#ManualSearch .wrapper {
+	padding:1px 0 10px 8px;
+	position:relative;
+}
+#ManualSearch input { 
+	border: #b0b4b8 solid 1px; 
+	color:#767676; 
+	font-family: 'Ubuntu', sans-serif;
+	font-size:12px; 
+	padding: 5px;
+	width:176px; 
+}
+#ManualSearch button {
+	/*background: url(search.png) no-repeat;*/
+	background: url("./vbulletin_sprites.png");
+	background-position: -112px -80px;
+	background-repeat:no-repeat;
+	border:none;
+	cursor:pointer;
+	height:16px;
+	position:absolute;
+	left:178px;
+	top: 8px;
+	width:16px;
+}
+#Manual1Search input[type="text"] {
+   background: url(search-white.png) no-repeat 10px 6px #fcfcfc;
+    border: 1px solid #d1d1d1;
+    font-family: 'Ubuntu', sans-serif;
+	font-size:12px;
+    color: #b0b4b8;
+    width: 150px;
+    padding: 6px 15px 6px 35px;
+}
+
+.ImgExpand{
+	background: url("./vbulletin_sprites.png");
+	background-position: -80px -80px;
+	background-repeat:no-repeat;
+	height:8px;
+	width:8px;
+	vertical-align:top;
+}
+.ImgCollapse{
+	background: url("./vbulletin_sprites.png");
+	background-position: -96px -80px;
+	background-repeat:no-repeat;
+	height:8px;
+	width:8px;
+}
+.ImgEnd{
+	background: none;
+	height:8px;
+	width:8px;
+}
+.GroupCollapse{
+	background-color:#dcdee1;
+}
+.GroupExpand{
+	background:none;
+}
+.GroupEnd{
+	background:none;
+}
+.itemtext{
+	display:inline-block;
+	width: 90%;
+}
+.itemimage{
+	display:inline-block;
+	width: 8px;
+	vertical-align:top;
+	padding-top:4px;
+	padding-right: 3px;
+	padding-left: 3px;
+}
+
+#body_navpanel
+{
+	color: black;
+	background-color: #efefef;
+	font-family: 'Ubuntu', sans-serif;
+	font-size:12px;
+	margin: 0px;
+}
+
+	#body_navpanel a:link, #body_navpanel a:visited, #body_navpanel a:active
+	{
+		text-decoration: none;
+		color: #000000;
+	}
+
+	#body_navpanel a:hover
+	{
+		text-decoration: underline;
+		color: #009dcb;
+	}
+
+	.navpanel_titlebar
+	{
+		color: #009dcb;
+	}
+		div.navpanel_titletext
+		{
+			text-align: center;
+			padding: 7px 11px 7px 11px;
+		}
+
+		.navpanel_titletext a:link, .navpanel_titletext a:visited, .navpanel_titletext a:active
+		{
+			font-weight: bold;
+			color: 009dcb;
+			text-decoration:none;
+		}
+		.navpanel_titletext a:hover
+		{
+			font-weight: bold;
+			color: 009dcb;
+			text-decoration:underline;
+		}
+
+/* The div containing the collapsible TOC */
+	#toc
+	{
+		color: black;
+		/*background-color: #E1E4F2; */
+		padding: 1px;
+		/*border: 0px 1px 0px 1px #738FBF solid;*/
+		width: 100%;
+	}
+		/*.navpanel_group_block {
+			background-color:#F00;
+		}
+		.navpanel_group_none {
+			background:none;
+		}*/
+		
+		#toc .navlinkN {
+			background-color: transparent;
+			padding: 4px 0px 6px 1px;
+			border-bottom: #c0c0c1 solid 1px;
+		}
+		#toc .navlinkNCollapse {
+			background-color:#dcdee1;
+			padding: 4px 0px 6px 1px;
+			border-bottom: #c0c0c1 solid 1px;
+		}
+		#toc .navlinkS
+		{
+			background-color: #FFFFFF;
+			border: #d4d6d9 solid 1px;
+			border-right:none;
+			border-top:none;
+			width: 100%;
+			padding: 4px 0px 6px 1px;
+		}
+
+		#toc img
+		{
+			margin-right: 5px;
+			border: none;
+		}
+
+/* The Search Page */
+#searchform legend, #searchform td
+{
+	font: 11px tahoma;
+}
+
+#searchform input, #searchform select
+{
+	font: 10pt verdana;
+}
+
+input.searchwidth, select.searchwidth, textarea.searchwidth
+{
+	width: 450px;
+}
+
+.smallfont
+{
+	font-size: 11px;
+}
+
+#comments
+{
+	/*margin: 20px 20px 0px 20px;*/
+	margin-top: 30px;
+	background: #0B198C;
+	padding: 1px;
+}
+	#commenttop
+	{
+		margin-top: 30px;
+		border-top: 1px solid rgb(90,126,220);
+	}
+	.commentstitle, .commentstitle a:link, .commentstitle a:visited
+	{
+		background: #869BBF;
+		color: white;
+		font: 11px tahoma;
+	}
+
+	.commentinfo
+	{
+		font-size: 11px;
+		background: #5C7099;
+		color: white;
+	}
+	.commentbody
+	{
+		font-size: 11px;
+		background: #E1E4F2;
+		color: black;
+	}
+
+legend
+{
+	color: #22229C;
+}
+
+form
+{
+	display: inline;
+}
+
+.Mgoodcode
+{
+	color: navy;
+}
+.Mbadcode
+{
+	color: red;
+}
+
+img#captcha {
+	max-width: initial;
+}

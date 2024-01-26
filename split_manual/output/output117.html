@@ -1,0 +1,206 @@
+<table class="headingtable" cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tbody>
+					<tr valign="bottom">
+						<td>
+							<h6 style="display:inline"><a name="item122"></a>Template Syntax</h6>
+						</td>
+						<td>
+							<div style="font:11px tahoma; text-align:right"><a
+									href="https://www.vbulletin.com/docs/onepage/#link122">Back to Top</a></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			This topic contains reference and usage information about vBulletin template syntax. <br>
+			<br>
+			<font size="2"><strong>Variable Access</strong></font><br>
+			<br>
+			Wherever possible, reference variables in templates using the following syntax:<div class="Mcodecontainer">
+				<pre class="Mcodeblock">{vb:var variable}
+</pre>
+			</div>Variables accessed this way are made “safe” by being run through <span
+				class="Mvar">htmlspecialchars</span> as they are output.<br>
+			<br>
+			To access array elements, use a dot operator rather than standard PHP square brackets:<div
+				class="Mcodecontainer">
+				<pre class="Mcodeblock">{vb:var variable.foo} // accesses htmlspecialchars($variable['foo'])
+{vb:var variable.$varkey} // accesses htmlspecialchars($variable[$varkey])
+</pre>
+			</div><strong>Raw Variables</strong><br>
+			<br>
+			To access variables in versions of vBulletin prior to V4, use the following syntax:<div
+				class="Mcodecontainer">
+				<pre class="Mcodeblock">{vb:raw variable}
+</pre>
+			</div>This is equivalent to simply accessing <span class="Mvar">$variable</span> in the pre-vB4 syntax. No
+			treatment is applied to the variable. The same dot operator is used to access array elements.<br>
+			<br>
+			<br>
+			<font size="2"><strong>Curly-Brace Syntax</strong></font><br>
+			<br>
+			The general curly-brace syntax is the following:<div class="Mcodecontainer">
+				<pre class="Mcodeblock">{vb:method arg1[, arg2...]}
+</pre>
+			</div>Inside curly braces, variables can be accessed without using a separate set of surrounding braces. For
+			example:<div class="Mcodecontainer">
+				<pre class="Mcodeblock">{vb:method {variable}} // unneccessary extra braces
+{vb:method variable}
+</pre>
+			</div>
+			<font size="2"><strong>Built-in Methods</strong></font><br>
+			<br>
+			<strong>phrase</strong><br>
+			<br>
+			The code <span class="Mvar">{vb:phrase phrase_name[, arguments for phrase...]}</span> inserts the specified
+			phrase. If arguments are provided, they will be run through <span class="Mvar">htmlspecialchars</span>.<br>
+			<br>
+			Example:<div class="Mcodecontainer">
+				<pre class="Mcodeblock">{vb:phrase welcome}
+</pre>
+			</div><strong>rawphrase</strong><br>
+			<br>
+			The code <span class="Mvar">{vb:rawphrase phrase_name[, arguments for phrase...]}</span> works like <span
+				class="Mvar">phrase</span>, although arguments bypass <span class="Mvar">htmlspecialchars</span>.<br>
+			<br>
+			Example:<div class="Mcodecontainer">
+				<pre class="Mcodeblock">{vb:rawphrase message_by_x_on_y_at_z, {vb:link member, {vb:raw postinfo}}, {vb:raw postinfo.username}, {vb:raw postinfo.postdate}, {vb:raw postinfo.posttime}} 
+</pre>
+			</div><strong>date</strong><br>
+			<br>
+			The code <span class="Mvar">{vb:date timestamp[, format]}</span> formats a UNIX timestamp using the default
+			date format for the active language. A format may also be explicitly specified. The timezone will be
+			corrected for the viewing user.<br>
+			<br>
+			<br>
+			<strong>time</strong><br>
+			<br>
+			The code <span class="Mvar">{vb:time timestamp[, format]}</span> works like <span class="Mvar">date</span>,
+			although<br>
+			it uses the default time format instead of date format.<br>
+			<br>
+			<br>
+			<strong>number</strong><br>
+			<br>
+			The code <span class="Mvar">{vb:number number[, decimals]}</span> outputs a number having run through <span
+				class="Mvar">vb_number_format</span> for the correct locale formatting. The number of decimal places to
+			display can be optionally specified.<br>
+			<br>
+			<br>
+			<strong>raw</strong><br>
+			<br>
+			The code <span class="Mvar">{vb:raw variable}</span> outputs the variable <span class="Mvar">raw</span>,
+			without any formatting or escaping.<br>
+			<br>
+			<br>
+			<strong>escapejs</strong><br>
+			<br>
+			The code <span class="Mvar">{vb:escapejs variable}</span> returns the variable prepared for use as a
+			Javascript single-quoted string instead of running <span class="Mvar">htmlspecialchars</span>.<br>
+			<br>
+			<br>
+			<strong>urlencode</strong><br>
+			<br>
+			The code <span class="Mvar">{vb:urlencode variable}</span> escapes the variable using <span
+				class="Mvar">urlencode</span>.<br>
+			<br>
+			<br>
+			<strong>if</strong><br>
+			<br>
+			The code <span class="Mvar">{vb:if condition, true[, false]}</span> can be used in instances where the full
+			<span class="Mvar">&lt;vb:if&gt;[\var] tag cannot be used, such as within HTML tags.<br>
+				<br>
+				Example:<div class="Mcodecontainer">
+					<pre class="Mcodeblock">&lt;div class="{vb:if $forumid==1, forum1, forum}"&gt;...&lt;/div&gt;
+</pre>
+				</div><strong>link</strong><br>
+				<br>
+				The code [var]{vb:link type, info[, extra-info]}</span> is used to build a hyperlink URL of the
+			specified type and into the correct “friendly” format.<br>
+			<br>
+			For more information, see &lt;&lt;&lt;Insert doc link: Link Syntax&gt;&gt;&gt;.<br>
+			<br>
+			<br>
+			<strong>math</strong><br>
+			<br>
+			The code <span class="Mvar">{vb:math expression}</span> is primarily used within CSS to evaluate the result
+			of the mathematical expression specified.<br>
+			<br>
+			<br>
+			<strong>stylevar</strong><br>
+			The code <span class="Mvar">{vb:stylevar name[.sub-part]}</span> is used to output a style variable from the
+			style system. No escaping is performed.<br>
+			<br>
+			<br>
+			<font size="2"><strong>Tags</strong></font><br>
+			<br>
+			All tags make use of the <span class="Mvar">vb</span> namespace for ease of identification and parsing.<br>
+			<br>
+			The following tags are available.<br>
+			<br>
+			<strong>literal</strong><br>
+			<br>
+			The code inside <span class="Mvar">&lt;vb:literal&gt;misc code&lt;/vb:literal&gt;</span> is treated as plain
+			HTML. No curly-brace syntax or <span class="Mvar">vb:tag</span> markup is evaluated.<br>
+			<br>
+			<br>
+			<strong>if</strong><br>
+			<br>
+			If the condition specified in <span class="Mvar">&lt;vb:if condition="condition"&gt;true
+				result&lt;/vb:if&gt;</span> is true, the contents of the <span class="Mvar">vb:if</span> tags will be
+			output, otherwise nothing will be output.<br>
+			<br>
+			The following code is used in conjunction with <span class="Mvar">vb:if</span>.<div class="Mcodecontainer">
+				<pre class="Mcodeblock">elseif
+&lt;vb:elseif condition="condition" /&gt;true result
+</pre>
+			</div>This allows a secondary condition to be checked and the true result to be output if the condition is
+			met.<div class="Mcodecontainer">
+				<pre class="Mcodeblock">else
+&lt;vb:else /&gt;true result
+</pre>
+			</div>Used in conjunction with <span class="Mvar">vb:if</span>, the true result is output if the <span
+				class="Mvar">vb:if</span> condition failed, and so did any <span class="Mvar">vb:elseif</span>
+			checks.<br>
+			<br>
+			<br>
+			<strong>comment</strong><br>
+			<br>
+			The code <span class="Mvar">&lt;vb:comment&gt;a comment&lt;/vb:comment&gt;</span> is used where a comment is
+			necessary but the usual <span class="Mvar">&lt;!-- comment →</span> syntax is undesirable. The <span
+				class="Mvar">vb:comment</span> tag allows its contents to be completely removed upon compiling, so they
+			will not be delivered to the browser. This is useful for internal commenting.<br>
+			<br>
+			<strong>each</strong><br>
+			<br>
+			The code <span class="Mvar">&lt;vb:each from="array" key="key" value="value"&gt;&lt;/vb:each&gt;</span><br>
+			will iterate through an existing array, in a similar manner to <span class="Mvar">foreach</span>.<br>
+			<br>
+			The following are example uses of <span class="Mvar">&lt;vb:each&gt;</span>.<br>
+			<br>
+			Array:<div class="Mcodecontainer">
+				<pre class="Mcodeblock">// We have an array of users available in PHP. 
+// It looks like this: 
+// $users = array( 
+//    1 =&gt; array('username' =&gt; 'Adam', 'email' =&gt; 'adam@adam.com'), 
+//    2 =&gt; array('username' =&gt; 'Ben', 'email' =&gt; 'ben@ben.com'), 
+//    3 =&gt; array('username' =&gt; 'Chris', 'email' =&gt; 'chris@chris.com') 
+// );  
+[code]
+
+
+Template:
+
+[code]
+&lt;!-- our template code... --&gt;
+&lt;vb:each from="users" key="userid" value="userinfo"&gt;
+    &lt;li&gt;&lt;a href="member.php?u={vb:var userid}"&gt;{vb:var userinfo.username}&lt;/a&gt;&lt;/li&gt;
+&lt;/vb:each&gt;
+</pre>
+			</div>Output:<div class="Mcodecontainer">
+				<pre class="Mcodeblock">&lt;!-- will output... --&gt;
+    &lt;li&gt;&lt;a href="member.php?u=1"&gt;Adam&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="member.php?u=2"&gt;Ben&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="member.php?u=3"&gt;Chris&lt;/a&gt;&lt;/li&gt;
+</pre>
+			</div>
+			

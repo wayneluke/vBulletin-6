@@ -1,0 +1,76 @@
+<table class="headingtable" cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tbody>
+					<tr valign="bottom">
+						<td>
+							<h4 style="display:inline"><a name="item245"></a>An Introduction to User Infractions</h4>
+						</td>
+						<td>
+							<div style="font:11px tahoma; text-align:right"><a
+									href="https://www.vbulletin.com/docs/onepage/#link245">Back to Top</a></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			The vBulletin User Infraction system is designed to automate the management of “misbehaving” users.<br>
+			<br>
+			The first step in setting up your user infraction system is to create infraction levels. These levels vary
+			based on the content of the site and the scale of the system that you want to create. You can create just a
+			few levels or set up many levels covering a myriad of infractions.<br>
+			<br>
+			When creating levels, keep in mind the point total at which you want to start penalizing users by taking
+			away permissions. If you envision taking away a certain permission when a user accumulates 10 infraction
+			points, then you need to consider how many points should be given for each infraction and how quickly the
+			user can get to 10 points.<br>
+			<br>
+			Each infraction level has an expiration time. When the infraction expires, the associated points are removed
+			from the user's point total and the user's infraction groups are recalculated.<br>
+			<br>
+			Infraction levels can also be allowed to be given as warnings. A warning does not add any infraction points
+			to the user's point total. Warnings serve as a method to remind users of your site's rules and encourage
+			them to be followed without awarding infraction points. Moderators can give an infraction or a warning for
+			those levels that have the warning ability enabled. <br>
+			<br>
+			When an infraction is given, a message is sent by the moderator to the receiving user that explains why the
+			infraction is being given. This message uses the <strong>Private Messaging System</strong> if it is enabled.
+			Otherwise, if your site has email enabled, an email is sent. At the same time, a new thread for discussion
+			of the infraction is created in a predetermined channel. This channel is set up in the <span
+				class="Mprocess">Settings &gt; Options &gt; User Infractions &amp; Post Reporting Options</span>
+			section. For more information, read the <a
+				href="https://www.vbulletin.com/docs/html/main/acp_users_userinfractions_postreport" class="Mhop">User
+				Infractions &amp; Post Reporting Options</a> article.<br>
+			<br>
+			The second step in setting up the system is to create infraction groups that penalize users in whatever way
+			you define.<br>
+			<br>
+			Normal permissions work by combining all of a user's usergroup permissions and granting a permission for any
+			that are set to ‘Yes’. Infraction group permissions work in the reverse: the permissions are combined and
+			any permission set to ‘No’ is taken away from the user.<br>
+			<br>
+			When you set up your infraction usergroups (in the <strong>Usergroup Manager</strong>), set all permissions
+			to ‘Yes’, and then change those that need to be removed in case of an infraction to ‘No’.<br>
+			<br>
+			Any permissions set to ‘No’ affects all channels. If you want to penalize a user only in certain channels,
+			set all permissions to ‘Yes’ and then set up custom permissions at <span class="Mprocess">Usergroups &gt;
+				Channel Permissions</span> for the channel in question using the Infraction Group. For more information
+			on channel permissions, read the <a href="https://www.vbulletin.com/docs/html/main/acp_channels_permissions"
+				class="Mhop">Channel Permissions</a> article.<br>
+			<br>
+			A user can be in multiple infraction groups: they will be assigned to all groups that apply to their primary
+			usergroup ID that have a point total less than or equal to their accumulated points.<br>
+			<br>
+			Navigate to <span class="Mprocess">User Infractions &gt; User Infraction Manager</span> to view current
+			Infraction Levels and Infraction Groups. If you don’t have any set up, you can add them from this
+			screen.<br>
+			<br>
+			&lt;&lt;&lt;Insert screenshot of User Infraction Manager.&gt;&gt;&gt;<br>
+			<br>
+			To add a new level, navigate to <span class="Mprocess">User Infractions &gt; Add New User Infraction
+				Level</span>. For more information, see the <a
+				href="https://www.vbulletin.com/docs/html/main/acp_users_userinfractions_modlevels"
+				class="Mhop">Modifying User Infraction Levels</a> article.<br>
+			<br>
+			To add a new group, navigate to <span class="Mprocess">User Infractions &gt; Add New User Infraction
+				Group</span>. For more information, see the <a
+				href="https://www.vbulletin.com/docs/html/main/acp_users_userinfractions_modgroups"
+				class="Mhop">Modifying User Infraction Levels</a> article.
+			

@@ -1,0 +1,68 @@
+<table class="headingtable" cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tbody>
+					<tr valign="bottom">
+						<td>
+							<h5 style="display:inline"><a name="item102"></a>External Data Provider</h5>
+						</td>
+						<td>
+							<div style="font:11px tahoma; text-align:right"><a
+									href="https://www.vbulletin.com/docs/onepage/#link102">Back to Top</a></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			Path to External Data Provider options: <span class="Mprocess">Settings &gt; Options &gt; External Data
+				Provider</span><br>
+			<br>
+			The External Data Provider syndicates vBulletin content to external sites using one or more of the following
+			protocols:<ul>
+				<li>Javascript</li>
+				<li>RSS</li>
+				<li>XML</li>
+			</ul>
+			<div class="Mnote">
+				<div class="Mnotewarnheader">Note:</div>
+				<div class="Mnotewarninner">You must click <strong>Save</strong> for changes to take effect.</div>
+			</div>
+			<div align="center"><img src="./vBulletin Manual_files/external-data-provider.png" border="0" alt=""></div>
+			<br>
+			<br>
+			<strong>Enable External Javascript</strong> (Yes/<u>No</u>)<br>
+			Enables Javascript-syndicated content to be displayed. <br>
+			<br>
+			Sample call to check for new Javascript-syndicated content:<br>
+			&lt;&lt;&lt;Link: http://www.example.com/forum/external?type=js&gt;&gt;&gt;<br>
+			<br>
+			<br>
+			<strong>Enable RSS Syndication</strong> (Yes/<u>No</u>)<br>
+			Enables RSS-syndicated content to be displayed. For example, a Trillian news plugin is being used to pick up
+			content. <br>
+			<br>
+			Sample call to check for new RSS-syndicated content:<br>
+			&lt;&lt;&lt;Link: http://www.example.com/forum/external?type=rss2&gt;&gt;&gt;<br>
+			<br>
+			<strong>Enable XML Syndication</strong> (Yes/<u>No</u>)<br>
+			Enables XML-syndicated content to be displayed.<br>
+			<br>
+			Sample call to check for new XML-syndicated content:<br>
+			&lt;&lt;&lt;Link: http://www.example.com/forum/external?type=xml&gt;&gt;&gt;<br>
+			<br>
+			<strong>Thread Cutoff</strong> (smallest value: 1; default: 30)<br>
+			Number of days within which threads are selected.<br>
+			<br>
+			If you have a busy site, choose a smaller number.<br>
+			<br>
+			<br>
+			<strong>Thread Cache Lifespan</strong> (valid values: 1-1440; default: 60)<br>
+			Time in minutes that thread content is cached.<br>
+			<br>
+			The higher the value, the fewer resources are used.<br>
+			<br>
+			<br>
+			<strong>Maximum External Records</strong> (default: 15)<br>
+			Maximum number of records provided.<div class="Mnote">
+				<div class="Mnotewarnheader">Note:</div>
+				<div class="Mnotewarninner">Users can add <em>&amp;count=X</em> to their RSS feed request to retrieve
+					more records.</div>
+			</div>
+			

@@ -1,0 +1,47 @@
+<table class="headingtable" cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tbody>
+					<tr valign="bottom">
+						<td>
+							<h6 style="display:inline"><a name="item127"></a>How Style Variables Interact with CSS</h6>
+						</td>
+						<td>
+							<div style="font:11px tahoma; text-align:right"><a
+									href="https://www.vbulletin.com/docs/onepage/#link127">Back to Top</a></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			vBulletin uses Style Variables to dynamically build the CSS it uses for rendering during page load or when
+			the files are written to the server, if you have enabled that option. The use of Style Variables allows you
+			to build different styles from which your users can choose.<br>
+			<br>
+			Here is a sample of code in a CSS template:<div class="Mcodecontainer">
+				<pre class="Mcodeblock">.postbit, .postbitlegacy, .eventbit {
+    margin-bottom: {vb:stylevar padding};
+    display:block;
+    width: 100%;
+    clear:both;
+    position: relative;
+    float: {vb:stylevar left};
+    color: {vb:stylevar body_color};
+    border: {vb:stylevar postbit_border};
+}
+</pre>
+			</div>This code contains several style variable references denoted by <span
+				class="Mvar">{vb:stylevar}</span> tags. The vBulletin template engine retrieves the values of the style
+			variables and inserts them directly into the CSS before it is used for rendering.<br>
+			<br>
+			<strong>CSS Math Tag</strong><br>
+			It is possible to use style variables in mathematical expressions with the <span
+				class="Mvar">{vb:math}</span> tag.<br>
+			<br>
+			This is used to evaluate the result of the mathematical expression specified. The syntax is:<div
+				class="Mcodecontainer">
+				<pre class="Mcodeblock">{vb:math expression}
+</pre>
+			</div>An example using <span class="Mvar">{vb:math}</span> is:<div class="Mcodecontainer">
+				<pre class="Mcodeblock">height:{vb:math 8px + {vb:math {vb:stylevar font.fontSize}-1}};
+</pre>
+			</div>This expression determines the height of an element based on the font size specified in the font style
+			variable and an extra value of 8 pixels.
+			

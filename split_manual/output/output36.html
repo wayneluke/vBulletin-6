@@ -1,0 +1,59 @@
+<table class="headingtable" cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tbody>
+					<tr valign="bottom">
+						<td>
+							<h3 style="display:inline"><a name="item40"></a>vBulletin Template Diff/Merge System</h3>
+						</td>
+						<td>
+							<div style="font:11px tahoma; text-align:right"><a
+									href="https://www.vbulletin.com/docs/onepage/#link40">Back to Top</a></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			One of the most common complaints about vBulletin's upgrade process is applying the template changes. While
+			the template history feature helped a little bit, it didn't go far enough. vBulletin 4.0 will introduce a
+			feature to make applying template changes much easier: automatic merging and 3-way comparison.<br>
+			<br>
+			Whenever you upgrade, we will automatically look for templates that have changed and see if you customized
+			those templates. If you have, we will automatically try to merge the changes in. If this succeeds, you won't
+			have anything else to do (in most cases). If it fails, your customized template won't be updated--like in
+			vBulletin 3--and you'll have to apply the changes yourself. However, that process is improved as well. More
+			on that later.<br>
+			<br>
+			Roughly, the merging process goes like this:<br>
+			[*]Find the differences between the old default and the new default. ("old-new")<br>
+			[*]Find the differences between the old default and your customized version. ("old-custom")<br>
+			[*]Start walking through the template. If we find a changed spot in old-new but it's not changed in
+			old-custom, use the old-new version. If we find a change in old-custom but not old-new, use the old-custom
+			version. If neither changed, use either. If both changed, that's a conflict and we can't do the merge.<br>
+			Most of this happens behind the scenes. However, you'll see some changes to the "Find Update Templates"
+			screen:<br>
+			<br>
+			<div align="center"><img src="./vBulletin Manual_files/merge_find.png" border="0" alt=""></div>
+			<br>
+			The "View Highlighted Changes" link will take you to this page:<br>
+			<br>
+			<div align="center"><img src="./vBulletin Manual_files/merge_compare.png" border="0" alt=""></div>
+			<br>
+			This lets you view the 3-way merge results visually. The yellow lines indicate areas changed by merging,
+			while the red blocks indicate conflicts. The conflicting areas show you the values in all 3 versions of the
+			template (old, new, customized) to let you choose how to resolve it.<br>
+			<br>
+			Of course, trying to do the edit from this page would be a challenge, so if you click the "Edit Merged Text"
+			link, you'll be taken to a normal looking template editor:<br>
+			<br>
+			<div align="center"><img src="./vBulletin Manual_files/merge_edit.png" border="0" alt=""></div>
+			<br>
+			However, the text that you're editing is slightly different from the norm. Any unchanged or merged areas are
+			as you'd expect, but the output from a conflict is very different. All 3 possible values for a conflict will
+			be shown, so you can resolve it correct. And don't worry, if you try to save it while there's still a
+			conflict, it will warn you.<br>
+			<br>
+			It should be noted that the automatic merging is pretty conservative. "Adjacent updates" (when a customized
+			version adds a line immediately after a line that was changed) will trigger a conflict. In some cases, it'd
+			be ok for this merge to go through, but there are other situations where things would break if the change
+			were applied. Regardless, the new conflict management system should allow you to resolve the problem more
+			quickly.<br>
+
+			

@@ -1,0 +1,41 @@
+<table class="headingtable" cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tbody>
+					<tr valign="bottom">
+						<td>
+							<h5 style="display:inline"><a name="item72"></a>PHP</h5>
+						</td>
+						<td>
+							<div style="font:11px tahoma; text-align:right"><a
+									href="https://www.vbulletin.com/docs/onepage/#link72">Back to Top</a></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			The <strong>PHP</strong> module is used to display dynamic content on your page - content that would change
+			over time or that needs information from the database. It is in the module category <em>Generic</em>.<br>
+			<br>
+			<div align="center"><img src="./vBulletin Manual_files/php-module.png" border="0" alt=""></div>
+			<br>
+			The <strong>PHP</strong> module has two different options:<br>
+			<br>
+			<em>Title</em><br>
+			This is the title that will show above the PHP module on the page.<br>
+			<br>
+			<em>PHP Code</em><br>
+			This is where you would input your valid PHP for the module. Please make sure you use valid PHP or you could
+			possibly break your page. <br>
+			<br>
+			Some examples of valid PHP to use in this module:<div class="Mcodecontainer">
+				<pre class="Mcodeblock">echo “Hello World!”;
+</pre>
+			</div>The output in the PHP module would then be:<div class="Mcodecontainer">
+				<pre class="Mcodeblock">Hello World</pre>
+			</div>
+			<div class="Mcodecontainer">
+				<pre class="Mcodeblock">echo "Hello ". vB5_User::get('username') .", how are you doing today?";
+</pre>
+			</div>The output in the PHP module would then be:<div class="Mcodecontainer">
+				<pre
+					class="Mcodeblock">Hello <em><font color="#000080">&lt;username&gt;</font></em>, how are you doing today?</pre>
+			</div>&lt;&lt;image goes here of actual module on the page&gt;&gt;
+			

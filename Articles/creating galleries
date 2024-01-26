@@ -1,0 +1,101 @@
+# Creating a vBulletin Gallery Channel
+
+> Note: This is Part 1 of a multipart article series. This series teaches you how to create a Photo Gallery on vBulletin without the use of Third-Party Addons or Products. This tutorial is geared towards beginner and intermediate users and designed to walk the user through a wide variety of vBulletin's feature set. Hopefully, this gives the user a wider understanding to manage their own community.
+> [Part 2](#), [Part 3](#), [Part 4](#)
+
+## Why a Gallery?
+
+vBulletin has extensive attachment and image management tools available to the customer. Customers can create Photo Galleries in any channel if they have permission. They can also create albums in their user profile. However, this isn't always enough. An administrator may want to consolidate this into sitewide Galleries where users can share photos under specific categories.
+
+## Let's Do this...
+
+### Create the Gallery Channel
+
+First create a new sub-channel under Forum called Gallery. This can be created using the Site Builder channel tool or the Channel Manager in the AdminCP. I recommend using the Channel Manager because it provides additional options.
+
+> Note: If you want to allow your users to create their own gallery channels, think about using Groups as the top level parent. All other steps should be the same.
+
+1. In the AdminCP go to Channel Management -> Channel Manager.
+2. In the `Choose Action...` drop down for Forum select "Add Child Channel".
+3. I used Galleries for my Channel Title, added a description, and set all the options to no. 
+4. Set the Display Order to 0.
+5. Save the Channel.
+
+![Gallery Chanenl](images/gallery1.png)
+
+### Add Some Default Channel Permissions
+
+vBulletin defaults to allowing 5 attachments per post. This may not be sufficient for a Gallery. So let's change that.
+
+1. In the AdminCP go to Channel Management -> Channel Permissions.
+2. At the top of the page, there will be three links `Permission Duplication Tools | Permissions Quick Editor | Quick Channel Permission Setup`. Click on `Quick Channel Permission Setup`
+3. You should see a screen like the image below.
+
+![Permission Setup](images/gallery3.png)
+
+4. For the first field, set this to "Galleries"
+5. Next select the usergroups that you want to view this channel. Don't forget to select Administrators as one. (see image above)
+6. Scroll down to Attachment Permissions. 
+7. Set "Max Attachments per Post" to a higher number. I chose 20 for this value.
+8. Scroll down to "Create Permissions.
+9. Make sure that "Can Create Photo Galleries" and "Can Create Photo" are both set to Yes.
+10. Save these permissions.
+
+This will only change the modified permissions. Any permission set to Ignore, will keep its previous value.
+
+If you want to restrict the viewing of this channel to members, you can return to the Quick Channel Permission Setup tool and select the groups that shouldn't see the content and set "Can View Channel" to No. Then save.
+
+### Set some Page Parameters
+
+Currently, this channel will have a URL prefix of forum/galleries and its children will inherit that. We want to fix this so that it is just galleries or gallery, depending on your preference. To do this follow these steps:
+
+1. Click on "Site Home Page" at the top of the AdminCP window.
+2. Once on your front page, remove `/index.php` (if it is there) and add `/forum/galleries` to the URL in your browser and press enter. THis should take you to the current Galleries channel.
+3. Once in the Galleries Channel, click "Edit Page" in the Site Builder Menu.
+   1. The page will look pretty bare as there is no content yet. We're going to get to that soon.
+4. Click "Save Page" in the upper right corner. We want to make a few changes before we create content.
+5. In the URL change it to galleries or gallery (your choice). I am just going to stick with galleries.
+6. Set "Overwrite Template" to No.
+7. In the text box that appears, type "Gallery Channel"
+8. Finish saving the page.
+
+![Gallery Page](images/gallery2.png)
+
+## Sub-Channels
+
+Now that the initial setup is taken care of we can create some sub-channels to hold different types of images. Since we're at the frontend of the site anyway, we'll use the Channel Manager in Site Builder to create these.
+
+1. In the Site Builder menu, click on "Channels."
+2. On the "Galleries" row, click on the + link.
+3. Give your new channel a name.
+4. Repeat for all your initial channels.
+5. When Done, click "Save Changes" in the top right corner.
+
+![Channels](images/gallery4.png)
+
+### Add a Navigation Tab
+
+When we originally created the Galleries channel,  we gave it a display order of 0. This hides the channel in Forum Lists but allows it to be accessible by URL provided the user has permission to view it.
+
+1. In the Site Builder menu, click on Navigation Bar.
+2. Select "New Navigation Item"
+
+![Navigation](images/gallery5.png)
+
+3. If you're restricting access then click on "Edit" under usergroups.
+4. Select the usergroups that should be able to see this tab.
+
+![view permission](images/gallery6.png)
+
+### Customizing the Page Template
+
+Page Templates allow you to change groups of pages at one time. Above in Set Some Page Parameters, we set the groundwork for this by creating a new page template for Galleries. Now we are going to start taking advantage of this. My channels are based on types of animals so I am going to edit the Mammals Channel. The screenshot below shows us where we are now:
+
+![Current Channels](images/gallery7.png)
+
+If I click on Mammals you will notice it is a little different. Behind the scenes, I made a few changes to the layout. I set the Photos tab to be the default and re-arranged them. I will go over these changes in a minute. Currently Mammals looks like this:
+
+![Mammals Channel](images/gallery8.png)
+
+I can make the other channels look like this simply by changing their Page Template. If I edit the Page for the Birds Channel, and select the Page Template tab I will see this: 
+

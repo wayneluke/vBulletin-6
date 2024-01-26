@@ -1,0 +1,49 @@
+<table class="headingtable" cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tbody>
+					<tr valign="bottom">
+						<td>
+							<h2 style="display:inline"><a name="item419"></a>Debug Mode</h2>
+						</td>
+						<td>
+							<div style="font:11px tahoma; text-align:right"><a
+									href="https://www.vbulletin.com/docs/onepage/#link419">Back to Top</a></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			When developing for vBulletin or troubleshooting issues, you often have to enter Debug Mode. Debug Mode
+			provides you with more information about how vBulletin runs some examples include: page generation times,
+			templates used on a page, the memory used on a page and how many queries it took to generate the page. Debug
+			Mode should not be used on a live production site unless absolutely necessary. It can expose information
+			that could weaken security on your site.<div class="Mnote">
+				<div class="Mnotewarnheader">Note:</div>
+				<div class="Mnotewarninner">The config file is located in your includes directory.</div>
+			</div><strong>
+				<font size="3">Entering Debug Mode</font>
+			</strong><br>
+			To do this, you need to edit your config.php file and add the following line:<div class="Mcodecontainer">
+				<div class="Mcodeblock"><code><span style="color: #000000">
+							<span style="color: #0000BB">$config</span><span style="color: #007700">[</span><span
+								style="color: #DD0000">'Misc'</span><span style="color: #007700">][</span><span
+								style="color: #DD0000">'debug'</span><span
+								style="color: #007700">]&nbsp;=&nbsp;</span><span
+								style="color: #0000BB">true</span><span style="color: #007700">;&nbsp;
+								<br></span><span style="color: #0000BB"></span>
+						</span>
+					</code></div>
+			</div>This line of code can be anywhere in the file after the &lt;?php and outside of a comment. Once done,
+			save the file and overwrite the copy on your server.<br>
+			<br>
+			<strong>
+				<font size="3">Turning off Debug Mode</font>
+			</strong><br>
+			Edit your config.php file and remove the above line of code or comment it out by placing two slashes ('//')
+			in front of it. Save the file and overwrite the copy stored on your server.
+
+		</div>
+	</div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<table class="headingtable" cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tbody>
+					<tr valign="bottom">
+						<td>
+							<h2 style="display:inline"><a name="item19"></a>Editing the vBulletin Configuration Files
+							</h2>
+						</td>
+						<td>
+							<div style="font:11px tahoma; text-align:right"><a
+									href="https://www.vbulletin.com/docs/onepage/#link19">Back to Top</a></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			As of vBulletin there are two configuration files. There is the new vBulletin presentation config.php file,
+			and the core configuration file. We will first go over the legacy configuration file as it contains your
+			database information. The legacy configuration file is always located in the upload/core/includes/ folder of
+			your vBulletin package.<div class="Mwarn">
+				<div class="Mnotewarnheader">Warning:</div>
+				<div class="Mnotewarninner">Before uploading the vBulletin files to your web server, you must edit both
+					vBulletin configuration files to tell vBulletin how to communicate with your database and server.
+				</div>
+			</div>To edit the configuration files, you will need to open the file in a text editor such as Windows®
+			WordPad or another recommended editor.<div class="Mnote">
+				<div class="Mnotewarnheader">Note:</div>
+				<div class="Mnotewarninner">Please use a <a
+						href="https://www.vbulletin.com/docs/html/main/vb5_recommended_software"
+						class="Mhop">recommended editor</a> to avoid issues with the formatting and display of the file.
+					PHP files are standard ASCII/ANSI plain text files and should not be saved as UTF-8 with BOM.</div>
+			</div><strong>
+				<font size="3">Format of the config.php Files</font>
+			</strong><br>
+			The vBulletin configuration files are in PHP. However if you follow these instructions, knowledge of PHP is
+			not required to edit these files. The files are a series of variables. When setting a variable, you enter
+			the value to the right of the equal sign. If the value is text rather than numbers it needs to be in single
+			quotation marks. <br>
+			<br>
+			When making changes to the file, the edit should always be to the right of the = sign between the single
+			quotes. For example:<br>
+			<br>
+			Default: $config['admincpdir'] = 'admincp'; <br>
+			Correct: $config['admincpdir'] = 'myadmin'; <br>
+			Incorrect: $config['myadmin'] = 'admincp';<br>
+			<br>
+			<br>
+			Make sure that you edit the info to the right of the equal sign. Do <strong>not</strong> edit the names in
+			the brackets to the left of the equal sign. <br>
+			<br>
+
+			

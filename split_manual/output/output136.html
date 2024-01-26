@@ -1,0 +1,68 @@
+<table class="headingtable" cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tbody>
+					<tr valign="bottom">
+						<td>
+							<h5 style="display:inline"><a name="item141"></a>Uploading a Style</h5>
+						</td>
+						<td>
+							<div style="font:11px tahoma; text-align:right"><a
+									href="https://www.vbulletin.com/docs/onepage/#link141">Back to Top</a></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			If you have downloaded a vBulletin XML style file from another vBulletin installation, or if you want to
+			restore a style backup that you made yourself, you will have need of the vBulletin Style Importer.<br>
+			<br>
+			This system will read an XML file, convert the data inside it into StyleVars, CSS, Replacement Variables and
+			Templates and write the data into your database.<br>
+			<br>
+			<strong>
+				<font color="red">***SCREENSHOT OF UPLOAD OPTIONS PAGE***</font>
+			</strong><br>
+			<br>
+			The Style Download form is relatively simple, with the following controls:<ul>
+				<li><strong>Either Upload XML File from your computer</strong><br>
+					If the XML style file you want to import is located on your own computer, press the ‘Browse’ button
+					and use the popup navigator to find the file and upload it.</li>
+				<li><strong>Or Import XML file from your server</strong><br>
+					If the XML style file you want to import is located on your web server, enter the file path to the
+					file here. This should be the path relative to the directory where vBulletin is installed.</li>
+				<li><strong>Merge Into Style</strong><br>
+					If you are restoring a style backup, you will probably want to import the XML file over the top of
+					the style of which it is a backup. To do this, select the style you want to merge into from the list
+					provided. If no style is chosen from the list, a new style will be created and the data in the XML
+					file will be imported into this new style.</li>
+				<li><strong>Ignore Style Version</strong><br>
+					When a style file is downloaded from vBulletin, the version number of the vBulletin exporting the
+					file is included. If the version number included in the style file you are importing does not match
+					the version number of the vBulletin doing the import a warning will be shown to alert you to
+					possible incompatibilities. If you are confident that no errors will occur as a result of importing
+					a style from a different version of vBulletin, use this control to force vBulletin to accept the
+					file regardless of the stored version number.</li>
+				<li><strong>Title for Uploaded Style</strong><br>
+					If you chose to create a new style rather than overwrite an existing style, vBulletin will use the
+					style title included in the XML file as the title for the new style unless you specify an
+					alternative title using this control.</li>
+				<li><strong>Parent Style</strong><br>
+					When importing a style as a new style, this allows you to set whether the newly imported style
+					should be a parent style or the child of another style. Select the option you wish from the
+					dropdown.</li>
+				<li><strong>Display Order</strong><br>
+					This text box expects you to enter a whole number (0, 15, 99, 1007 etc) to affect the position at
+					which this style will appear in any style lists. It corresponds to the display order text box on the
+					main <a href="https://www.vbulletin.com/docs/html/main/stylemanager" class="Mhop">Style Manager</a>
+					interface.</li>
+				<li><strong>Title for Uploaded Style</strong><br>
+					This Yes/No choice corresponds to the checkbox next to each style on the main <a
+						href="https://www.vbulletin.com/docs/html/main/stylemanager" class="Mhop">Style Manager</a>
+					interface, and affects whether or not your visitors will be able to use this style to view the
+					board.</li>
+			</ul>Once you have entered your selections in the form, press the <strong>[Import]</strong> button to import
+			your style customisations into your database.<div class="Mnote">
+				<div class="Mnotewarnheader">Note:</div>
+				<div class="Mnotewarninner">XML style files can not contain image files, so no images will be imported
+					when using this system. If the style you are importing requires special images, you will need to
+					upload them to your web server using an FTP client.</div>
+			</div>
+			

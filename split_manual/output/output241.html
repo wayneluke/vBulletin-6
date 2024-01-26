@@ -1,0 +1,157 @@
+<table class="headingtable" cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tbody>
+					<tr valign="bottom">
+						<td>
+							<h4 style="display:inline"><a name="item246"></a>The User Infraction Manager</h4>
+						</td>
+						<td>
+							<div style="font:11px tahoma; text-align:right"><a
+									href="https://www.vbulletin.com/docs/onepage/#link246">Back to Top</a></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			The <strong>User Infraction Manager</strong>, accessible via <span class="Mprocess">User Infractions &gt;
+				User Infraction Manager</span>, allows you to view and modify user infraction levels and groups, as well
+			as automatic ban settings.<br>
+			<br>
+			The <strong>User Infraction Manager</strong> has three tables: <strong>User Infraction Levels</strong>,
+			<strong>User Infraction Groups</strong> and <strong>Automatic Ban</strong>.<br>
+			<br>
+			<font size="2"><strong>User Infraction Levels</strong></font><br>
+			<br>
+			&lt;&lt;&lt;screenshot of the User Infraction Levels table&gt;&gt;&gt;<br>
+			<br>
+			The <strong>User Infraction Levels</strong> table has the following columns:<ul>
+				<li><strong>Title</strong><br>
+					The title of the user infraction level.</li>
+				<li><strong>Points</strong><br>
+					The number of points the specified user infraction level is worth.</li>
+				<li><strong>Expires</strong><br>
+					The amount of time that the points stay active for the specified user infraction level. If the
+					points never expire, this column will display "Never".</li>
+				<li><strong>Warning</strong><br>
+					Whether or not the infraction level can be given as a warning.</li>
+				<li><strong>Extend</strong><br>
+					Whether or not the expiration time period will be extended if the user receives an additional
+					infraction of the same kind within the time period specified in the Expires field.</li>
+				<li><strong>Controls</strong><br>
+					The dropdown list has the following options:<ul>
+						<li><strong>Edit</strong><br>
+							Selecting this option and clicking the <span class="Mbutton"
+								title="Click the &#39;Go&#39; button">[Go]</span> button will open the <strong>Edit User
+								Infraction Level</strong> form for the specified user infraction level. For more
+							information about this form, see the <a
+								href="https://www.vbulletin.com/docs/html/main/acp_users_userinfractions_modlevels"
+								class="Mhop">Modifying User Infraction Levels</a> article.</li>
+						<li><strong>Delete</strong><br>
+							Selecting this option and clicking the <span class="Mbutton"
+								title="Click the &#39;Go&#39; button">[Go]</span> button will open a confirmation dialog
+							asking if you are sure you would like to delete the specified user infraction level.
+							Clicking the <span class="Mbutton" title="Click the &#39;Yes&#39; button">[Yes]</span> will
+							delete the user infraction level and return you to the <strong>User Infraction
+								Manager</strong>. Clicking the <span class="Mbutton"
+								title="Click the &#39;No&#39; button">[No]</span> will cancel the operation and return
+							you to the <strong>User Infraction Manager</strong>.</li>
+					</ul>
+				</li>
+			</ul>Clicking the <span class="Mbutton"
+				title="Click the &#39;Add New User Infraction Level&#39; button">[Add New User Infraction Level]</span>
+			button at the bottom of the table opens the <strong>Add User Infraction Level</strong> form. For more
+			information about this form, see the <a
+				href="https://www.vbulletin.com/docs/html/main/acp_users_userinfractions_modlevels"
+				class="Mhop">Modifying User Infraction Levels</a> article.<br>
+			<br>
+			<font size="2"><strong>User Infraction Groups</strong></font><br>
+			<br>
+			&lt;&lt;&lt;screenshot of the User Infraction Groups table&gt;&gt;&gt;<br>
+			<br>
+			The <strong>User Infraction Groups</strong> table has the following columns:<ul>
+				<li><strong>Primary Usergroup</strong><br>
+					The usergroup for which this infraction group applies.</li>
+				<li><strong>Override Usergroup</strong><br>
+					The usergroup that will be used to override the primary usergroup. See the <a
+						href="https://www.vbulletin.com/docs/html/main/acp_users_userinfractions_modgroups"
+						class="Mhop">Modifying User Infraction Groups</a> article for more information about how
+					permissions work in regards to this setting.<br>
+					<br>
+					Clicking this link opens the <strong>Edit Usergroup</strong> form. For more information about this
+					form, see the <a
+						href="https://www.vbulletin.com/docs/html/main/acp_permissions_tools_addedit_usergroups"
+						class="Mhop">Adding and Editing A Usergroup</a> article.</li>
+				<li><strong>Override Display</strong><br>
+					Whether or not the user's username markup and user title will be replaced by the markup and user
+					title from the infraction usergroup.</li>
+				<li><strong>Points</strong><br>
+					The number of points that must be accumulated for this infraction group to apply.</li>
+				<li><strong>Controls</strong><br>
+					The dropdown list has the following options:<ul>
+						<li><strong>Edit</strong><br>
+							Selecting this option and clicking the <span class="Mbutton"
+								title="Click the &#39;Go&#39; button">[Go]</span> button will open the <strong>Edit User
+								Group</strong> form for the specified user infraction group. For more information about
+							this form, see the <a
+								href="https://www.vbulletin.com/docs/html/main/acp_users_userinfractions_modgroups"
+								class="Mhop">Modifying User Infraction Groups</a> article.</li>
+						<li><strong>Delete</strong><br>
+							Selecting this option and clicking the <span class="Mbutton"
+								title="Click the &#39;Go&#39; button">[Go]</span> button will open a confirmation dialog
+							asking if you are sure you would like to delete the specified user infraction group.
+							Clicking the <span class="Mbutton" title="Click the &#39;Yes&#39; button">[Yes]</span> will
+							delete the user infraction group and return you to the <strong>User Infraction
+								Manager</strong>. Clicking the <span class="Mbutton"
+								title="Click the &#39;No&#39; button">[No]</span> will cancel the operation and return
+							you to the <strong>User Infraction Manager</strong>.</li>
+					</ul>
+				</li>
+			</ul>Clicking the <span class="Mbutton"
+				title="Click the &#39;Add New User Infraction Group&#39; button">[Add New User Infraction Group]</span>
+			button at the bottom of the table opens the <strong>Add User Infraction Group</strong> form. For more
+			information about this form, see the <a
+				href="https://www.vbulletin.com/docs/html/main/acp_users_userinfractions_modgroups"
+				class="Mhop">Modifying User Infraction Groups</a> article.<br>
+			<br>
+			<font size="2"><strong>Automatic Ban</strong></font><br>
+			<br>
+			&lt;&lt;&lt;screenshot of the Automatic Ban table&gt;&gt;&gt;<br>
+			<br>
+			The <strong>Automatic Ban</strong> table has the following columns:<ul>
+				<li><strong>Primary Usergroup</strong><br>
+					The usergroup for which this automatic ban applies.</li>
+				<li><strong>Ban Usergroup</strong><br>
+					The usergroup the user will be moved to after they are banned. Clicking this link opens the
+					<strong>Edit Usergroup</strong> form. For more information about this form, see the <a
+						href="https://www.vbulletin.com/docs/html/main/acp_permissions_tools_addedit_usergroups"
+						class="Mhop">Adding and Editing A Usergroup</a> article.</li>
+				<li><strong>Amount</strong><br>
+					The number of points or infractions that the user must accumulate in order to trigger the automatic
+					ban.</li>
+				<li><strong>Method</strong><br>
+					Whether the the automatic ban is triggered via the specified number of "Points" or "Infractions".
+				</li>
+				<li><strong>Ban Period</strong><br>
+					The length of time that the user will be banned.</li>
+				<li><strong>Controls</strong><br>
+					The dropdown list has the following options:<ul>
+						<li><strong>Edit</strong><br>
+							Selecting this option and clicking the <span class="Mbutton"
+								title="Click the &#39;Go&#39; button">[Go]</span> button will open the <strong>Edit
+								Automatic Ban</strong> form for the specified user infraction group. For more
+							information about this form, see the <a
+								href="https://www.vbulletin.com/docs/html/main/acp_users_userinfractions_modbans"
+								class="Mhop">Modifying Automatic Bans</a> article.</li>
+						<li><strong>Delete</strong><br>
+							Selecting this option and clicking the <span class="Mbutton"
+								title="Click the &#39;Go&#39; button">[Go]</span> button will open a confirmation dialog
+							asking if you are sure you would like to delete the specified automatic ban. Clicking the
+							<span class="Mbutton" title="Click the &#39;Yes&#39; button">[Yes]</span> will delete the
+							automatic ban and return you to the <strong>User Infraction Manager</strong>. Clicking the
+							<span class="Mbutton" title="Click the &#39;No&#39; button">[No]</span> will cancel the
+							operation and return you to the <strong>User Infraction Manager</strong>.</li>
+					</ul>
+				</li>
+			</ul>Clicking the <span class="Mbutton" title="Click the &#39;Add New Automatic Ban&#39; button">[Add New
+				Automatic Ban]</span> button at the bottom of the table opens the <strong>Add Automatic Ban</strong>
+			form. For more information about this form, see the hop=acp_users_userinfractions_modbans]Modifying
+			Automatic Bans[/hop] article.
+			

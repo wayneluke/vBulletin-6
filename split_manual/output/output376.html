@@ -1,0 +1,36 @@
+<table class="headingtable" cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tbody>
+					<tr valign="bottom">
+						<td>
+							<h3 style="display:inline"><a name="item385"></a>Accessing Your Server and Files</h3>
+						</td>
+						<td>
+							<div style="font:11px tahoma; text-align:right"><a
+									href="https://www.vbulletin.com/docs/onepage/#link385">Back to Top</a></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			How you access your server can undermine any security protocols you put into place. It is recommended that
+			you use SFTP (SSH File Transfer Protocol) and SSH (Secure Shell) access to directly access your server and
+			files. These are secure versions of the common FTP and Telnet protocols. SFTP and SSH will send passwords in
+			an encrypted format whereas FTP and Telnet send them in plaintext.<br>
+			<br>
+			You can find out more about these protocols at Wikipedia.com<br>
+			SFTP: <a href="https://en.wikipedia.org/wiki/SSH_file_transfer_protocol"
+				target="_blank">http://en.wikipedia.org/wiki/SSH_file_transfer_protocol</a><br>
+			SSH: <a href="https://en.wikipedia.org/wiki/SSH" target="_blank">http://en.wikipedia.org/wiki/SSH</a><br>
+			<br>
+			<strong>Root Accounts</strong><br>
+			Root or Super User accounts are a necessity if you maintain your own server but they are a security
+			nightmare. You should never access your server directly with a Root Account unless you can absolutely
+			guarantee a secure tunnel between your access point and the server itself. You can do this with a Virtual
+			Private Networking protocol on both your server and the computer you access the server with. Not all servers
+			will support this though and your datacenter might not allow the installation of the software to allow
+			it.<br>
+			<br>
+			If you are using Linux or Unix, you can create a usergroup called a "Wheel Group". This is a group of users
+			that once logged in through SSH, can issue a command to switch to a superuser. This is the only way you
+			should access your superuser accounts without a VPN connection. You can find information on creating wheel
+			account users in your operating system's documentation.
+			

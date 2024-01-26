@@ -1,0 +1,40 @@
+<table class="headingtable" cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tbody>
+					<tr valign="bottom">
+						<td>
+							<h3 style="display:inline"><a name="item36"></a>Using the Command Line Upgrade</h3>
+						</td>
+						<td>
+							<div style="font:11px tahoma; text-align:right"><a
+									href="https://www.vbulletin.com/docs/onepage/#link36">Back to Top</a></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			With vBulletin, you can run the upgrade script from the command line and remove the overhead of your browser
+			and HTTP calls. The command line interface is designed to specifically help big boards with the upgrade
+			process and to eliminate the time caused by HTTP interaction. <br>
+			<br>
+			To run this interface, go to your install directory
+			(<em>http://www.yourdomain.com/pathtoforums/core/install/upgrade.php</em>) using the ‘cd’ command and
+			execute:<div class="Mcodecontainer">
+				<pre class="Mcodeblock">php -f upgrade.php
+</pre>
+			</div>If you are logged in as the root user, you will need to run the upgrade as the user that the webserver
+			runs under. This will prevent permission problems from occurring later if you store CSS as files. Use this
+			command:<div class="Mcodecontainer">
+				<pre class="Mcodeblock">sudo -u &lt;user&gt; php -f upgrade.php
+</pre>
+			</div>Where &lt;user&gt; is the user that the webserver is run with. On most systems, this is the user
+			nobody.<br>
+			<br>
+			Your CLI version of PHP may not have been compiled with or configured to use the same modules as your web
+			version. If you encounter problems in command line mode, switching to the web mode should be able to process
+			through them. You can see your command line configuration by typing:<div class="Mcodecontainer">
+				<pre class="Mcodeblock">php -i &gt; phpinfo.txt
+</pre>
+			</div>You can then review the output in any text editor. You should inspect this configuration to make sure
+			that it has mysql and/or mysqli available so you can connect to the database. You would also need to make
+			sure that the command line version of PHP has XML support. If it does not, then you would need to run the
+			XML imports from the Browser.
+			

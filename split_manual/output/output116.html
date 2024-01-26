@@ -1,0 +1,206 @@
+<table class="headingtable" cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tbody>
+					<tr valign="bottom">
+						<td>
+							<h6 style="display:inline"><a name="item121"></a>How do Templates Work</h6>
+						</td>
+						<td>
+							<div style="font:11px tahoma; text-align:right"><a
+									href="https://www.vbulletin.com/docs/onepage/#link121">Back to Top</a></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			The pages you see making up the user interface of vBulletin are generated using a number of templates.
+			Templates are fragments of XHTML code interspersed with PHP variables. These combine together to form
+			complete XHTML pages that are served up to visitors.<br>
+			<br>
+			A simple example template might look like this:<div class="Mcodecontainer">
+				<pre class="Mcodeblock"><font color="#008080">&lt;table class=<font color="#0000FF">"tborder"</font>&gt;</font>
+<font color="#008080">&lt;tr&gt;</font>
+    <font color="#008080">&lt;td class=<font color="#0000FF">"tcat"</font> colspan=<font color="#0000FF">"2"</font>&gt;</font>My Table<font color="#008080">&lt;/td&gt;</font>
+<font color="#008080">&lt;/tr&gt;</font>
+$tablebits
+<font color="#008080">&lt;/table&gt;</font>
+</pre>
+			</div>The <span class="Mvar">$tablebits</span> PHP variable represents an area of the template that will be
+			replaced with either some data, or additional template contents.<br>
+			<br>
+			For example, we might have another template that looks like this:<div class="Mcodecontainer">
+				<pre class="Mcodeblock"><font color="#008080">&lt;tr&gt;</font>
+    <font color="#008080">&lt;td class=<font color="#0000FF">"alt1"</font>&gt;</font>$username<font color="#008080">&lt;/td&gt;</font>
+    <font color="#008080">&lt;td class=<font color="#0000FF">"alt2"</font>&gt;</font>$message<font color="#008080">&lt;/td&gt;</font>
+<font color="#008080">&lt;/tr&gt;</font>
+</pre>
+			</div>This template would have the <span class="Mvar">$username</span> and <span
+				class="Mvar">$message</span> variables substituted with the appropriate username and message.<div
+				class="Mcodecontainer">
+				<pre class="Mcodeblock"><font color="#008080">&lt;tr&gt;</font>
+    <font color="#008080">&lt;td class=<font color="#0000FF">"alt1"</font>&gt;</font>Mister User<font color="#008080">&lt;/td&gt;</font>
+    <font color="#008080">&lt;td class=<font color="#0000FF">"alt2"</font>&gt;</font>This is my message<font color="#008080">&lt;/td&gt;</font>
+<font color="#008080">&lt;/tr&gt;</font>
+</pre>
+			</div>The template would then be repeated as many times as necessary, replacing the variables with the
+			username and message for each repetition. Finally, this completed block of XHTML would be inserted into the
+			first template, replacing the <span class="Mvar">$tablebits</span> variable, resulting in a complete block
+			of code like this:<div class="Mcodecontainer">
+				<pre class="Mcodeblock"><font color="#008080">&lt;table class=<font color="#0000FF">"tborder"</font>&gt;</font>
+<font color="#008080">&lt;tr&gt;</font>
+    <font color="#008080">&lt;td class=<font color="#0000FF">"tcat"</font> colspan=<font color="#0000FF">"2"</font>&gt;</font>My Table<font color="#008080">&lt;/td&gt;</font>
+<font color="#008080">&lt;/tr&gt;</font>
+<font color="#008080">&lt;tr&gt;</font>
+    <font color="#008080">&lt;td class=<font color="#0000FF">"alt1"</font>&gt;</font>Mister User<font color="#008080">&lt;/td&gt;</font>
+    <font color="#008080">&lt;td class=<font color="#0000FF">"alt2"</font>&gt;</font>This is my message<font color="#008080">&lt;/td&gt;</font>
+<font color="#008080">&lt;/tr&gt;</font>
+<font color="#008080">&lt;tr&gt;</font>
+    <font color="#008080">&lt;td class=<font color="#0000FF">"alt1"</font>&gt;</font>Another Person<font color="#008080">&lt;/td&gt;</font>
+    <font color="#008080">&lt;td class=<font color="#0000FF">"alt2"</font>&gt;</font>This message is in reply to that posted above.<font color="#008080">&lt;/td&gt;</font>
+<font color="#008080">&lt;/tr&gt;</font>
+<font color="#008080">&lt;tr&gt;</font>
+    <font color="#008080">&lt;td class=<font color="#0000FF">"alt1"</font>&gt;</font>Mister User<font color="#008080">&lt;/td&gt;</font>
+    <font color="#008080">&lt;td class=<font color="#0000FF">"alt2"</font>&gt;</font>Hey, thanks for responding to my message!<font color="#008080">&lt;/td&gt;</font>
+<font color="#008080">&lt;/tr&gt;</font>
+<font color="#008080">&lt;/table&gt;</font>
+</pre>
+			</div>This resulting code can then be passed on to the visitor's web browser for display.<br>
+			<br>
+			Here is the vBulletin header template. It shows how a typical template is built in vBulletin.<div
+				class="Mcodecontainer">
+				<pre class="Mcodeblock"><font color="#000080">&lt;div class=<font color="#0000FF">"above_body"</font>&gt;</font> <i><font color="#000080">&lt;!-- closing tag is in template navbar --&gt;</font></i>
+<font color="#000080">&lt;div id=<font color="#0000FF">"header"</font> class=<font color="#0000FF">"floatcontainer doc_header"</font>&gt;</font>
+    <font color="#000080">&lt;vb:if condition=<font color="#0000FF">"$stylevar['titleimage']"</font>&gt;</font><font color="#000080">&lt;div&gt;</font><font color="#008000">&lt;a name=<font color="#0000FF">"top"</font> href=<font color="#0000FF">"{vb:link forumhome}"</font> class=<font color="#0000FF">"logo-image"</font>&gt;</font><font color="#800080">&lt;img src=<font color="#0000FF">"{vb:stylevar titleimage}"</font> alt=<font color="#0000FF">"{vb:rawphrase x_powered_by_vbulletin, {vb:raw vboptions.bbtitle}}"</font> /&gt;</font><font color="#008000">&lt;/a&gt;</font><font color="#000080">&lt;/div&gt;</font><font color="#000080">&lt;/vb:if&gt;</font>
+    <font color="#000080">&lt;div id=<font color="#0000FF">"toplinks"</font> class=<font color="#0000FF">"toplinks"</font>&gt;</font>
+        <font color="#000080">&lt;vb:if condition=<font color="#0000FF">"$show['member']"</font>&gt;</font>
+            <font color="#000080">&lt;ul class=<font color="#0000FF">"isuser"</font>&gt;</font>
+                <font color="#000080">&lt;li&gt;</font><font color="#008000">&lt;a href=<font color="#0000FF">"login.php?{vb:raw session.sessionurl}do=logout<b><i>&amp;amp;</i></b>logouthash={vb:raw bbuserinfo.logouthash}"</font> onclick=<font color="#0000FF">"return log_out('{vb:rawphrase sure_you_want_to_log_out}')"</font>&gt;</font>{vb:rawphrase log_out}<font color="#008000">&lt;/a&gt;</font><font color="#000080">&lt;/li&gt;</font>
+                <font color="#000080">&lt;vb:if condition=<font color="#0000FF">"$show['registerbutton']"</font>&gt;</font>
+                <font color="#000080">&lt;li&gt;</font><font color="#008000">&lt;a href=<font color="#0000FF">"register.php{vb:raw session.sessionurl_q}"</font> rel=<font color="#0000FF">"nofollow"</font>&gt;</font>{vb:rawphrase register}<font color="#008000">&lt;/a&gt;</font><font color="#000080">&lt;/li&gt;</font>
+                <font color="#000080">&lt;/vb:if&gt;</font>
+                <font color="#000080">&lt;li&gt;</font><font color="#008000">&lt;a href=<font color="#0000FF">"usercp.php{vb:raw session.sessionurl_q}"</font>&gt;</font>{vb:rawphrase user_control_panel}<font color="#008000">&lt;/a&gt;</font><font color="#000080">&lt;/li&gt;</font>
+                <font color="#000080">&lt;li&gt;</font><font color="#008000">&lt;a href=<font color="#0000FF">"{vb:link member, {vb:raw bbuserinfo}}"</font>&gt;</font>{vb:rawphrase your_profile}<font color="#008000">&lt;/a&gt;</font><font color="#000080">&lt;/li&gt;</font>
+                <font color="#000080">&lt;vb:if condition=<font color="#0000FF">"$notifications_total"</font>&gt;</font>
+                <font color="#000080">&lt;li class=<font color="#0000FF">"popupmenu notifications"</font> id=<font color="#0000FF">"notifications"</font>&gt;</font>
+                    <font color="#008000">&lt;a class=<font color="#0000FF">"popupctrl"</font> href=<font color="#0000FF">"usercp.php{vb:raw session.sessionurl_q}"</font>&gt;</font>{vb:rawphrase your_notifications}: <font color="#000080">&lt;span class=<font color="#0000FF">"notifications-number"</font>&gt;</font><font color="#000080">&lt;strong&gt;</font>{vb:raw notifications_total}<font color="#000080">&lt;/strong&gt;</font><font color="#000080">&lt;/span&gt;</font><font color="#008000">&lt;/a&gt;</font>
+                    <font color="#000080">&lt;ul class=<font color="#0000FF">"popupbody popuphover"</font>&gt;</font>
+                        {vb:raw notifications_menubits}
+                    <font color="#000080">&lt;/ul&gt;</font>
+                <font color="#000080">&lt;/li&gt;</font>
+                <font color="#000080">&lt;vb:else /&gt;</font>
+                <font color="#000080">&lt;li class=<font color="#0000FF">"popupmenu nonotifications"</font> id=<font color="#0000FF">"nonotifications"</font>&gt;</font>
+                    <font color="#008000">&lt;a class=<font color="#0000FF">"popupctrl"</font> href=<font color="#0000FF">"usercp.php{vb:raw session.sessionurl_q}"</font>&gt;</font>{vb:rawphrase your_notifications}<font color="#008000">&lt;/a&gt;</font>
+                    <font color="#000080">&lt;ul class=<font color="#0000FF">"popupbody popuphover"</font>&gt;</font>
+                        <font color="#000080">&lt;li&gt;</font>{vb:rawphrase no_new_messages}<font color="#000080">&lt;/li&gt;</font>
+                        <font color="#000080">&lt;vb:if condition=<font color="#0000FF">"$show['pmmainlink']"</font>&gt;</font><font color="#000080">&lt;li&gt;</font><font color="#008000">&lt;a href=<font color="#0000FF">"private.php{vb:raw session.sessionurl_q}"</font>&gt;</font>{vb:rawphrase inbox}<font color="#008000">&lt;/a&gt;</font><font color="#000080">&lt;/li&gt;</font><font color="#000080">&lt;/vb:if&gt;</font>
+                    <font color="#000080">&lt;/ul&gt;</font>
+                <font color="#000080">&lt;/li&gt;</font>
+                <font color="#000080">&lt;/vb:if&gt;</font>
+                <font color="#000080">&lt;li class=<font color="#0000FF">"welcomelink"</font>&gt;</font>{vb:rawphrase welcome_x_link_y, {vb:raw bbuserinfo.username}, {vb:link member, {vb:raw bbuserinfo}}}<font color="#000080">&lt;/li&gt;</font>
+                <font color="#000080">&lt;vb:if condition=<font color="#0000FF">"$vboptions['enablefacebookconnect']"</font>&gt;</font>
+                    {vb:raw facebook_header}
+                <font color="#000080">&lt;/vb:if&gt;</font>
+            <font color="#000080">&lt;/ul&gt;</font>
+            {vb:raw template_hook.header_userinfo}
+            <font color="#000080">&lt;vb:comment&gt;</font><font color="#000080">&lt;p&gt;</font>{vb:rawphrase last_visited_x_at_y, {vb:raw pmbox.lastvisitdate}, {vb:raw pmbox.lastvisittime}}<font color="#000080">&lt;/p&gt;</font><font color="#000080">&lt;/vb:comment&gt;</font>
+        <font color="#000080">&lt;vb:else /&gt;</font>
+            <font color="#000080">&lt;ul class=<font color="#0000FF">"nouser"</font>&gt;</font>
+            <font color="#000080">&lt;vb:if condition=<font color="#0000FF">"$show['registerbutton']"</font>&gt;</font>
+                <font color="#000080">&lt;li&gt;</font><font color="#008000">&lt;a href=<font color="#0000FF">"register.php{vb:raw session.sessionurl_q}"</font> rel=<font color="#0000FF">"nofollow"</font>&gt;</font>{vb:rawphrase register}<font color="#008000">&lt;/a&gt;</font><font color="#000080">&lt;/li&gt;</font>
+            <font color="#000080">&lt;/vb:if&gt;</font>
+                <font color="#000080">&lt;li&gt;</font><font color="#008000">&lt;a rel=<font color="#0000FF">"help"</font> href=<font color="#0000FF">"faq.php{vb:raw session.sessionurl_q}"</font>&gt;</font>{vb:rawphrase help}<font color="#008000">&lt;/a&gt;</font><font color="#000080">&lt;/li&gt;</font>
+                <font color="#000080">&lt;li&gt;</font>
+            <font color="#800000">&lt;script type=<font color="#0000FF">"text/javascript"</font> src=<font color="#0000FF">"clientscript/vbulletin_md5.js?v={vb:raw vboptions.simpleversion}"</font>&gt;</font><font color="#800000">&lt;/script&gt;</font>
+            <font color="#FF8000">&lt;form id=<font color="#0000FF">"navbar_loginform"</font> action=<font color="#0000FF">"login.php?{vb:raw session.sessionurl}do=login"</font> method=<font color="#0000FF">"post"</font> onsubmit=<font color="#0000FF">"md5hash(vb_login_password, vb_login_md5password, vb_login_md5password_utf, {vb:raw show.nopasswordempty})"</font>&gt;</font>
+                <font color="#FF8000">&lt;fieldset id=<font color="#0000FF">"logindetails"</font> class=<font color="#0000FF">"logindetails"</font>&gt;</font>
+                    <font color="#000080">&lt;div&gt;</font>
+                        <font color="#000080">&lt;div&gt;</font>
+                    <font color="#FF8000">&lt;input type=<font color="#0000FF">"text"</font> class=<font color="#0000FF">"textbox&lt;vb:if condition="</font>!$username"&gt;</font> default-value<font color="#000080">&lt;/vb:if&gt;</font>" name="vb_login_username" id="navbar_username" size="10" accesskey="u" tabindex="101" value="<font color="#000080">&lt;vb:if condition=<font color="#0000FF">"$username"</font>&gt;</font>{vb:raw username}<font color="#000080">&lt;vb:else /&gt;</font>{vb:rawphrase username}<font color="#000080">&lt;/vb:if&gt;</font>" /&gt;
+                    <font color="#FF8000">&lt;input type=<font color="#0000FF">"password"</font> class=<font color="#0000FF">"textbox"</font> tabindex=<font color="#0000FF">"102"</font> name=<font color="#0000FF">"vb_login_password"</font> id=<font color="#0000FF">"navbar_password"</font> size=<font color="#0000FF">"10"</font> /&gt;</font>
+                    <font color="#FF8000">&lt;input type=<font color="#0000FF">"text"</font> class=<font color="#0000FF">"textbox default-value"</font> tabindex=<font color="#0000FF">"102"</font> name=<font color="#0000FF">"vb_login_password_hint"</font> id=<font color="#0000FF">"navbar_password_hint"</font> size=<font color="#0000FF">"10"</font> value=<font color="#0000FF">"{vb:rawphrase password}"</font> style=<font color="#0000FF">"display:none;"</font> /&gt;</font>
+                    <font color="#FF8000">&lt;input type=<font color="#0000FF">"submit"</font> class=<font color="#0000FF">"loginbutton"</font> tabindex=<font color="#0000FF">"104"</font> value=<font color="#0000FF">"{vb:rawphrase log_in}"</font> title=<font color="#0000FF">"{vb:rawphrase enter_username_to_login_or_register}"</font> accesskey=<font color="#0000FF">"s"</font> /&gt;</font>
+                        <font color="#000080">&lt;/div&gt;</font>
+                    <font color="#000080">&lt;/div&gt;</font>
+                <font color="#FF8000">&lt;/fieldset&gt;</font>
+                <font color="#000080">&lt;div id=<font color="#0000FF">"remember"</font> class=<font color="#0000FF">"remember"</font>&gt;</font>
+                    <font color="#FF8000">&lt;label for=<font color="#0000FF">"cb_cookieuser_navbar"</font>&gt;</font><font color="#FF8000">&lt;input type=<font color="#0000FF">"checkbox"</font> name=<font color="#0000FF">"cookieuser"</font> value=<font color="#0000FF">"1"</font> id=<font color="#0000FF">"cb_cookieuser_navbar"</font> class=<font color="#0000FF">"cb_cookieuser_navbar"</font> accesskey=<font color="#0000FF">"c"</font> tabindex=<font color="#0000FF">"103"</font> /&gt;</font> {vb:rawphrase remember_me}<font color="#FF8000">&lt;/label&gt;</font>
+                <font color="#000080">&lt;/div&gt;</font>
+
+                <font color="#FF8000">&lt;input type=<font color="#0000FF">"hidden"</font> name=<font color="#0000FF">"s"</font> value=<font color="#0000FF">"{vb:raw session.sessionhash}"</font> /&gt;</font>
+                <font color="#FF8000">&lt;input type=<font color="#0000FF">"hidden"</font> name=<font color="#0000FF">"securitytoken"</font> value=<font color="#0000FF">"{vb:raw bbuserinfo.securitytoken}"</font> /&gt;</font>
+                <font color="#FF8000">&lt;input type=<font color="#0000FF">"hidden"</font> name=<font color="#0000FF">"do"</font> value=<font color="#0000FF">"login"</font> /&gt;</font>
+                <font color="#FF8000">&lt;input type=<font color="#0000FF">"hidden"</font> name=<font color="#0000FF">"vb_login_md5password"</font> /&gt;</font>
+                <font color="#FF8000">&lt;input type=<font color="#0000FF">"hidden"</font> name=<font color="#0000FF">"vb_login_md5password_utf"</font> /&gt;</font>
+            <font color="#FF8000">&lt;/form&gt;</font>
+            <font color="#800000">&lt;script type=<font color="#0000FF">"text/javascript"</font>&gt;</font>
+            YAHOO.util.Dom.setStyle('navbar_password_hint', "display", "inline");
+            YAHOO.util.Dom.setStyle('navbar_password', "display", "none");
+            vB_XHTML_Ready.subscribe(function()
+            {
+            //
+                YAHOO.util.Event.on('navbar_username', "focus", navbar_username_focus);
+                YAHOO.util.Event.on('navbar_username', "blur", navbar_username_blur);
+                YAHOO.util.Event.on('navbar_password_hint', "focus", navbar_password_hint);
+                YAHOO.util.Event.on('navbar_password', "blur", navbar_password);
+            });
+            
+            function navbar_username_focus(e)
+            {
+            //
+                var textbox = YAHOO.util.Event.getTarget(e);
+                if (textbox.value == '<font color="#000080">&lt;vb:if condition=<font color="#0000FF">"$username"</font>&gt;</font>{vb:raw username}<font color="#000080">&lt;vb:else /&gt;</font>{vb:rawphrase username}<font color="#000080">&lt;/vb:if&gt;</font>')
+                {
+                //
+                    textbox.value='';
+                    textbox.style.color='{vb:stylevar input_color}';
+                }
+            }
+
+            function navbar_username_blur(e)
+            {
+            //
+                var textbox = YAHOO.util.Event.getTarget(e);
+                if (textbox.value == '')
+                {
+                //
+                    textbox.value='<font color="#000080">&lt;vb:if condition=<font color="#0000FF">"$username"</font>&gt;</font>{vb:raw username}<font color="#000080">&lt;vb:else /&gt;</font>{vb:rawphrase username}<font color="#000080">&lt;/vb:if&gt;</font>';
+                    textbox.style.color='{vb:stylevar shade_color}';
+                }
+            }
+            
+            function navbar_password_hint(e)
+            {
+            //
+                var textbox = YAHOO.util.Event.getTarget(e);
+                
+                YAHOO.util.Dom.setStyle('navbar_password_hint', "display", "none");
+                YAHOO.util.Dom.setStyle('navbar_password', "display", "inline");
+                YAHOO.util.Dom.get('navbar_password').focus();
+            }
+
+            function navbar_password(e)
+            {
+            //
+                var textbox = YAHOO.util.Event.getTarget(e);
+                
+                if (textbox.value == '')
+                {
+                    YAHOO.util.Dom.setStyle('navbar_password_hint', "display", "inline");
+                    YAHOO.util.Dom.setStyle('navbar_password', "display", "none");
+                }
+            }
+            <font color="#800000">&lt;/script&gt;</font>
+                <font color="#000080">&lt;/li&gt;</font>
+                <font color="#000080">&lt;vb:if condition=<font color="#0000FF">"$vboptions['enablefacebookconnect']"</font>&gt;</font>
+                    {vb:raw facebook_header}
+                <font color="#000080">&lt;/vb:if&gt;</font>
+            <font color="#000080">&lt;/ul&gt;</font>
+        <font color="#000080">&lt;/vb:if&gt;</font>
+    <font color="#000080">&lt;/div&gt;</font>
+    <font color="#000080">&lt;div class=<font color="#0000FF">"ad_global_header"</font>&gt;</font>
+        {vb:raw ad_location.global_header1}
+        {vb:raw ad_location.global_header2}
+    <font color="#000080">&lt;/div&gt;</font>
+    <font color="#000080">&lt;hr /&gt;</font>
+<font color="#000080">&lt;/div&gt;</font>
+</pre>
+			</div>
+			

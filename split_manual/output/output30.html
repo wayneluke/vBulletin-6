@@ -1,0 +1,98 @@
+<table class="headingtable" cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tbody>
+					<tr valign="bottom">
+						<td>
+							<h2 style="display:inline"><a name="item34"></a>Updating the vBulletin Scripts on Your Web
+								Server</h2>
+						</td>
+						<td>
+							<div style="font:11px tahoma; text-align:right"><a
+									href="https://www.vbulletin.com/docs/onepage/#link34">Back to Top</a></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			After downloading the latest version of vBulletin, you will need to decompress the package into a directory
+			on your local workstation. Once this is completed you can start the upgrade process.<table cellpadding="5"
+				cellspacing="0" border="0">
+				<!--<tr><td nowrap="nowrap"><b>Step Num</b></td><td><b>Instruction</b></td></tr>-->
+				<tbody>
+					<tr valign="top">
+						<td class="Mstepnum">1</td>
+						<td class="Msteptext" width="100%">To begin, you will want to turn off your forums. This will
+							help eliminate any potential db errors as people attempt to access your forums before the
+							upgrade is complete. For more information on how to do this, see the <a
+								href="https://www.vbulletin.com/docs/html/main/acp_settings_options_onoff"
+								class="Mhop">Turn Your vBulletin On and Off</a> article.</td>
+					</tr>
+					<tr valign="top">
+						<td class="Mstepnum">2</td>
+						<td class="Msteptext" width="100%">Once your vBulletin site is turned off, you can upload the
+							files. We're using Filezille in the following steps.</td>
+					</tr>
+					<tr valign="top">
+						<td class="Mstepnum">3</td>
+						<td class="Msteptext" width="100%">Connect to your SFTP server.</td>
+					</tr>
+					<tr valign="top">
+						<td class="Mstepnum">4</td>
+						<td class="Msteptext" width="100%">Navigate to the new vBulletin files (on your local machine)
+							in the local pane and the existing old files in the remote pane.</td>
+					</tr>
+					<tr valign="top">
+						<td class="Mstepnum">5</td>
+						<td class="Msteptext" width="100%">Upload the local files into over the files of your remote
+							vBulletin installation as shown here, overwriting the files currently in place:<br>
+							<br>
+							<div align="center"><img src="./vBulletin Manual_files/upload_1.png" border="0" alt="">
+							</div>
+							<br>
+							At this point, you will be prompted by the FTP client to confirm that you want to overwrite
+							the existing files. You should confirm this prompt, telling the FTP client that yes, you do
+							want to overwrite the existing files. If the prompt gives you the option to overwrite
+							<em>all</em> existing files without prompting again, use this option.<br>
+							<br>
+							<div align="center"><img src="./vBulletin Manual_files/upload_2.png" border="0" alt="">
+							</div>
+							<div class="Mwarn">
+								<div class="Mnotewarnheader">Warning:</div>
+								<div class="Mnotewarninner"><strong>Upgrading from vBulletin 3.8.11 or vBulletin
+										4.2.5</strong><br>
+									<br>
+									If you are upgrading from a legacy version of vBulletin, it is required that you put
+									the vBulletin files in a new directory. to delete all previous vBulletin files from
+									the server before uploading the vBulletin files. Special care should be used to
+									maintain the directories with user uploaded content like avatars and attachments.
+									The directory structure and file layout in vBulletin has changed dramatically and
+									this will make sure there are no conflicts between files.</div>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>Most FTP client applications will handle the file transfers automatically, but if for some reason
+			your application does not, you should make a note of the following:<ul>
+				<li><strong>All text files to be transferred in ASCII mode</strong><br>
+					All files containing plain text from the vBulletin package should be transferred in ASCII mode.<br>
+					Text file types you will find in vBulletin are: <em>.html, .php, .js, .xml, .css.</em></li>
+				<li><strong>All non-text files to be transferred in Binary mode</strong><br>
+					The remaining files, which are mostly images, should be transferred to your web server in binary
+					mode.<br>
+					Binary file types used in vBulletin are: <em>.gif, .png, .jpg, .ico.</em></li>
+			</ul>
+			<div class="Mnote">
+				<div class="Mnotewarnheader">Note:</div>
+				<div class="Mnotewarninner">If you installed vB5 directly in the root directory of your web publishing
+					folder (not in a subfolder), you should upload all the files contained in the
+					<strong>upload</strong> folder directly into the web publishing folder on the server, overwriting
+					the files directly.</div>
+			</div>
+			<div class="Mwarn">
+				<div class="Mnotewarnheader">Warning:</div>
+				<div class="Mnotewarninner">It is extremely important that you upload <em>all</em> the files from the
+					latest vBulletin package, including the entire contents of the <strong>install</strong> directory
+					(except the install.php file).<br>
+					<br>
+					Failure to upload all the files may result in the upgrade script being unable to successfully
+					complete the upgrade process.</div>
+			</div>
+			

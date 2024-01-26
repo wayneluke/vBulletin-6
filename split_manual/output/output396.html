@@ -1,0 +1,34 @@
+<table class="headingtable" cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tbody>
+					<tr valign="bottom">
+						<td>
+							<h3 style="display:inline"><a name="item405"></a>4) Making MySQL Start Up with Your Server
+							</h3>
+						</td>
+						<td>
+							<div style="font:11px tahoma; text-align:right"><a
+									href="https://www.vbulletin.com/docs/onepage/#link405">Back to Top</a></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			If you want to set up your MySQL server to run automatically whenever the system is running (just like your
+			Web server probably does), you'll have to set it up to do so. In the share/mysql subdirectory of the MySQL
+			directory, you'll find a script called mysql.server that can be added to your system startup routines to do
+			this.<br>
+			<br>
+			Assuming you've set up a special MySQL user to run the MySQL server, you'll need to edit the mysql.server
+			script before you use it. Open it in your favorite text editor and change the mysql_daemon_user setting to
+			refer to the user you created above:<blockquote class="Mtype">mysql_daemon_user=mysqlusr</blockquote>Setting
+			up the script to be run by your system at startup is a highly operating system-dependant task. If you're not
+			using RedHat Linux and you're not sure of how to do this, you'd be best to ask someone who knows. In RedHat
+			Linux, the following commands (starting in the MySQL directory) will do the trick:<blockquote class="Mtype">
+				cp share/mysql/mysql.server /etc/rc.d/init.d/<br>
+				cd /etc/rc.d/init.d<br>
+				chmod 500 mysql.server<br>
+				cd /etc/rc.d/rc3.d<br>
+				ln -s ../init.d/mysql.server S99mysql<br>
+				cd /etc/rc.d/rc5.d<br>
+				ln -s ../init.d/mysql.server S99mysql</blockquote>That's it! To test that this works, you can reboot
+			your system and request the status of the server as before to make sure it runs properly at startup.
+			
