@@ -1,6 +1,6 @@
 # vBulletin 6.0.3 Changes and Updates
 
-A preview release of vBulletin 6.0.3 is available for download and testing.
+vBulletin 6.0.3 is now available for self-hosted customers. vBulletin Cloud customers will be automatically upgraded in the coming weeks.
 
 ## Front End Changes
 
@@ -28,6 +28,7 @@ In addition to this:
 
 - The avatar border style variables have been consolidated into a single style variable called `global_avatar_border`. The default is a zero-pixel value in the provided styles and themes
 - The avatar display code has been consolidated across vBulletin systems to remove code redundancy.
+- This feature can be disabled in the AdminCP under Settings -> Options -> User Profile Options -> Use Custom Default Avatar.
 
 ---
 
@@ -111,9 +112,9 @@ For more information, see [vBulletin Connect System Requirements](https://www.vb
 
 ### Current Version Support Schedule
 
-- Active Version - 6.0.2
+- Active Version - 6.0.3
+- Security Patch - 6.0.2
 - Security Patch - 6.0.1
-- Security Patch - 6.0.0
 - Security Patch - 5.7.5
 
 ### Discussion
