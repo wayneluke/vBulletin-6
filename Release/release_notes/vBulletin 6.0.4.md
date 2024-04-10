@@ -1,6 +1,6 @@
-## vBulletin 6.0.4 Changes and Updates
+# vBulletin 6.0.4 Changes and Updates
 
-A preview release of vBulletin 6.0.4 is now available for self-hosted customers.
+vBulletin 6.0.4 is now available for download customers. vBulletin Cloud customers will be automatically upgraded over the coming weeks.
 
 ### Home Node Permissions
 
@@ -14,7 +14,20 @@ Handling the channel permissions of the Home Node has been refactored.
 
 Paypal's Payment API has been added as a vBulletin Gateway. The new gateway will allow Administrators to move away from Paypal's IPN functionality and add new payment methods to their site.
 
-> Please note that the IPN Gateway is now considered deprecated and will be removed in the future.
+To enable the Paypal API, follow these steps:
+
+1. In your AdminCP visit Paid Subscriptions -> Payment Gateways.
+2. Select Edit for Paypal API.
+3. Enter your Paypal Client Id and Secret Key.
+   - If you have not created an app yet, Log into the [PayPal Developer Dashboard](https://developer.paypal.com/dashboard/) using your merchant credentials, go to "App & Credentials" and hit "Create App".
+   - Give it an easily identifiable name like "vBulletin 6 Integration", set the type to "Merchant" and create the app.
+   - On the next page, you should see your Client ID & Secret key.
+   - Scroll down to "Features", and ensure that "Subscriptions" is checked.
+   - You can always go back to "App & Credentials" in the dashboard to view your client ID & secret.
+4. Set this Gateway to Active
+5. Save the page.
+
+> Please note that the Paypal IPN Gateway is now considered deprecated and will be removed in the future.
 
 ### Article Sorting
 
@@ -24,7 +37,7 @@ To control the Display Order of your articles, visit the AdminCP and go to Artic
 
 ### New Template Markup
 
-We have added a new vBulletin Markup tag to test for usergroups to the system. This tag provides simpler markup to check if a user belongs to a specific usergroup over using the <vb:if> markup with ismemberof() code from previous versions.
+We have added a new vBulletin Markup tag (`vb:usergroup`) to test for usergroups to the system. This tag provides simpler markup to check if a user belongs to a specific usergroup over using the <vb:if> markup with ismemberof() code from previous versions.
 
 Usage:
 
@@ -91,6 +104,10 @@ We have removed the inline Javascript used to define the Page Object. The Page O
 - Consolidated the default Terms of Service information from three phrases and locations to one location.
 
 ## Additional Information
+
+### PHP 8.0 Deprecation
+
+PHP 8.0 is now past end of life and is no longer supported by The PHP Group. Due to this PHP 8.0 should be considered deprecated.
 
 ### Install / Upgrade
 
