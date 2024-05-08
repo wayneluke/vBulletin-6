@@ -1,4 +1,4 @@
-# vBulletin 6.0.1 Changes and Updates
+# vBulletin 6.0.5 Changes and Updates
 
 ## Front End Changes
 
