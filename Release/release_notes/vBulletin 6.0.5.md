@@ -1,6 +1,6 @@
 # vBulletin 6.0.5 Changes and Updates
 
-A preview release of vBulletin 6.0.5 is now available for testing by self-hosted (download) customers. Preview releases are not meant to be used on production servers.
+vBulletin 6.0.5 is now available for download by self-hosted (download) customers. vBulletin Cloud sites will be automatically updated in the upcoming weeks.
 
 ## Front End Changes
 
@@ -77,9 +77,9 @@ For more information, see [vBulletin Connect System Requirements](https://www.vb
 
 ### Current Version Support Schedule
 
-- Active Version - 6.0.4
+- Active Version - 6.0.5
+- Security Patch - 6.0.4
 - Security Patch - 6.0.3
-- Security Patch - 6.0.2
 - Security Patch - 5.7.5
 
 ### Discussion
