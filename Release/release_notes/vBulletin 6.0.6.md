@@ -12,7 +12,7 @@ Site Administrators can choose to display birthdays and holidays on Calendar Mod
 
 #### Birthdays
 
-This feature shows the birthdays of users who have been active within a specific period. By default, the activity cutoff is 180 days, and Administrators can adjust this value in the Calendar module. When a user clicks or taps on a birthday in the Calendar, the user's profile will be loaded."
+This feature shows the birthdays of users who have been active within a specific period. This will show active all members who have been active in the last 30 days. These settings can be changed in the AdminCP under Settings -> Options -> User Profile Options. When a user clicks or taps on a birthday in the Calendar, the user's profile will be loaded. If permissions allow, the user can then leave a visitor message wishing them Happy Birthday.
 
 #### Holidays
 
