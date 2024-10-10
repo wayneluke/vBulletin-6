@@ -1,12 +1,12 @@
 # vBulletin 6.0.7 Changes and Updates
 
-A preview release of vBulletin 6.0.7 is now available for self-hosted (download) customers. These preview releases are suitable for testing purposes only and are not suitable for production servers.
+vBulletin 6.0.7 is now available for download by self-hosted (download) customers. vBulletin Cloud sites will be automatically updated in the upcoming weeks.
 
 ## Front End Changes
 
 ### Site Builder Quick Setup
 
-Several new options have been added to Site Builder's Quick Setup tool. This tool helps onboard new vBulletin sites after installation. 
+Several new options have been added to Site Builder's Quick Setup tool. This tool helps onboard new vBulletin sites after installation.
 
 1. Site Owners can edit the Site Name within Quick Setup.
 2. Top-level forum channels can be marked as private or public within Quick Setup.
@@ -79,9 +79,9 @@ For more information, see [vBulletin Connect System Requirements](https://www.vb
 
 ### Current Version Support Schedule
 
-- Active Version - 6.0.6
+- Active Version - 6.0.7
+- Security Patch - 6.0.6
 - Security Patch - 6.0.5
-- Security Patch - 6.0.4
 
 ### Discussion
 
